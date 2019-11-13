@@ -1,0 +1,87 @@
+{{ partial "head.html" . }}
+<body>
+    {{ partial "nav.html" . }}
+
+    <section id="wrapper" class="post">
+        <article>
+            <header>
+                <h1>
+                    {{ .Title }}
+                </h1>
+                <h2 class="headline">
+                    {{ .Date.Format "2 Jan 2006 15:04" }}
+                    · {{ if lt 1 .WordCount }}{{ .WordCount }} mots{{ else }}{{.WordCount }} mot{{ end }}
+                    · Lecture en {{ .ReadingTime }} minutes
+                    <span class="tags">
+                        {{ with .Params.tags }}
+                        {{ if ge (len .) 1 }}
+                        {{ range . }}
+                        <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
+                        {{ end }}
+                        {{ end }}
+                        {{ end}}
+                    </span>
+                </h2>
+            </header>
+            {{ if .Site.Params.enableToc }}
+            {{ if .TableOfContents }}
+            <div id="toc">
+                {{ .TableOfContents }}
+            </div>
+            {{ end }}
+            {{ end }}
+            <section id="post-body">
+                {{ .Content }}
+            </section>
+        </article>
+
+        {{ if eq .Type "post" }}
+
+        {{ range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+        {{ $.Scratch.Set "has_related" true }}
+        {{ end }}
+
+        {{ if $.Scratch.Get "has_related" }}
+        <div class="related-content">
+            <h3>Related Posts</h3>
+            <ul>
+                {{ $num_to_show := .Site.Params.related_content_limit | default 3 }}
+                {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+                <li>
+                    <a href="{{ .RelPermalink }}">
+                        {{ .Title }}
+                    </a>
+                    &ndash;
+                    <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05-0700" }}">
+                        {{ .Date.Format "Jan 2, 2006" }}
+                    </time>
+                    <br>
+                    <small>{{ .Summary | plainify | htmlUnescape }}</small>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
+
+        <i class="icon-ellipsis page-separator" aria-hidden="true"></i>
+
+        {{ partial "single-about.html" . }}
+
+        <p>Vous avez vu une erreur ? Quelque chose ne va pas ? Vous pouvez
+        contribuer à cette page sur
+        <a href="https://github.com/tommoulard/blog" target="_blank">GitHub</a>
+        ou laisser un commentaire en
+        dessous. Merci d'être passé par là :)</p>
+
+        {{ if .Site.Params.enableDisqus }}
+        {{ partial "disqus.html" . }}
+        {{ end }}
+        {{ end }}
+
+        {{ partial "footer.html" . }}
+    </section>
+
+    {{ partial "js.html" . }}
+</body>
+</html>

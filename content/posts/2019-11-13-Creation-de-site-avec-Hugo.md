@@ -1,5 +1,5 @@
 ---
-title: "Creation de site avec Hugo"
+title: "Création de site avec Hugo"
 date: 2019-11-13T15:17:21+01:00
 author: Tom Moulard
 url: /creation-de-site

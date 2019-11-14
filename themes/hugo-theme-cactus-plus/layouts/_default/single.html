@@ -1,7 +1,7 @@
 {{ partial "head.html" . }}
+
 <body>
     {{ partial "nav.html" . }}
-
     <section id="wrapper" class="post">
         <article>
             <header>
@@ -34,13 +34,10 @@
                 {{ .Content }}
             </section>
         </article>
-
         {{ if eq .Type "post" }}
-
         {{ range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
         {{ $.Scratch.Set "has_related" true }}
         {{ end }}
-
         {{ if $.Scratch.Get "has_related" }}
         <div class="related-content">
             <h3>Related Posts</h3>
@@ -62,26 +59,20 @@
             </ul>
         </div>
         {{ end }}
-
-
         <i class="icon-ellipsis page-separator" aria-hidden="true"></i>
-
         {{ partial "single-about.html" . }}
-
         <p>Vous avez vu une erreur ? Quelque chose ne va pas ? Vous pouvez
-        contribuer à cette page sur
-        <a href="https://github.com/tommoulard/blog" target="_blank">GitHub</a>
-        ou laisser un commentaire en
-        dessous. Merci d'être passé par là :)</p>
-
+            contribuer à cette page sur
+            <a href="https://github.com/tommoulard/blog" target="_blank">GitHub</a>
+            ou laisser un commentaire en
+            dessous. Merci d'être passé par là :)</p>
         {{ if .Site.Params.enableDisqus }}
         {{ partial "disqus.html" . }}
         {{ end }}
         {{ end }}
-
         {{ partial "footer.html" . }}
     </section>
-
     {{ partial "js.html" . }}
 </body>
+
 </html>

@@ -2,7 +2,7 @@ up:
 	hugo server -D
 
 new:
-	hugo new posts/$(shell date +%F)-$(POST).md
+	hugo new "posts/$(shell date +%F)-$(shell echo $(POST) | sed "s/ /-/g").md"
 
 build:
 	hugo -D

@@ -14,6 +14,8 @@ categories:
   - tutoriel
 ---
 
+# Ce n'est pas un exemple qui fonctionne !
+
 Faire une application en Go et le mettre dans un docker est très important pour la portabilité.
 
 Un `Dockerfile` simple pour une application:
@@ -96,7 +98,9 @@ Sur Windows, il faut sélectionner l’icône Docker et sélectionner `Settings`
 Il faut ensuite sélectionner `Daemon` puis cliquer sur la checkbox `Experimental Features` pour les activer
 
 ## Mais à quoi ça sert ?
-La solution simple pour avoir plusieurs architectures pour une même application est d'utiliser les **tags**(ou repository différents, mais à éviter encore plus). Il faut donc construire une image par GOOS/GOARCH supportés. Et on aurait une liste de tags comme ça:
+La solution simple pour avoir plusieurs architectures pour une même application est d'utiliser les **tags**(ou repository différents, mais à éviter encore plus).
+Il faut donc construire une image par GOOS/GOARCH supportés.
+Et on aurait une liste de tags comme ça:
 
  - my-app/app:latest
  - my-app/app:latest-windows-amd64
@@ -108,7 +112,7 @@ Soit faire:
 #!/bin/bash
 os_archs=( darwin/386 darwin/amd64 dragonfly/amd64 freebsd/386 freebsd/amd64 freebsd/arm linux/386 linux/amd64 linux/arm linux/arm64 linux/ppc64 linux/ppc64le linux/mips linux/mipsle linux/mips64 linux/mips64le linux/s390x nacl/386 nacl/amd64p32 nacl/arm netbsd/386 netbsd/amd64 netbsd/arm openbsd/386 openbsd/amd64 openbsd/arm plan9/386 plan9/amd64 plan9/arm solaris/amd64 windows/386 windows/amd64 )
 build="go build -o app"
-dk_app=me/app
+dk_app=my-app/app
 hash=$(git rev-parse --short HEAD)
 
 for os_arch in "${os_archs[@]}"; do
@@ -128,7 +132,8 @@ for os_arch in "${os_archs[@]}"; do
 done
 ```
 
-Mais il serait mieux de ne pas remplir la liste des tags comme ça. Et cela ne permet pas d'être **vraiment** multi architecture: sur une machine ARM, il faut un tag différent d'une machine x86_64.
+Mais il serait mieux de ne pas remplir la liste des tags comme ça.
+Et cela ne permet pas d'être **vraiment** multi architecture: sur une machine ARM, il faut un tag différent d'une machine x86_64.
 
 Les manifest de Docker permettent de créer une image qui soit architecture agnostique: Que l'on récupère l'image sur un ARM ou sur un x86_64, la commande est la même:
 ```bash
@@ -254,7 +259,7 @@ $ docker manifest inspect my-app/app:latest
 #!/bin/bash
 os_archs=( darwin/386 darwin/amd64 dragonfly/amd64 freebsd/386 freebsd/amd64 freebsd/arm linux/386 linux/amd64 linux/arm linux/arm64 linux/ppc64 linux/ppc64le linux/mips linux/mipsle linux/mips64 linux/mips64le linux/s390x nacl/386 nacl/amd64p32 nacl/arm netbsd/386 netbsd/amd64 netbsd/arm openbsd/386 openbsd/amd64 openbsd/arm plan9/386 plan9/amd64 plan9/arm solaris/amd64 windows/386 windows/amd64 )
 build="go build -o app"
-dk_app=tommoulard/app2
+dk_app=my-app/app
 hash=$(git rev-parse --short HEAD)
 
 for os_arch in "${os_archs[@]}"; do
@@ -283,3 +288,5 @@ docker manifest create tommoulard/app:${hash} ${manifests} --amend
 docker manifest push tommoulard/app:latest
 docker manifest push tommoulard/app:${hash}
 ```
+
+# Ce n'est pas un exemple qui fonctionne !

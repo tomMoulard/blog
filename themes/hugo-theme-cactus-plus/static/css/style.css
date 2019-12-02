@@ -1117,3 +1117,7 @@ a.symbol:hover {
     font-size: .9em;
     clear: right;
 }
+
+.related-content {
+    margin-bottom: 20px;
+}

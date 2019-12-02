@@ -40,7 +40,7 @@
         {{ end }}
         {{ if $.Scratch.Get "has_related" }}
         <div class="related-content">
-            <h3>Related Posts</h3>
+            <h3>Posts en Rapport</h3>
             <ul>
                 {{ $num_to_show := .Site.Params.related_content_limit | default 3 }}
                 {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
@@ -50,7 +50,7 @@
                     </a>
                     &ndash;
                     <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05-0700" }}">
-                        {{ .Date.Format "Jan 2, 2006" }}
+                        {{ .Date.Format "2 Jan 2006" }}
                     </time>
                     <br>
                     <small>{{ .Summary | plainify | htmlUnescape }}</small>

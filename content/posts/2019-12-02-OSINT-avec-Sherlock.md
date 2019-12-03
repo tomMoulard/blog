@@ -77,7 +77,7 @@ Récupérer ses données là peux être importantes car elle permettent d'utilis
 
 On peux, par exemple, utiliser le fichier fourni par Sherlock et ouvrir tous les liens obtenu dans un nouvel onglet de notre navigateur:
 ```bash
-for link in $(grep http results/user123.txt); do $BROWSER $file; done
+for link in $(grep http results/user123.txt); do $BROWSER $link; done
 ```
 
 # Les sites qui sont disponible actuellement sont:

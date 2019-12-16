@@ -1,6 +1,6 @@
 baseURL = "https://blog.moulard.org/"
 languageCode = "fr"
-title = "Tom's Blog"
+title = "Moulard's Blog"
 
 # Site settings
 theme = "hugo-theme-cactus-plus"
@@ -13,9 +13,9 @@ summaryLength = 10
 linenos = true
 
 [params]
-	author = "Tom Moulard"
-	description = "Site qui sert de blog pour Tom"
-	bio = "Tom est un développeur passionné"
+	author = "La famille Moulard"
+	description = "Site qui sert de blog pour les Moulards"
+	bio = "La famille Moulard au grand complet !"
 
 	linkedin = "https://linkedin.com/in/tommoulard"
 	facebook = "tommoulard"
@@ -73,21 +73,26 @@ linenos = true
 
 	# Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
 	iconFont = "font-awesome"
-  # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
-  socialIconStyle = ""
-  [params.navigation]
-    help = "Aide"
+
+	# The social icons can be styled differently if you use mono as font - circle, rounded, or empty
+
+	# Enable Git informations
+	enableGitInfo = true
+
+	socialIconStyle = ""
+	[params.navigation]
+		help = "Aide"
 
 
 # Add additional social link entries underneath
 [social]
 	facebook-square = "https://www.facebook.com/tommoulard"
-    rss-square = "/index.xml"
+	rss-square = "/index.xml"
 	github-square = "https://www.github.com/tommoulard"
 
 [taxonomies]
-  category = "categories"
-  tag = "tags"
+	category = "categories"
+	tag = "tags"
 
 [related]
 	threshold = 80

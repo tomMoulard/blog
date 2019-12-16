@@ -9,8 +9,9 @@
                     {{ .Title }}
                 </h1>
                 <h2 class="headline">
-                    {{ .Date.Format "2 Jan 2006 15:04" }}
-                    · {{ if lt 1 .WordCount }}{{ .WordCount }} mots{{ else }}{{.WordCount }} mot{{ end }}
+                    Ecrit le {{ .Date.Format "2 Jan 2006 15:04" }}
+                    {{ if ne .Date .Lastmod}} et mis à jours le {{ .Lastmod.Format "2 Jan 2006 15:04" }}{{ end }}
+                    · {{ .WordCount }}mot{{ if lt 1 .WordCount }}s{{ end }}
                     · Lecture en {{ .ReadingTime }} minutes
                     <span class="tags">
                         {{ with .Params.tags }}

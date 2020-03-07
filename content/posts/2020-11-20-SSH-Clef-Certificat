@@ -16,9 +16,146 @@ categories:
 
 # Pourquoi des clefs ssh et pas des password?
 
+Il y a deux raison d'utiliser des clefs et pas des password pour le SSH l'une est bonne et l'autre mauvaise.
+La mauvaise raison est gérer, memorisé et taper des password n'est pas le but de la vie. Et qui plus est c'est penible. 
+La bonne est que les passowrds sur internet sa ne resiste pas au brute force attaque. Un password de 8 caracteres meme complexe est bien moins secure qu'une clef des 4096 bits. 
+
+Dans le cloud quand vous laissez un serveur SSH accessible, en quelques minutes c'est the finalle bot attaque !!!
+
+Moi j'ai bien dire que la clef privé est une clef, et que la clef public est un serure. 
+La clef privé permet d'ouvrir les portes securisé avec la clef public. Evidement si vous pouvez partagé la clef public, il faut précicieusement garder secrete la clef privé. 
+La passphrase, est le code secret nécessaire a l'utilisation de la clef privé. 
+
+## Comment empecher les password dans SSH 
+mettre a no le parmettre PasswordAuthentication du fichier /etc/ssh/sshd_config
+pi@pi3:~/.ssh $ grep PasswordAuthentication /etc/ssh/sshd_config
+PasswordAuthentication no
+
+
 # Comment faire une clef
 
+Avec puttygen sous windows c'est simplicime, il faut juste pas oublier de bouger la souris sous la barre verte pour generer de l'aleatoire. 
+
+avec openssh c'est encore plus simple 
+pi@pi3:~/.ssh $ ssh-keygen -t rsa -b 4096
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/pi/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/pi/.ssh/id_rsa.
+Your public key has been saved in /home/pi/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:WJfG2b35KlyIkbY+jo+H3dyMKrtJiSoC0JRyIe9ptlw pi@pi3
+The key's randomart image is:
++---[RSA 4096]----+
+|. .o             |
+|.o+      . + .   |
+| =.     . *.. .  |
+|....   o o+    o |
+|. = E . S. + .o  |
+|.+ o   . .o . .. |
+|. o   . o+ + =  .|
+|. .  . .o+= * o. |
+| . ..   *B+o ..  |
++----[SHA256]-----+
+pi@pi3:~/.ssh $ cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC0g4DwZskmd8kcYyb7dvljI8B0NxhOHjIjrfzh+GmZsQvF2L+08QBComrwfMp+Z9jE1YmAf4RBoFUHahZYpJiS0t0VgUQqCO/WKhygQwP/f7w+29H1WnJARkUy9eKCjzD13gdSzbzZMrucps6bmF+mnHGJ5G2kZHMWCMk+tglfz6vgnN5thTFkP3lFCZo1njT+dzsFxPAHNZxfEDsRyUxBCd2ItC4iQcEIJAvO2vVFVID3TW/BkAzXpFiyvIsScqEi4H4mochmL05nUscjrLj+1Wi8Y2Z99VXTAMIF7fMz/spDL46GWnn5FSXzvY/qc1vj5OXNpNeAKELySszw60l1zRgaV9LWKJ5rIYNbcWqG7Q6O7FXaXEMQ0Jre/j2upXEbM3qrlACXojUZx6WO1eKTnRisZcZebrVtcFv2IkzKMV18wzni61PSUqD9a/i3cxnNz+80oYI6ARlqd4vh1bZIJRnN4+SqUzSM5w7Rw8mdxhSzbU9IDEZTshA84+j/CDvbIKtnpXmvlyUbvFLS39LGAOC0NtgZhb7JQ+pwCPJ69lJqiBwelOi0uRUGQ86j+XSf0GNbUC/HGL08VJWT1wum9CNaEqVliZ+VKw+zYyVMa64Hf6PeF54FOH+/jLUSQeFGB7NrP0hKTznD6baLR9F3A4ose01JCX5kbXp91W6R7Q== pi@pi3
+
+pi@pi3:~/.ssh $ cat id_rsa
+-----BEGIN RSA PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+DEK-Info: AES-128-CBC,91FE4EEA4EF377C38F0D56DC7BE40B3F
+
+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
+-----END RSA PRIVATE KEY-----
+pi@pi3:~/.ssh $
+
 # Comment pousser sa clef sur un serveur
+
+La clefs public doit être mise dans la liste des clefs du compte que l'on souhaite acceder 
+Classiquement /home/<<user>>/.ssh/authorized_keys
+rechercher dans le fichier /etc/ssh/sshd_config  la clef AuthorizedKeysFile par defaut a  %h/.ssh/authorized_keys
+
+##Copie de la clefs sur un server
+pi@pi3:~/.ssh $ ssh-copy-id pi@pi4b.home
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/pi/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+
+/usr/bin/ssh-copy-id: WARNING: All keys were skipped because they already exist on the remote system.
+                (if you think this is a mistake, you may want to use -f option)
+
+pi@pi3:~/.ssh $ ssh pi@pi4b.home
+pi@pi3:~/.ssh $ ssh pi@pi4b.home -i id_rsa
+Linux pi4b 4.19.75-v7l+ #1270 SMP Tue Sep 24 18:51:41 BST 2019 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sat Mar  7 11:05:33 2020 from 192.168.1.29
+pi@pi4b:~ $
+
+
+##Copie de la clefs manuelement 
+pi@pi3:~/.ssh $ cat id_rsa.pub >> /home/pi/.ssh/authorized_keys
+
+attention au autorisation sur le fichier authorized_keys 
+pi@pi3:~/.ssh $ ls -l /home/pi/.ssh/authorized_keys
+-rw------- 1 pi pi 3505 mars   7 12:01 /home/pi/.ssh/authorized_keys
+p
+
+
+
 
 # Pourquoi les certificats SSL C'est mieux qu'une clefs SSH
 

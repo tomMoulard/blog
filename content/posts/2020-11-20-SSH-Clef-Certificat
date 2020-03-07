@@ -1,0 +1,35 @@
+---
+title: "Une application Multi Architecture en Golang dans Docker"
+date: 2020-11-20T13:19:36+01:00
+author: Guillaume Moulard
+url: /SSH-Clef-Certificat
+draft: false
+type: post
+tags:
+  - SSH
+  - Securite
+  - certificat
+  - sshd
+categories:
+  - tutoriel
+---
+
+# Pourquoi des clefs ssh et pas des password?
+
+# Comment faire une clef
+
+# Comment pousser sa clef sur un serveur
+
+# Pourquoi les certificats SSL C'est mieux qu'une clefs SSH
+
+# Comment faire mettre en oeuvre une CA sur le serveur SSHD 
+
+## creation de la CA Certificat Autority
+
+## setup des la CA dans les serveur SSH sshd
+
+# Comment créer sa clefs et la signé par sa CA
+
+# Comment pousser sa clef signé sur un serveur
+
+

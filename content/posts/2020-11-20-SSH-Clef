@@ -2,7 +2,7 @@
 title: "Securisation SSH : Utilisation de clefs a la place des password."
 date: 2020-11-20T13:19:36+01:00
 author: Guillaume Moulard
-url: /SSH-Clef-Certificat
+url: /SSH-Clef
 draft: false
 type: post
 tags:

@@ -132,5 +132,3 @@ permitted by applicable law.
 Last login: Sat Mar  7 11:57:23 2020 from 192.168.1.29
 pi@pi4b:~ $
 ```
-
-

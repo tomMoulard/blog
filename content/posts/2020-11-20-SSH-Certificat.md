@@ -1,6 +1,6 @@
 ---
 title: "Securisation SSH : Utilisation de certificat a la place des Clefs."
-date: 2020-11-20T13:19:36+01:00
+date: 2020-03-09T13:19:36+01:00
 author: Guillaume Moulard
 url: /SSH-Certificat
 draft: false
@@ -132,4 +132,3 @@ permitted by applicable law.
 Last login: Sat Mar  7 11:57:23 2020 from 192.168.1.29
 pi@pi4b:~ $
 ```
-

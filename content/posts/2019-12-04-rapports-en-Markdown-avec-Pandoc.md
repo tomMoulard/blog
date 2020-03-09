@@ -17,6 +17,8 @@ Faire un rapport peux être compliqué avec des outils très graphiques. En effe
 
 En effet, la séparation du contenant et du contenu permet d'être conscient de ce que l'on écrit et permet de changer le style global du rapport facilement.
 
+![](/img/2019/hugo-creation.png)
+
 # Qu'est-ce que le Markdown
 
 ```markdown
@@ -95,35 +97,35 @@ Aussi, n'importe quel bloc de texte indenté est considéré comme un bloc de co
 
 On peux spécifier le langage du code après les backticks pour avoir une coloration qui soit en rapport:
 
-```python
-import random
+    ```python
+    import random
 
-class CardGame(object):
-    """ a sample python class """
-    NB_CARDS = 32
-    def __init__(self, cards=5):
-        self.cards = random.sample(range(self.NB_CARDS), 5)
-        print 'ready to play'
-`` `
+    class CardGame(object):
+        """ a sample python class """
+        NB_CARDS = 32
+        def __init__(self, cards=5):
+            self.cards = random.sample(range(self.NB_CARDS), 5)
+            print 'ready to play'
+    ```
 
 Du code en Javascript:
 
-```js
-var config = {
-    duration: 5,
-    comment: 'WTF'
-}
-// callbacks beauty un action
-async_call('/path/to/api', function(json) {
-    another_call(json, function(result2) {
-        another_another_call(result2, function(result3) {
-            another_another_another_call(result3, function(result4) {
-                alert('And if all went well, i got my result :)');
+    ```js
+    var config = {
+        duration: 5,
+        comment: 'WTF'
+    }
+    // callbacks beauty un action
+    async_call('/path/to/api', function(json) {
+        another_call(json, function(result2) {
+            another_another_call(result2, function(result3) {
+                another_another_another_call(result3, function(result4) {
+                    alert('And if all went well, i got my result :)');
+                });
             });
         });
-    });
-})
-`` `
+    })
+    ```
 
 
 # Les Math
@@ -142,6 +144,7 @@ $$F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \, e^{ - i \ome
 
 # Qu'est-ce que Pandoc
 Selon `man pandoc`
+
 >  Pandoc  is  a  Haskell  library for converting from one markup format to another, and a command-line tool that uses this library.
 
 `Pandoc` permet donc de convertir un `markup language` en un autre.
@@ -170,6 +173,7 @@ links-as-notes: true
 ```
 
 Ce que veulent dire chaque champs:
+
  - `title`(string): Correspond au titre du rapport
  - `author`(string): Correspond à l'auteur du rapport
  - `date`(string): Correspond à la date d'écriture du rapport
@@ -200,6 +204,7 @@ pandoc \
 
 Les arguments utilisés ici permettent d'avoir encore plus de contrôle sur `pandoc` et le fichier de sortie.
 Leurs signification:
+
  - `from`: Permet de définir le langage source et ses spécifications
  - `V`: Permet de définir des variables de la forme CLEF:VALEUR
  - `s`: Permet d'avoir un header et un footer approprié, de ne pas avoir des problèmes d'encodage de fichiers et de ne pas avoir des Métadata dans le corps du texte.

@@ -1,5 +1,5 @@
 up:
-	hugo server -D
+	hugo server -D --disableFastRender
 
 new:
 	hugo new "posts/$(shell date +%F)-$(shell echo $(POST) | sed "s/ /-/g").md"

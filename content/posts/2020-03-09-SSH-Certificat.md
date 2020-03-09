@@ -18,6 +18,7 @@ categories:
 # Pourquoi les certificats SSL c'est mieux qu'une clé SSH ?
 
 Mettre en place des certificats pousse encore la sécurité un peu plus loin car il est alors possible:
+
  - de donner des délais de validité
  - de faire les liste de révocation
  - de faire des restriction d'usage du SSH (`clear`, `force-command=command`, `no-agent-forwarding`, `no-port-forwarding`, `no-pt`, `no-user-rc`, `no-x11-forwarding`, `permit-agent-forwarding`, `permit-port-forwarding`, `permit-pty`, `permit-user-rc`, `permit-x11-forwarding`, `source-address=address_list`)

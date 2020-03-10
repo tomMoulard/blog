@@ -22,6 +22,8 @@ Mettre en place des certificats pousse encore la sécurité un peu plus loin car
  - de donner des délais de validité
  - de faire les liste de révocation
  - de faire des restriction d'usage du SSH (`clear`, `force-command=command`, `no-agent-forwarding`, `no-port-forwarding`, `no-pt`, `no-user-rc`, `no-x11-forwarding`, `permit-agent-forwarding`, `permit-port-forwarding`, `permit-pty`, `permit-user-rc`, `permit-x11-forwarding`, `source-address=address_list`)
+ - de faire comme [facebook](https://engineering.fb.com/production-engineering/scalable-and-secure-access-with-ssh/) :)
+
 
 # Comment mettre en oeuvre une CA sur le serveur SSHD ?
 
@@ -130,3 +132,5 @@ permitted by applicable law.
 Last login: Sat Mar  7 11:57:23 2020 from 192.168.1.29
 pi@pi4b:~ $
 ```
+
+

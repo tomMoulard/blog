@@ -13,7 +13,7 @@ summaryLength = 10
 linenos = true
 
 [params]
-	author = "La famille Moulard"
+	author = "La famille Moulard and co"
 	description = "Site qui sert de blog pour les Moulards"
 	bio = "La famille Moulard au grand complet !"
 
@@ -25,7 +25,7 @@ linenos = true
 
 	enableDisqus = true
 	disqusShortname = "blog-moulard-org"
-
+ 
 
 	enableSummary = true
 	# Set the value to true if use description in post front matter replace content summary

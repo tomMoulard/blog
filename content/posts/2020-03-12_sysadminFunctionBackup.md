@@ -1,15 +1,15 @@
 ---
 title: "sysadmin function bakup"
-date: 2020-03-12T13:19:36+01:00
+date: 2020-03-12T10:19:36+01:00
 author: Guillaume Moulard
 url: /sysadminFunctionBackup
 draft: false
 type: post
 tags:
   - sysadmin
-  - function 
+  - function
   - backup
-  - script 
+  - script
   - shell
 categories:
   - tutoriel
@@ -18,58 +18,72 @@ categories:
 
 # sysadmin function bakup
 
-Dans les regles d'or de tout sysadmin il y a bien sur la nécésité de mettre en oeuvre une politique de backup complet des systems. 
+Dans les règles d'or de tout sysadmin il y a bien sûr la nécessité de mettre en œuvre une politique de backup complet des systèmes.
 Ce n'est pas le sujet de cette article !!!
-Il existe bonne pratique pour garantir la traçabilité et la capacité de revenir sur une mauvaise manip. 
-**Avant de modifier une fichier, il faut en faire une copie !!!** 
-alors c'est simple a premiere vue 
+Il existe bonne pratique pour garantir la traçabilité et la capacité de revenir sur une mauvaise manip.
 
-    cp /etc/fstab /etc/fstab.bkp
+**Avant de modifier une fichier, il faut en faire une copie !!!**
 
- Bon sa c'est la base :) 
+Alors c'est simple à première vue:
+
+```bash
+cp /etc/fstab /etc/fstab.bkp
+```
+
+Bon sa c'est la base :)
 Franchement sa aide dans bien des cas. On peut allé un peut plus loins et ajouté un horodatage.
 
-    cp /etc/fstab /etc/fstab-bkp200312002553
-Pour ma part je me suis souvent demandé pourquoi personne n'avais ecrit en cp avec cette fonction...
+```bash
+cp /etc/fstab /etc/fstab-bkp200312002553
+```
+
+Pour ma part je me suis souvent demandé pourquoi personne n'avais écrit en `cp` avec cette fonction...
 Bien justement probablement car il y a les function en shell :)
 
-il faut juste ca créer dans son environement ou le mettre dans son fichier $HOME/.bashrc
+Il faut juste la créer dans son environnement et le mettre dans son fichier `$HOME/.bashrc`
 
-	bkp (){ cp -a $1 $1-bkp$(date +"%y%m%d%H%M%S") ; }
-ont peut alors ensuite l'utiliser comme une command classique
-
-    root@pi3:~# bkp (){ cp -a $1 $1-bkp$(date +"%y%m%d%H%M%S") ; }
-    root@pi3:~# bkp /etc/fstab
-    root@pi3:~# ls -l /etc/fstab*
-    -rw-r--r-- 1 root root 305 nov.  29 18:40 /etc/fstab
-    -rw-r--r-- 1 root root 305 nov.  29 18:40 /etc/fstab-bkp200312003354
-
-cool non!!!
-
-Bien sur l'utilisation des function en bash n'a pas de limite, voila une autre que j'utilise souvent pour repeter X fois la meme commmande...
-	
-	t10 (){ for x in {01..10}; do $@ ; done }
-Et a l'utilisation
-
-    pi@pi3:~ $ t10 (){ for x in guigui{01..10}; do $@ ; done }
-    pi@pi3:~ $ t10 echo g >> /tmp/10g
-    pi@pi3:~ $ cat /tmp/10g
-    g
-    g
-    g
-    g
-    g
-    g
-    g
-    g
-    g
-    g
-    pi@pi3:~ $
-	
-ont peut faire des choses beaucoup plus sophistiqué... Voila une function qui décompresses les principaux fichier d'archive.  
-
-
+```bash
+bkp (){ cp -a $1 $1-bkp$(date +"%y%m%d%H%M%S") ; }
 ```
+
+On peut alors ensuite l'utiliser comme une commande classique
+
+```bash
+root@pi3:~> bkp (){ cp -a $1 $1-bkp$(date +"%y%m%d%H%M%S") ; }
+root@pi3:~> bkp /etc/fstab
+root@pi3:~> ls -l /etc/fstab*
+-rw-r--r-- 1 root root 305 nov.  29 18:40 /etc/fstab
+-rw-r--r-- 1 root root 305 nov.  29 18:40 /etc/fstab-bkp200312003354
+```
+
+> Cool non!!!
+
+Bien sûr l'utilisation des fonctions en bash n'a pas de limite, voila une autre que j'utilise souvent pour répéter X fois la même commande...
+
+```bash
+t10 (){ for x in {01..10}; do $@ ; done }
+```
+Et à l'utilisation
+
+```bash
+pi@pi3:~ $ t10 (){ for x in guigui{01..10}; do $@ ; done }
+pi@pi3:~ $ t10 echo g >> /tmp/10g
+pi@pi3:~ $ cat /tmp/10g
+g
+g
+g
+g
+g
+g
+g
+g
+g
+g
+```
+
+On peut faire des choses beaucoup plus sophistiqué... Voila une fonction qui décompresses les principaux fichiers d'archive.
+
+```bash
 # Extract the content of an achive
 function extract {
  if [ -z "$1" ]; then

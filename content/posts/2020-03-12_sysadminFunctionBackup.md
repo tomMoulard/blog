@@ -66,7 +66,7 @@ t10 (){ for x in {01..10}; do $@ ; done }
 Et à l'utilisation
 
 ```bash
-pi@pi3:~ $ t10 (){ for x in guigui{01..10}; do $@ ; done }
+pi@pi3:~ $ t10 (){ for x in {01..10}; do $@ ; done }
 pi@pi3:~ $ t10 echo g >> /tmp/10g
 pi@pi3:~ $ cat /tmp/10g
 g

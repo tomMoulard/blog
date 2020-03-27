@@ -1,5 +1,5 @@
 ---
-title: "Corona Et CLI"
+title: "Corona et CLI"
 date: 2020-03-27T12:22:48+01:00
 author: Tom Moulard
 url: /coronoa-and-CLI
@@ -66,12 +66,14 @@ Les trois arguments de sed permettent:
 On peux mieux voir les informations grâce à `AWK`:
 ```bash
 $ curl https://corona-stats.online/fr |\
-    grep an |\
+    grep France |\
     sed "s/\s*//g ; s/║//g ; s/│/;/g" |\
     awk -F';' '{print $2":"$3"("$7","$8")"}'
 Country:TotalCases(Recovered,Active)
 France(FR):29,155(4,948,22,511)
 ```
+
+> Attention: ne pas oublier d'enlever la ligne avec les informations de champ avec une utilisation un peut plus poussée.
 
 # Conclusion
 Il ne nous reste plus qu'à utiliser ces informations, dans une barre d'état par exemple.
@@ -80,7 +82,7 @@ Pour aller plus loin, on pourrais ne pas utiliser `cURL` à chaque appel, mais u
 
 ```bash
 curl https://corona-stats.online/fr > $HOME/.cache/corona_data
-grep an $HOME/.cache/corona_data |\
+grep France $HOME/.cache/corona_data |\
     sed "s/\s*//g ; s/║//g ; s/│/;/g" |\
     awk -F';' '{print $2":"$3"("$7","$8")"}'
 ```

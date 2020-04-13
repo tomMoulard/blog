@@ -2,7 +2,7 @@
 title: "ANSSI et automatisation de MOOC Secnumacademie avec Selenium"
 date: 2020-04-13T18:57:41+02:00
 author: Tom Moulard
-url: /coronoa-and-CLI
+url: /anssi-mooc-on-hacking
 draft: false
 type: post
 tags:

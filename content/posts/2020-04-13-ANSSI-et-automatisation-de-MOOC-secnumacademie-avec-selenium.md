@@ -68,6 +68,11 @@ mkdir mook-hack && cd mook-hack
 wget https://raw.githubusercontent.com/tomMoulard/python-projetcs/master/anssi-mooc/mooc.py
 ```
 
+## Installer les dépendances
+```bash
+sudo apt install -y python3-selenium chromium-chromedriver
+```
+
 ## Mettre son username/password
 ```bash
 $EDITOR +4 mooc.py

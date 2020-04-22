@@ -55,6 +55,7 @@ if __name__ == '__main__':
 Un bot que vous pourrez trouver sur mon [repository github](https://github.com/tomMoulard/python-projetcs).
 
 Il suffit de:
+
  - mettre son username et son password dans les variables `user` et `passwd`.
  - lancer le bot
  - attendre que le bot ait connecté le navigateur
@@ -102,6 +103,7 @@ y
 
 # Upgrades
 Dans le futur, on pourrait:
+
  - lire les vidéos
  - ne pas faire `Y` pour chaque cours
 

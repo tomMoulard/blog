@@ -51,7 +51,7 @@ linenos = true
 	home = ""
 	about = ""
 	archive = ""
-	subscribe = ""
+	subscribe = "S'abonner au flux RSS"
 
 	olderPosts = ""
 	newerPosts = ""

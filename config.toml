@@ -1,10 +1,11 @@
 baseURL = "https://blog.moulard.org/"
 languageCode = "fr"
 title = "Moulard's Blog"
+copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 
 # Site settings
 theme = "hugo-theme-cactus-plus"
-googleAnalytics = "your_google_analytics_id"
+# googleAnalytics = "your_google_analytics_id"
 # Set the value to true if your site include CJK (Chinese, Japanese, and Korean languages) characters
 hasCJKLanguage = false
 
@@ -25,17 +26,15 @@ linenos = true
 
 	enableDisqus = true
 	disqusShortname = "blog-moulard-org"
- 
 
 	enableSummary = true
 	# Set the value to true if use description in post front matter replace content summary
 	useDescriptionReplaceSummary = false
 
-
 	enableGoogleAnalytics = false
 	enableBaiduAnalytics = false
 	# Set the value to your baidu analysis code if you want to use baidu analytics
-	baiduAnalytics = 'your_baidu_analysis_code'
+	# baiduAnalytics = 'your_baidu_analysis_code'
 
 	enableTwitterCard = true
 	# The url for twitter card image, default is avatar.png in static/images directory

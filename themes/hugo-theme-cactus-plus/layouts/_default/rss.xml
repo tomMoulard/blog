@@ -1,10 +1,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
-    <link>{{ .Permalink }}</link>
+    <link>{{ printf "%q%q" .Site.BaseURL .Permalink | safeHTML }}</link>
     <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
     <generator>Hugo -- gohugo.io -- Tom Moulard</generator>
-    <image>{{ .Permalink }}/images/avatar.png</image>
+    <image>{{ printf "%q%q" .Site.BaseURL .Permalink | safeHTML }}/images/avatar.png</image>
     {{ with .Site.LanguageCode }}<language>{{.}}</language>{{end}}
     {{ with .Site.Author.email }}<managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}
     {{ with .Site.Author.email }}<webMaster>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</webMaster>{{end}}
@@ -16,12 +16,11 @@
     {{ range .Pages }}
     <item>
       <title>{{ .Title }}</title>
-      <link>{{ .Permalink }}</link>
+      <link>{{ printf "%q%q" .Site.BaseURL .Permalink | safeHTML }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
-      <guid>{{ .Permalink }}</guid>
-      <guid>{{ .Permalink }}</guid>
-      <comments>{{ .Permalink }}#disqus_thread</comments>
+      <guid>{{ printf "%q%q" .Site.BaseURL .Permalink | safeHTML }}</guid>
+      <comments>{{ printf "%q%q#disqus_thread" .Site.BaseURL .Permalink | safeHTML }}</comments>
       <description>{{ .Content | html }}</description>
     </item>
     {{ end }}

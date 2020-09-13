@@ -206,7 +206,6 @@ h4,
 h5,
 p,
 #post-body ul,
-#post-list li,
 #post-body ol,
 pre {
     margin-bottom: 20px;
@@ -328,13 +327,11 @@ nav.main-nav a.cta {
 }
 
 #wrapper {
-    max-width: 600px;
     margin: 0 auto;
     padding: 60px 20px 100px 20px;
 }
 
 #wrapper.home {
-    max-width: 600px;
     margin: 0 auto;
     padding: 0px 40px 20px 40px;
 }
@@ -605,20 +602,10 @@ img {
 Post List
 =========================================== */
 
-#post-list,
 #archive-list {}
 
-#post-list li,
 #archive-list li {
     list-style-type: none;
-}
-
-#post-list li:last-child {
-    margin-bottom: 0;
-}
-
-#post-list li+li {
-    padding-top: 20px;
 }
 
 #post-list a {
@@ -894,7 +881,6 @@ h2.month {
         margin-top: 60px;
     }
 
-    #post-list,
     #archive-list {
         margin-top: 0;
     }
@@ -1121,4 +1107,99 @@ a.symbol:hover {
 
 .related-content {
     margin-bottom: 20px;
+}
+
+#post-list::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+#post-list::-webkit-scrollbar-thumb {
+    background: #201C29;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 1px hsla(0, 0%, 100%, .25), inset -2px -2px -2px rgba(0, 0, 0, .25)
+}
+
+#post-list::-webkit-scrollbar-track {
+    /* background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d); */
+}
+
+.post-article {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    min-width: 250px;
+    padding: 1.5rem;
+
+    border-radius: 16px;
+    background: #FFFFFF;
+    box-shadow: -1rem 0 1rem #424242;
+
+    transition: .2s;
+    height: 450px;
+}
+
+.article-author {
+    position: absolute;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    align-items: center;
+    margin: 0 0 3rem;
+}
+
+.author-avatar img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 16px 10px;
+    /* filter: grayscale(100%); */
+}
+
+.author-name-prefix {
+    font-style: normal;
+    font-weight: 700;
+    color: #7A7A8C;
+}
+
+.half-circle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 48px;
+    fill: none;
+    stroke: #ff8a00;
+    stroke-width: 8;
+    stroke-linecap: round;
+}
+
+@media only screen and (min-width: 601px) {
+    .post-article {
+        width: 400px;
+        height: 500px;
+    }
+
+    .post-article:not(:first-child) {
+        margin-left: -130px;
+    }
+
+    #post-list {
+        display: flex;
+        padding: 3rem;
+        overflow-x: scroll;
+    }
+
+    .article-author {
+        margin: 0 0 3rem;
+    }
+
+    .post-article:hover {
+        transform: translateY(-1rem);
+    }
+
+    .post-article:hover~.post-article {
+        transform: translateX(130px);
+    }
 }

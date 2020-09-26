@@ -30,5 +30,22 @@ newgrp docker
 reboot
 docker run hello-world
 ```
-
 On peux voir que la première ligne sert à installer docker et docker-compose, tandis que celles d'après permettent d'utiliser docker sans avoir à le préfixer de `sudo`.
+
+## Sur une Distro basée sur Arch
+Avec l'user `root` (`sudo su`), faire:
+```zsh
+pacman -Syu docker docker-compose
+groupadd docker
+gpasswd -a $USER docker
+systemctl enable docker
+systemctl start docker
+newgrp docker
+reboot
+```
+
+Tester son installation:
+```zsh
+docker run hello-world
+```
+

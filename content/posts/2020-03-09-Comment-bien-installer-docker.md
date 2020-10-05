@@ -1,6 +1,6 @@
 ---
 title: "Comment bien installer docker ?"
-date: 2020-09-26T08:30:00+01:00
+date: 2020-10-05T19:00:00+01:00
 author: Tom Moulard
 url: /installer-docker
 draft: false
@@ -28,7 +28,6 @@ sudo groupadd docker
 sudo gpasswd -a $USER docker
 newgrp docker
 reboot
-docker run hello-world
 ```
 On peux voir que la première ligne sert à installer docker et docker-compose, tandis que celles d'après permettent d'utiliser docker sans avoir à le préfixer de `sudo`.
 
@@ -44,8 +43,23 @@ newgrp docker
 reboot
 ```
 
-Tester son installation:
-```zsh
-docker run hello-world
+
+## Sur une Distro basée sur Centos
+Avec l'user `root` (`sudo su`), faire:
+```bash
+yum install -y yum-utils
+
+yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+yum install --allowerasing -y docker-ce docker-ce-cli containerd.io
+systemctl enable docker
+systemctl start docker
+pip3 install docker-compose # pour l'installation de `docker-compose`
 ```
 
+# Tester son installation:
+```bash
+docker run hello-world
+```

@@ -1,6 +1,6 @@
 ---
 title: "Comment bien installer docker ?"
-date: 2020-10-05T19:00:00+01:00
+date: 2020-10-06T12:00:00+01:00
 author: Tom Moulard
 url: /installer-docker
 draft: false
@@ -23,13 +23,13 @@ Le GUI apporte une manière simple de visualiser se qui se passe dans docker.
 
 ## Sur une Distro basée sur Debian
 ```bash
-sudo apt install -y docker docker.io docker-compose
+sudo apt install -y docker docker.io
 sudo groupadd docker
 sudo gpasswd -a $USER docker
 newgrp docker
 reboot
 ```
-On peux voir que la première ligne sert à installer docker et docker-compose, tandis que celles d'après permettent d'utiliser docker sans avoir à le préfixer de `sudo`.
+La commande `newgrp docker` permet d'utiliser docker sans avoir à le préfixer de `sudo`.
 
 ## Sur une Distro basée sur Arch
 Avec l'user `root` (`sudo su`), faire:
@@ -43,6 +43,7 @@ newgrp docker
 reboot
 ```
 
+La commande `newgrp docker` permet d'utiliser docker sans avoir à le préfixer de `sudo`.
 
 ## Sur une Distro basée sur Centos
 Avec l'user `root` (`sudo su`), faire:
@@ -56,10 +57,18 @@ yum-config-manager \
 yum install --allowerasing -y docker-ce docker-ce-cli containerd.io
 systemctl enable docker
 systemctl start docker
-pip3 install docker-compose # pour l'installation de `docker-compose`
 ```
 
 # Tester son installation:
 ```bash
 docker run hello-world
 ```
+
+# Comment installer docker-compose ?
+On peut utiliser la dernière version de `docker-compose`
+```bash
+curl -L https://github.com/docker/compose/releases/download/$(curl -Ls https://www.servercow.de/docker-compose/latest.php)/docker-compose-$(uname -s)-$(uname -m) > /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+```
+
+Sinon, il faut utiliser la dernière version présente sur les repository de la distro que vous utilisez.

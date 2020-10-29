@@ -1,19 +1,23 @@
 <div class="about-area">
-    {{ if eq ($.Param "author") "Tom Moulard" }}
+    {{ if in ($.Param "author") "Tom" }}
         <img src="/img/author-100.jpg" srcset="/img/author-100@2x.jpg 2x" alt="Image de l'auteur Tom Moulard" width="80" height="80">
         <h3>L'auteur:&nbsp; Tom Moulard</h3>
         <p>
             Depuis mon enfance, je suis captivé par les articles de science et de technologie. Un jour, j'ai décidé de faire partie de ce monde : j'ai pris ma calculatrice programmable (une TI-82 stat).... <a href="https://tom.moulard.org/fr">La suite, sur mon site</a>
         </p>
-    {{ else if eq ($.Param "author") "Guillaume Moulard" }}
+    {{ end }}
+    {{ if in ($.Param "author") "Guillaume" }}
         <img src="/img/guillaume.moulard100.jpg" srcset="/img/guillaume.moulard200.jpg 2x" alt="Image de l'auteur Guillaume Moulard" width="80" height="80">
         <h3>L'auteur:&nbsp; Guillaume Moulard</h3>
         <p>
             Mon premier code était sur un ZX81... Mes derniers emois sont le week-end pour mes Raspberrys PI et la semaine pour les techno du Cloud. <a href="https://www.moulard.org">www.moulard.org</a>
         </p>
-    {{ else }}
+    {{ end }}
+    {{ if in ($.Param "author") "Huvelle" }}
+        <img src="/img/martin.huvelle100.jpg" srcset="/img/martin.huvelle200.jpg 2x" alt="Image de l'auteur Martin Huvelle" width="80" height="80">
+        <h3>L'auteur:&nbsp; Martin Huvelle</h3>
         <p>
-            L'auteur n'est pas connu :/
+            J'ai toujours été obsédé par l'idée de créer, d'arriver à concrétiser sous n'importe quel format possible les idées qui émerge dans ma tête. L'informatique m'a permi d'étendre les possibilités, de régler des problèmes concrets, d'avoir un coup d'avance
         </p>
     {{ end }}
 </div>

@@ -27,6 +27,7 @@ We are a team of EPITA student in the TCOM major, and we are all working as teac
 We had a master plan to have fun in this hackaethon. First we build a "small" plugin to warm up on Tuesday and then the big project to really have fun during those three days.
 
 The plan:
+
 | Day       | Task                               |
 | --------- | ---------------------------------- |
 | Tuesday   | Warm up and try a simple plugin    |
@@ -55,7 +56,7 @@ We had a lot of chat with one of the organizer (Thank you [Santo](https://twitte
 
 To be sure that no one had did this, as usual we check github, traefik etc. Nothing, until we check discord, our future teammate Mike had the same idea. So we decided to team up (We didn't know how much it would be a good idea) !
 
-# Day 3, A light in the dark
+# Day 3, A happy ending
 After a lot of hours, thinking about the design and coding every piece of the plugin, combine every part we each created. We had one last bug, we tried everything, review every lines with differents people at each time.
 Last helping call, we ask the discord about our issue, of course after few second we post, we managed to solve it and of course the patch was "use caps for your config variables". Typical, we even stumbled upon this reflection for the first plugin.
 

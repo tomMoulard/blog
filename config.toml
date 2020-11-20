@@ -15,7 +15,7 @@ linenos = true
 
 [params]
 	author = "La famille Moulard and co"
-	description = "Site qui sert de blog pour les Moulards"
+	description = "Site qui sert de blog pour les Moulard"
 	bio = "La famille Moulard au grand complet !"
 
 	linkedin = "https://linkedin.com/in/tommoulard"

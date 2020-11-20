@@ -1,0 +1,68 @@
+---
+title: "VPN : Comment NATer un VPN IPSEC?"
+date: 2020-11-20T13:19:36+01:00
+author: Guillaume Moulard
+url: /NET-VPN
+draft: false
+type: post
+tags:
+  - iptables
+  - parketFiter
+  - pfSence
+categories:
+  - tutoriel
+---
+
+
+# Q/A
+## est'il possible de faire du NAT sur une firewall -> YES
+C'est un peut contre intuitif, mais oui il est possible de faire du nat de vpn ipsec. habituellement un VPN IPSEC est entre @IP-Partener1 et @IP-Partener2 
+En fait il est tout à fait possible d'introduire une intermediaire qui nat les 2 flux udp ncéssarie au VPN IPSEC 500-dpt:isakmp et 4500-dpt:ipsec-nat-t:
+@IP-Partener1 <-> @NAT <-> @IP-Partener2 
+Cela é été tester sur de multiple technologie de VPN sans posé de probleme d'implementations. 
+
+## est'il possible d'utiliser des FQDN pour mettre en place des VPN -> YES
+Par exemple sur l'interface des pfSence pour la remote gateway il est noté: Enter the public IP address or host name of the remote gateway.
+
+# mettre en place du NAT d'un VPN sur centOS7-iptables.
+
+## Step 1 : installé les softs et paramtré l'OS 
+
+```bash
+$	package yum install -y iptables tcpdump  iptables-services
+$	systemctl enable iptables
+$	systemctl start iptables
+$	echo "1" >  /proc/sys/net/ipv4/ip_forward
+$	sysctl -w net.ipv4.ip_forward=1
+```
+
+## Step 2 : Valider le routage
+Pour que le NAT fonctionne sur la machine il faut que les 2 partener soit accessible. L'utilisaiton conjointe de 2 commmandes permentt de valider cela: 
+"tcpdump -p -i eth1 port 500" pour voir les paquets passé et "telnet $IP-Partener2 500" pour les generer. 
+
+## Step 3 : installé les regle de nat des 2 flux et parametrer la bonne redirection :
+
+```bash
+$	iptables -t nat -A PREROUTING -p udp -s $IP-Partener1 --dport 500  -i eth1 -j DNAT --to $IP-Partener2:500
+$	iptables -t nat -A PREROUTING -p udp -s $IP-Partener1 --dport 4500 -i eth1 -j DNAT --to $IP-Partener2:4500
+$	iptables -t nat -A PREROUTING -p udp -s $IP-Partener2 --dport 500  -i eth1 -j DNAT --to $IP-Partener1:500
+$	iptables -t nat -A PREROUTING -p udp -s $IP-Partener2 --dport 4500 -i eth1 -j DNAT --to $IP-Partener1:4500
+
+$	iptables -F FORWARD
+$	iptables -t nat -A POSTROUTING -j MASQUERADE
+```
+
+
+# mettre en place du NAT d'un VPN sur packet filter.
+
+Voila un exemple de regle de nat: 
+```bash
+#rdr on vtnet0 inet proto udp from $IP-Partener1 port = isakmp  to $IPInterfaceOne port = isakmp  ->  $IP-Partener2
+#rdr on vtnet0 inet proto udp from $IP-Partener2 port = isakmp  to $IPInterfaceOne port = isakmp  ->  $IP-Partener1
+#rdr on vtnet0 inet proto udp from $IP-Partener1 port = sae-urn to $IPInterfaceOne port = sae-urn -> $IP-Partener2
+#rdr on vtnet0 inet proto udp from $IP-Partener2 port = sae-urn to $IPInterfaceOne port = sae-urn ->  $IP-Partener1
+```
+
+# Quelques liens utile : 
+Le livre  https://inetdoc.net/pdf/iptables-tutorial.pdf
+La doc CentOS pour mettre en place une nat http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-sg-fr-4/s1-firewall-ipt-fwd.html

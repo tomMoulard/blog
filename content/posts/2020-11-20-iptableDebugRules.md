@@ -14,13 +14,13 @@ categories:
 
 # iptables, comment sa fonctionne ?
 
-mes deux URL de Réference : 
-Le livre:  https://inetdoc.net/pdf/iptables-tutorial.pdf
-Le man: http://www.delafond.org/traducmanfr/man/man8/iptables.8.html
+Mes deux URL de reference :
+ - Le livre:  https://inetdoc.net/pdf/iptables-tutorial.pdf
+ - Le man: http://www.delafond.org/traducmanfr/man/man8/iptables.8.html
 
-# comment savoir si un filtre est utiliser
+# Comment savoir si un filtre est utiliser
 
-le paramettre magique est -vnL 
+Le paramètre magique est `-vnL`
 
 ```bash
 # iptables -vnL
@@ -38,7 +38,7 @@ Chain FORWARD (policy ACCEPT 25664 packets, 4647K bytes)
 Chain OUTPUT (policy ACCEPT 30801 packets, 4552K bytes)
  pkts bytes target     prot opt in     out     source               destination
 ```
-Ont peut voir que 3068 paquets ont été REJECT par la regles 5 lors de l'entré sur le system 'INPUT'
+On peut voir que 3068 paquets ont été `REJECT` par la règle `5` lors de l'entrée sur le system `INPUT`.
 
 ```bash
 # iptables -t nat -vnL
@@ -59,18 +59,19 @@ Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination
   130 11120 MASQUERADE  all  --  *      *       0.0.0.0/0            0.0.0.0/0
 ```
-ici on peut voir que la regle de nat 1 a été appliqué sur 23 paquets. Les regles 3 et 4 n'ont traité aucun paquet.
 
+Ici on peut voir que la règle de NAT 1 a été appliqué sur 23 paquets.
+Les règles `3` et `4` n'ont traité aucun paquet.
 
-# comment demandé a iptables de loger les paquets 
+# Comment demander a iptables de loger les paquets ?
 
 ```bash
 iptables -I INPUT 1              -j LOG --log-level 7 --log-prefix "INPUT : "
 iptables -I FORWARD 1            -j LOG --log-level 7 --log-prefix "FORWARD : "
 iptables -I OUTPUT 1             -j LOG --log-level 7 --log-prefix "OUTPUT : "
-```FORWARD
+```
 
-Avec ces filtres positionnés dans iptables va envoyer une log pour les paquets qui arrive 'INPUT', sont retransmit 'FORWARD' ou envoyer 'OUTPUT' 
+Avec ces filtres positionnés, `iptables` va envoyer les logs pour les paquets qui arrivent `INPUT`, sont retransmit `FORWARD` ou envoyer `OUTPUT`.
 
 ```bash
 iptables -t nat -I PREROUTING 1  -j LOG --log-level 7 --log-prefix "PREROUTING : "
@@ -78,11 +79,12 @@ iptables -t nat -I POSTROUTING 1 -j LOG --log-level 7 --log-prefix "POSTROUTING 
 iptables -t nat -I OUTPUT 1      -j LOG --log-level 7 --log-prefix "NAT OUTPUT : "
 ```
 
-Ici les paquets qui passent par les tables de net serons envoyer dans les logs de la machine
+Ici les paquets qui passent par les tables de NAT serons envoyés dans les logs de la machine.
 
-pour consulter les log: dmesg -H
+## Comment consulter les logs?
 
 ```bash
+$ dmesg -H
 [Nov19 14:49] FORWARD : IN=eth1 OUT=eth1 MAC=fa:16:3e:e6:11:db:fa:16:3e:cc:4b:7e:08:00 SRC=195.25.2
 [  +0.079319] FORWARD : IN=eth1 OUT=eth1 MAC=fa:16:3e:e6:11:db:fa:16:3e:cc:4b:7e:08:00 SRC=90.115.1
 [  +3.939384] FORWARD : IN=eth1 OUT=eth1 MAC=fa:16:3e:e6:11:db:fa:16:3e:cc:4b:7e:08:00 SRC=195.25.2

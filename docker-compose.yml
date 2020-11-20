@@ -1,0 +1,11 @@
+version: '3.6'
+
+services:
+  hugo:
+    build: .
+    image: tommoulard/hugo
+    user: 1000:1000
+    ports:
+      - '1313:1313'
+    volumes:
+      - '.:/go/hugo/'

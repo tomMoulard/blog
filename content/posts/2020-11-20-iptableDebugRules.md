@@ -14,7 +14,7 @@ categories:
 
 # iptables, comment ça fonctionne ?
 
-Mes deux URLs de references :
+Mes deux URLs de références :
 
  - Le livre:  https://inetdoc.net/pdf/iptables-tutorial.pdf
  - Le man: http://www.delafond.org/traducmanfr/man/man8/iptables.8.html

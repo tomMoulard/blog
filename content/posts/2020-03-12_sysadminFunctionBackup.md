@@ -19,8 +19,8 @@ categories:
 # sysadmin function bakup
 
 Dans les règles d'or de tout sysadmin il y a bien sûr la nécessité de mettre en œuvre une politique de backup complet des systèmes.
-Ce n'est pas le sujet de cette article !!!
-Il existe bonne pratique pour garantir la traçabilité et la capacité de revenir sur une mauvaise manip.
+Ce n'est pas le sujet de cet article !!!
+Il existe une bonne pratique pour garantir la traçabilité et la capacité de revenir sur une mauvaise manip.
 
 **Avant de modifier une fichier, il faut en faire une copie !!!**
 
@@ -30,15 +30,15 @@ Alors c'est simple à première vue:
 cp /etc/fstab /etc/fstab.bkp
 ```
 
-Bon sa c'est la base :)
-Franchement sa aide dans bien des cas. On peut allé un peut plus loins et ajouté un horodatage.
+Bon ça c'est la base :)
+Franchement ça aide dans bien des cas. On peut aller un peu plus loin et ajouter un horodatage.
 
 ```bash
 cp /etc/fstab /etc/fstab-bkp200312002553
 ```
 
-Pour ma part je me suis souvent demandé pourquoi personne n'avais écrit en `cp` avec cette fonction...
-Bien justement probablement car il y a les function en shell :)
+Pour ma part je me suis souvent demandé pourquoi personne n'avait écrit en `cp` avec cette fonction...
+Bien probablement car il y a les function en shell :)
 
 Il faut juste la créer dans son environnement et le mettre dans son fichier `$HOME/.bashrc`
 
@@ -58,7 +58,7 @@ root@pi3:~> ls -l /etc/fstab*
 
 > Cool non!!!
 
-Bien sûr l'utilisation des fonctions en bash n'a pas de limite, voila une autre que j'utilise souvent pour répéter X fois la même commande...
+Bien sûr l'utilisation des fonctions en bash n'a pas de limite, voilà une autre que j'utilise souvent pour répéter X fois la même commande...
 
 ```bash
 t10 (){ for x in {01..10}; do $@ ; done }
@@ -81,7 +81,7 @@ g
 g
 ```
 
-On peut faire des choses beaucoup plus sophistiqué... Voila une fonction qui décompresses les principaux fichiers d'archive.
+On peut faire des choses beaucoup plus sophistiquées... Voila une fonction qui décompresse les principaux fichiers d'archive.
 
 ```bash
 # Extract the content of an achive

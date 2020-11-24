@@ -12,14 +12,14 @@ categories:
   - tutoriel
 ---
 
-# iptables, comment sa fonctionne ?
+# iptables, comment ça fonctionne ?
 
-Mes deux URL de reference :
+Mes deux URLs de references :
 
  - Le livre:  https://inetdoc.net/pdf/iptables-tutorial.pdf
  - Le man: http://www.delafond.org/traducmanfr/man/man8/iptables.8.html
 
-# Comment savoir si un filtre est utiliser
+# Comment savoir si un filtre est utilisé ?
 
 Le paramètre magique est `-vnL`
 
@@ -61,7 +61,7 @@ Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
   130 11120 MASQUERADE  all  --  *      *       0.0.0.0/0            0.0.0.0/0
 ```
 
-Ici on peut voir que la règle de NAT 1 a été appliqué sur 23 paquets.
+Ici on peut voir que la règle de NAT 1 a été appliquée sur 23 paquets.
 Les règles `3` et `4` n'ont traité aucun paquet.
 
 # Comment demander a iptables de loger les paquets ?
@@ -72,7 +72,7 @@ iptables -I FORWARD 1            -j LOG --log-level 7 --log-prefix "FORWARD : "
 iptables -I OUTPUT 1             -j LOG --log-level 7 --log-prefix "OUTPUT : "
 ```
 
-Avec ces filtres positionnés, `iptables` va envoyer les logs pour les paquets qui arrivent `INPUT`, sont retransmit `FORWARD` ou envoyer `OUTPUT`.
+Avec ces filtres positionnés, `iptables` va envoyer les logs pour les paquets qui arrivent `INPUT`, ils sont retransmit `FORWARD` ou envoyés `OUTPUT`.
 
 ```bash
 iptables -t nat -I PREROUTING 1  -j LOG --log-level 7 --log-prefix "PREROUTING : "
@@ -80,7 +80,7 @@ iptables -t nat -I POSTROUTING 1 -j LOG --log-level 7 --log-prefix "POSTROUTING 
 iptables -t nat -I OUTPUT 1      -j LOG --log-level 7 --log-prefix "NAT OUTPUT : "
 ```
 
-Ici les paquets qui passent par les tables de NAT serons envoyés dans les logs de la machine.
+Ici les paquets qui passent par les tables de NAT seront envoyés dans les logs de la machine.
 
 ## Comment consulter les logs?
 

@@ -82,6 +82,13 @@ iptables -t nat -I OUTPUT 1      -j LOG --log-level 7 --log-prefix "NAT OUTPUT :
 
 Ici les paquets qui passent par les tables de NAT seront envoyés dans les logs de la machine.
 
+Depuis la version 3.x il est possible d'utiliser **-j TRACE** 
+```bash
+iptables -t raw -A OUTPUT -p icmp -j TRACE
+```
+merci **Ludo** pour le liens : https://www.opensourcerers.org/2016/05/27/how-to-trace-iptables-in-rhel7-centos7/
+
+
 ## Comment consulter les logs?
 
 ```bash

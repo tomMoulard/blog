@@ -864,7 +864,7 @@ h2.month {
 
 /* Media Queries */
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 600px) {
     #wrapper {
         padding: 20px 20px 20px 20px;
     }
@@ -916,6 +916,14 @@ h2.month {
 
     .post h2 {
         font-size: 20px;
+    }
+
+    .post-article {
+        height: 300px;
+        border-bottom: 2px solid #ff8a00;
+        border-right: 2px solid #ff8a00;
+        box-shadow: none !important;
+        margin-bottom: 5px;
     }
 }
 

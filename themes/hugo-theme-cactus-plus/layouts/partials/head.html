@@ -48,4 +48,14 @@
     <meta property="article:section" content="{{ . }}" />{{ end }}
     {{ if isset .Params "date" }}
     <meta property="article:published_time" content="{{ (time .Date).Format "2006-01-02T15:04:05Z" }}" />{{ end }}
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+    <script>
+    window.klipse_settings = {
+        // language selector: css selector for the html elements you want to klipsify
+        selector_eval_js: '.language-javascript',
+        selector_eval_python_client: '.language-python',
+        selector_eval_markdown: '.language-markdown',
+        selector_golang: '.language-go',
+    };
+    </script>
 </head>

@@ -1,5 +1,5 @@
 ---
-title: "Use Active Direcotry from user management in linux machine.md"
+title: "Use Active Direcotry from user management in linux machine"
 date: 2022-04-12T13:19:36+01:00
 author: Guillaume Moulard
 url: /ADLinux
@@ -12,9 +12,9 @@ categories:
   - tutoriel
 ---
 
-## Step to setup 
+## Step to setup
 
-```bash    
+```bash
 ssh -i youKey root@machineIP
 ```
 
@@ -24,7 +24,7 @@ sudo yum -y update
 sudo yum -y install sssd realmd krb5-workstation samba-common-tools
 ````
 - Setup DNS servers - add the two DNS address on Directory details in web console
-  
+
 change  /etc/resolv.conf
 ```bash
 nameserver //DNS address 1 of Directory
@@ -37,25 +37,25 @@ sudo realm join -U Administrator@my.domaine.name my.domaine.name --verbose
 
 Set the SSH service to allow password authentication
 - change /etc/ssh/sshd_config
-```bash    
+```bash
 PasswordAuthentication yes
 ```
 
 - Add the following to the bottom of the sudoers file and save it
-```bash    
+```bash
 sudo nano /etc/sudoers
 #Add the "Delegated Administrators" group from the my.domaine.name domain.
-%AWS\ Delegated\ Administrators@my.domaine.name ALL=(ALL:ALL) ALL                        
+%AWS\ Delegated\ Administrators@my.domaine.name ALL=(ALL:ALL) ALL
 ```
 
 - restart the sssd service
-```bash    
+```bash
 sudo systemctl restart sshd.service
 sudo systemctl restart sssd.service
 ```
 
 - Disconnect and Reconnect using AD credentials
-```bash    
+```bash
 ssh -l Administrator@my.domaine.name machineIP
 ```
 

@@ -3,7 +3,7 @@ title: "Publish in AWS a raspberryPi shot"
 date: 2023-01-05T13:00:00+01:00
 author: Guillaume Moulard
 url: /AWS-raspberryPi-shot
-draft: true
+draft: false
 type: post
 tags:
   - blogging

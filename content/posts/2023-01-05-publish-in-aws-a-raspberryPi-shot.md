@@ -15,7 +15,7 @@ categories:
 
 # How to see and be seen
 
-The easiest way to forget the photos taken by the Raspberry and of course to take the photos on raspberry then publish them on 
+The easiest way to publish the photos taken by the Raspberry and of course to take the photos on raspberry then publish them on 
 this one directly with a Web server. 
 
 Why it is still necessary here our system in my case the reliability of my internet connection 

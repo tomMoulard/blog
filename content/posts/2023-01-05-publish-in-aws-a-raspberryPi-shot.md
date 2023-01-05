@@ -13,6 +13,7 @@ categories:
   - tutoriel
 ---
 
+# How to see and be seen
 
 The easiest way to forget the photos taken by the Raspberry and of course to take the photos on raspberry then publish them on 
 this one directly with a Web server. 
@@ -27,8 +28,32 @@ To set up this infrastructure I used terraform
 # on AWS  side
 
 
+To do this I used two web resource pages: 
+[hosting a static website on s3 using terraform](https://medium.com/@dblencowe/hosting-a-static-website-on-s3-using-terraform-0-12-aa5ffe4103e) 
+and 
+[s3-bucket-listing](https://github.com/rufuspollock/s3-bucket-listing)
+
+## Terraform setup
+
 ```shell
+
+git clone git@github.com:gmoulard/s3-static-website.git
+cd s3-static-website
+
+terraform init
+
+export AWS_PROFILE=default
+export TF_VAR_domain_name=to-drop1
+export TF_VAR_aws_region=eu-west-1
+terraform apply
+
+aws s3 sync dist s3://$TF_VAR_domain_name
+
+
 ```
+you can test on yours browser:  curl https://s3.$TF_VAR_aws_region.amazonaws.com/$TF_VAR_domain_name/listing.html
+in my case:  https://s3.eu-west-1.amazonaws.com/to-drop1/listing.html
+
 
 # On Raspberry pi
 

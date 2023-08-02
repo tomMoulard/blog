@@ -11,30 +11,32 @@ tags:
   - VMC
   - NSX
   - vsphere
-  - terraform 
+  - terraform
   - API
 categories:
   - tutoriel
 ---
 
-# Terraform for VMC 
-Comment faire mettre en place de Infrastructure as code (IaC) pour VMWare Cloud on AWS (VMC) avec Terraform et les API de NSX. 
+# Terraform for VMC
+Comment faire mettre en place de Infrastructure as code (IaC) pour VMWare Cloud on AWS (VMC) avec Terraform et les API de NSX.
 
-Pour mettre en oeuvre de l'IaC pour VMC, j'ai choisie de separé en 3 couches distinct le code 
-- deployement du SDDC
-- parametrage de la couche reseau NSX
-- deployement des VM dans vsphere
+Pour mettre en oeuvre de l'IaC pour VMC, j'ai choisie de séparer en 3 couches distinct le code:
 
-Lors de mes mise en oeuvre j'ai utilisé les liens suivant : 
-- Architecture generale
+- déploiement du SDDC
+- paramétrage de la couche réseau NSX
+- déploiement des VM dans vsphere
+
+Lors de mes mise en oeuvre j'ai utilisé les liens suivant :
+
+- Architecture générale
     - :heartpulse: [vmware : deploy-and-configure-vmware-cloud-on-aws](https://blogs.vmware.com/cloud/2022/06/30/using-terraform-with-multiple-providers-to-deploy-and-configure-vmware-cloud-on-aws/)
     - [vMusketeers : NSX-T Automation using Terraform: The how (VMC)!](https://vmusketeers.com/2020/08/10/nsx-t-automation-using-terraform-the-how-vmc/)
-- tips and trick NSX
+- Tips and trick NSX
     - [NicoVibert : Provider version](https://nicovibert.com/2020/02/04/terraform-provider-for-nsx-t-policy-and-vmware-cloud-on-aws/)
     - [catrouillet : NSX API usage](https://blog.catrouillet.net/2022/06/19/automate-authentication-token-on-vmware-cloud-vmc-on-aws-in-postman/)
-- Generique documentation
+- Documentation générique
     - [vmware : vmc documentation](https://docs.vmware.com/fr/VMware-Cloud-on-AWS/index.html)
-    - [vmware : nsxt API reference]()
+    - [vmware : nsxt API reference](https://developer.vmware.com/apis/1583/nsx-t)
     - [provider terraform for vmc](https://registry.terraform.io/providers/vmware/vmc/latest/docs)
     - [provider terraform for nsx-t](https://registry.terraform.io/providers/vmware/nsxt/latest/docs)
 - Autre liens utile
@@ -42,14 +44,15 @@ Lors de mes mise en oeuvre j'ai utilisé les liens suivant :
     - [VMC CLI](https://flings.vmware.com/python-client-for-vmc-on-aws)
 
 
-# Organisation du code IaC 
+# Organisation du code IaC
 
-La bonne organisation a mettre en place consiste a decoupé le code en 3 parties/repos
+La bonne organisation a mettre en place consiste a découper le code en 3 parties/repos
+
 - SDDC
 - NSX
 - vSphere
 
-Chaque partie est independantes. Toutefois des parametres d'entré pour nsx et vsphere sont néccessaire, ils sont generer par le sddc: 
+Chaque partie est indépendantes. Toutefois des paramètres d'entré pour nsx et vsphere sont nécessaire, ils sont générés par le sddc:
 
 ```
 provider "nsxt" {
@@ -70,47 +73,49 @@ provider "vsphere" {
 }
 
 ```
-Il est possible comme ici de les réutiliser dynamiquement en utilisant les tfstate. Toutefois l'utilisation de variable d'environemnet est a privilegier. Lors de l'utilisation de plusieurs environement des prod et de test une erreur de manipulation tfstate peut etre fatale. 
+Il est possible comme ici de les réutiliser dynamiquement en utilisant les tfstate. Toutefois l'utilisation de variable d'environnement est a privilégier. Lors de l'utilisation de plusieurs environnement des prod et de test une erreur de manipulation tfstate peut être fatale.
 
+# Déploiement du SDDC
 
-# Deployement du SDDC    
+Habituellement il n'est pas obligatoire d'automatiser de déploiement car c'est généralement fait une fois. Cela a en plus le problème de pouvoir automatiser la destruction du SDDC. En une commande vous avez alors perdu votre SDDC et donc toutes vos VM, cela est dangereux. Toutefois, il y a deux intérêt a l'automatisation:
 
-Habituellement il n'est pas obligatoire d'automatisé de deployement car c'est généralement fait une fois. cela a en plus le probleme de pouvoir automatiser la destruction du SDDC. En une commande vous avez alors perdu votre SDDC et donc toutes vos VM, cela est dangereux. Toutefois, il y a deux interet a l'automatisaiton: 
-- Mise ne place d'infrastructure a la demande pour faire des testes
-    - teste de paramettrage du SDDC
-    - teste de paramettrage NSX et VSphere sans impacter la production
-- Sauvegarde de la configuration du SDDC et des ses reseaux
+- Mise ne place d'infrastructure a la demande pour faire des tests
+    - test de paramétrage du SDDC
+    - test de paramétrage NSX et VSphere sans impacter la production
+- Sauvegarde de la configuration du SDDC et des ses réseaux
 
 Cf : [vmware : deploy-and-configure-vmware-cloud-on-aws Part1](https://blogs.vmware.com/cloud/2022/06/30/using-terraform-with-multiple-providers-to-deploy-and-configure-vmware-cloud-on-aws/)
 
-La clef d'api a utiliser doit etre genere dans la console VMWare : https://console.cloud.vmware.com/csp/gateway/portal/#/user/tokens
+La clef d'API a utiliser doit être générée dans la [console VMWare](https://console.cloud.vmware.com/csp/gateway/portal/#/user/tokens=).
 
-## Raccordment du SDDC a AWS. 
+## Raccordement du SDDC a AWS.
 
 ### Liens avec le connected account
-Le liens avec le connexted account se fait lors de la creation du SDDC. Les frais reseau du au debit sur cette inteconextion n'est pas facturé par AWS. Une ENI est crée dans le compte.
+Le liens avec le connexted account se fait lors de la creation du SDDC. Les frais réseau dû au débit sur cette interconnection n'est pas facturé par AWS. Une ENI est crée dans le compte.
 
-### Liens entre SDDC et la transit gateway 
+### Liens entre SDDC et la transit gateway
 
-Pour raccorder le SDDC a une transite gateway, le SDDC doit etre raccorder a un SDDC group. C'est lui qui manage le liens entre le SDDC et la transite gateway. 
+Pour raccorder le SDDC a une transit gateway, le SDDC doit être raccorder a un SDDC group. C'est lui qui manage le liens entre le SDDC et la transite gateway.
 
-Pour connecter l'external TGW, il faut avoir les informations : 
+Pour connecter TGW externe, il faut avoir les informations :
+
 - ID du compte : XXXXXXXXXXXX
 - ID tgw : tgw-0eXXXXXXXXXX
 - region : paris/paris
 - Routage a mettre en place dans les SDDC vers les subnet externe.
-  
-
-# Deployement dans NSX 
-
-Lors de l'implementation des rêgles il faut ditingué les quelques regles d'infrastructure qui goivent etre porté par la Gateway firewall (GFW) et l'ensembles des autres regles qui doivent etre porté par le Distributed firewall. 
-
-Il faut noter que tout les flux ouvert dans la GFW doivent en plus etre ouvert dans le DFW.
-
-Dans notre projet nous avons opté pour l'intégration des regles via des fichiers CSV, ainsi la creation d'une nouvelle regle n'implique par la modification des fichier terraform. 
 
 
-### Exemple de creation de rêgles
+# Déploiement dans NSX
+
+Lors de l'implémentation des règles il faut distinguer les quelques règles d'infrastructure qui doivent être porté par la Gateway firewall (GFW) et l'ensemble des autres règles qui doivent être porté par le Distributed firewall.
+
+Il faut noter que tout les flux ouvert dans la GFW doivent en plus être ouvert dans le DFW.
+
+Dans notre projet nous avons opté pour l'intégration des règles via des fichiers CSV, ainsi la creation d'une nouvelle règle n'implique par la modification des fichier terraform.
+
+
+### Exemple de creation de règles
+
 ```
 resource "nsxt_policy_gateway_policy" "icmp_from_group" {
 
@@ -135,16 +140,18 @@ resource "nsxt_policy_gateway_policy" "icmp_from_group" {
   }
 }
 ```
-- Scope est le paramettre qui definie l'interface ou la rêlge s'applique. Elle peut etre : 
+
+- Scope est le paramètre qui définie l'interface ou la règle s'applique. Elle peut être :
     - /infra/labels/cgw-all
     - /infra/labels/cgw-vpn
     - /infra/labels/cgw-public
     - /infra/labels/cgw-cross-vpc
     - /infra/labels/cgw-direct-connect
-- destinations_excluded peut etre a true ou false. Cela permet d'inversé la regle pour la posé sur (tout ce qui n'est pas le groupe) ou ( tout ce qui est dans le groupe) 
+- destinations_excluded peut être a `true` ou `false`. Cela permet d'inverser la règle pour la posé sur (tout ce qui n'est pas le groupe) ou ( tout ce qui est dans le groupe)
 
 ## Gateway firewall rules
-Lors de la vie du projet nous avons eu a recrér les regles de default gateway qui avais été detruite par Terraforme 
+
+Lors de la vie du projet nous avons eu a recréer les règles de default gateway qui avais été détruite par Terraform
 
 ```
 nsxt_policy_gateway_policy.mgw_policy: Destroying... [id=default]
@@ -152,7 +159,8 @@ nsxt_policy_gateway_policy.cgw_policy: Destroying... [id=default]
 nsxt_policy_gateway_policy.mgw_policy: Destruction complete after 1s
 nsxt_policy_gateway_policy.cgw_policy: Destruction complete after 2s
 ```
-Pour résoudre le probleme nous avons utiliser les directement les API De NSX-T
+
+Pour résoudre le problème nous avons utiliser les directement les API De NSX-T
 
 ```
 API PUT policy/api/v1/infra/domains/mgw/gateway-policies/
@@ -175,7 +183,7 @@ API PUT policy/api/v1/infra/domains/mgw/gateway-policies/
       "is_default" : false
   }
 
-API PUT policy/api/v1/infra/domains/cgw/gateway-policies/ 
+API PUT policy/api/v1/infra/domains/cgw/gateway-policies/
 {
     "resource_type" : "GatewayPolicy",
     "id" : "default",
@@ -199,11 +207,9 @@ API PUT policy/api/v1/infra/domains/cgw/gateway-policies/
 
 Cf : [vmware : deploy-and-configure-vmware-cloud-on-aws Part2](https://blogs.vmware.com/cloud/2022/07/06/vmware-cloud-on-aws-terraform-deployment-phase-2/)
 
-# Deployement dans vSphere
+# Déploiement dans vSphere
 
-Lors du deployement vsphere l'utilisation d'un referenciel yaml. Les problme recontrés ont ete sur lors de la construction des images des templates. Ils doivent avoir un attribue spécifique, il faut mettre otherLinux / otherLinux64Guest
+Lors du déploiement vsphere l'utilisation d'un référentiel YAML. Les problèmes rencontrés ont été sur lors de la construction des images des templates. Ils doivent avoir un attribue spécifique, il faut mettre `otherLinux` / `otherLinux64Guest`.
 
 Cf : [vmware : deploy-and-configure-vmware-cloud-on-aws Part3](https://blogs.vmware.com/cloud/2022/07/15/vmware-cloud-on-aws-terraform-deployment-phase-3/)
-
-
 

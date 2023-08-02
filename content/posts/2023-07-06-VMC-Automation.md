@@ -17,30 +17,40 @@ categories:
   - tutoriel
 ---
 
+
 # Terraform for VMC
 Comment faire mettre en place de Infrastructure as code (IaC) pour VMWare Cloud on AWS (VMC) avec Terraform et les API de NSX.
 
 Pour mettre en oeuvre de l'IaC pour VMC, j'ai choisie de séparer en 3 couches distinct le code:
 
-- déploiement du SDDC
-- paramétrage de la couche réseau NSX
-- déploiement des VM dans vsphere
+ - déploiement du SDDC
+ - paramétrage de la couche réseau NSX
+ - déploiement des VM dans vsphere
 
 Lors de mes mise en oeuvre j'ai utilisé les liens suivant :
 
-- Architecture générale
+ - Architecture générale
+
     - :heartpulse: [vmware : deploy-and-configure-vmware-cloud-on-aws](https://blogs.vmware.com/cloud/2022/06/30/using-terraform-with-multiple-providers-to-deploy-and-configure-vmware-cloud-on-aws/)
+
     - [vMusketeers : NSX-T Automation using Terraform: The how (VMC)!](https://vmusketeers.com/2020/08/10/nsx-t-automation-using-terraform-the-how-vmc/)
-- Tips and trick NSX
+
+ - Tips and trick NSX
+
     - [NicoVibert : Provider version](https://nicovibert.com/2020/02/04/terraform-provider-for-nsx-t-policy-and-vmware-cloud-on-aws/)
+
     - [catrouillet : NSX API usage](https://blog.catrouillet.net/2022/06/19/automate-authentication-token-on-vmware-cloud-vmc-on-aws-in-postman/)
-- Documentation générique
+ - Documentation générique
     - [vmware : vmc documentation](https://docs.vmware.com/fr/VMware-Cloud-on-AWS/index.html)
     - [vmware : nsxt API reference](https://developer.vmware.com/apis/1583/nsx-t)
     - [provider terraform for vmc](https://registry.terraform.io/providers/vmware/vmc/latest/docs)
+
     - [provider terraform for nsx-t](https://registry.terraform.io/providers/vmware/nsxt/latest/docs)
-- Autre liens utile
+
+ - Autre liens utile
+
     - [Console VMC](https://vmc.vmware.com/console/sddcs)
+
     - [VMC CLI](https://flings.vmware.com/python-client-for-vmc-on-aws)
 
 

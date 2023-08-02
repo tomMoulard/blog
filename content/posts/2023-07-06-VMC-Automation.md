@@ -3,7 +3,7 @@ title: "VMC Automation"
 date: 2023-07-06T13:00:00+01:00
 author: Guillaume Moulard
 url: /vmc-automation
-draft: true
+draft: false
 type: post
 tags:
   - blogging
@@ -17,7 +17,8 @@ categories:
   - tutoriel
 ---
 
-# Comment faire mettre en place de Infrastructure as code (IaC) pour VMWare Cloud on AWS (VMC) avec Terraform et les API de NSX. 
+# Terraform for VMC 
+Comment faire mettre en place de Infrastructure as code (IaC) pour VMWare Cloud on AWS (VMC) avec Terraform et les API de NSX. 
 
 Pour mettre en oeuvre de l'IaC pour VMC, j'ai choisie de separé en 3 couches distinct le code 
 - deployement du SDDC
@@ -26,7 +27,7 @@ Pour mettre en oeuvre de l'IaC pour VMC, j'ai choisie de separé en 3 couches di
 
 Lors de mes mise en oeuvre j'ai utilisé les liens suivant : 
 - Architecture generale
-    - [vmware : deploy-and-configure-vmware-cloud-on-aws](https://blogs.vmware.com/cloud/2022/06/30/using-terraform-with-multiple-providers-to-deploy-and-configure-vmware-cloud-on-aws/)
+    - :heartpulse: [vmware : deploy-and-configure-vmware-cloud-on-aws](https://blogs.vmware.com/cloud/2022/06/30/using-terraform-with-multiple-providers-to-deploy-and-configure-vmware-cloud-on-aws/)
     - [vMusketeers : NSX-T Automation using Terraform: The how (VMC)!](https://vmusketeers.com/2020/08/10/nsx-t-automation-using-terraform-the-how-vmc/)
 - tips and trick NSX
     - [NicoVibert : Provider version](https://nicovibert.com/2020/02/04/terraform-provider-for-nsx-t-policy-and-vmware-cloud-on-aws/)
@@ -84,6 +85,22 @@ Cf : [vmware : deploy-and-configure-vmware-cloud-on-aws Part1](https://blogs.vmw
 
 La clef d'api a utiliser doit etre genere dans la console VMWare : https://console.cloud.vmware.com/csp/gateway/portal/#/user/tokens
 
+## Raccordment du SDDC a AWS. 
+
+### Liens avec le connected account
+Le liens avec le connexted account se fait lors de la creation du SDDC. Les frais reseau du au debit sur cette inteconextion n'est pas facturé par AWS. Une ENI est crée dans le compte.
+
+### Liens entre SDDC et la transit gateway 
+
+Pour raccorder le SDDC a une transite gateway, le SDDC doit etre raccorder a un SDDC group. C'est lui qui manage le liens entre le SDDC et la transite gateway. 
+
+Pour connecter l'external TGW, il faut avoir les informations : 
+- ID du compte : XXXXXXXXXXXX
+- ID tgw : tgw-0eXXXXXXXXXX
+- region : paris/paris
+- Routage a mettre en place dans les SDDC vers les subnet externe.
+  
+
 # Deployement dans NSX 
 
 Lors de l'implementation des rêgles il faut ditingué les quelques regles d'infrastructure qui goivent etre porté par la Gateway firewall (GFW) et l'ensembles des autres regles qui doivent etre porté par le Distributed firewall. 
@@ -118,7 +135,7 @@ resource "nsxt_policy_gateway_policy" "icmp_from_group" {
   }
 }
 ```
-- Scope le paramettre  peut etre : 
+- Scope est le paramettre qui definie l'interface ou la rêlge s'applique. Elle peut etre : 
     - /infra/labels/cgw-all
     - /infra/labels/cgw-vpn
     - /infra/labels/cgw-public
@@ -187,3 +204,6 @@ Cf : [vmware : deploy-and-configure-vmware-cloud-on-aws Part2](https://blogs.vmw
 Lors du deployement vsphere l'utilisation d'un referenciel yaml. Les problme recontrés ont ete sur lors de la construction des images des templates. Ils doivent avoir un attribue spécifique, il faut mettre otherLinux / otherLinux64Guest
 
 Cf : [vmware : deploy-and-configure-vmware-cloud-on-aws Part3](https://blogs.vmware.com/cloud/2022/07/15/vmware-cloud-on-aws-terraform-deployment-phase-3/)
+
+
+

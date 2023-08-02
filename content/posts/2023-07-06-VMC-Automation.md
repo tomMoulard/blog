@@ -23,15 +23,15 @@ Comment faire mettre en place de Infrastructure as code (IaC) pour VMWare Cloud 
 
 Pour mettre en oeuvre de l'IaC pour VMC, j'ai choisie de séparer en 3 couches distinct le code:
 
- - déploiement du SDDC
- - paramétrage de la couche réseau NSX
- - déploiement des VM dans vsphere
+ 1. déploiement du SDDC
+ 1. paramétrage de la couche réseau NSX
+ 1. déploiement des VM dans vsphere
 
 Lors de mes mise en oeuvre j'ai utilisé les liens suivant :
 
  - Architecture générale
 
-    - :heartpulse: [vmware : deploy-and-configure-vmware-cloud-on-aws](https://blogs.vmware.com/cloud/2022/06/30/using-terraform-with-multiple-providers-to-deploy-and-configure-vmware-cloud-on-aws/)
+    - [vmware : deploy-and-configure-vmware-cloud-on-aws](https://blogs.vmware.com/cloud/2022/06/30/using-terraform-with-multiple-providers-to-deploy-and-configure-vmware-cloud-on-aws/)
 
     - [vMusketeers : NSX-T Automation using Terraform: The how (VMC)!](https://vmusketeers.com/2020/08/10/nsx-t-automation-using-terraform-the-how-vmc/)
 

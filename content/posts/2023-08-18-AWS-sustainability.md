@@ -19,6 +19,20 @@ categories:
   - state of the art
 ---
 
+# Le numérique représente 3 % de la consommation d’énergie finale
+
+Source: [ww.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement](https://www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement/themes-ree/pressions-exercees-par-les-modes-de-production-et-de-consommation/prelevements-de-ressources-naturelles/energie/article/numerique-et-consommation-energetique)
+
+En France, la consommation énergétique est de 476 TWh et l’électricité représente environ 25 % de l’énergie finale.
+GreenIT estimait qu’en 2015 le numérique consommait environ 56 TWh, ce qui représente environ 12 % de la consommation électrique du pays et 3 % de la consommation d’énergie finale.
+Sur les 56 TWh :
+
+43 TWh pour les équipements utilisateurs à usage personnel ou professionnel (ordinateurs, ta-blettes, smartphones, box d’accès à internet, etc.)
+3,5 TWh pour le cœur du réseau (composants techniques pour relier les datacenters aux usagers, 3G, 4G, etc.)
+10 TWh pour les « datacenters » => 2.1% de l'electricité total !
+
+![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg)
+
 
 # AWS and Sustainability
 
@@ -107,8 +121,8 @@ Ce pilier Développement durable met l'accent sur la réduction des impacts sur 
 Question & reflexion
 
 1. Comment un utilisateur du cloud AWS peut-il choisir le service et la région a utiliser pour minimisé l'impacte carbone de son infrastructure. 
-1. Comment AWS peut-il etre 5 foix plus efficase d'un datacenter europeen puisque le cloud AWS est dans des datacenter mutualisé en france. Le JDD publie un initiative d'AWS de datacenter geant en [Essonne](https://www.journaldunet.com/web-tech/cloud/1515711-exclu-jdn-le-projet-secret-du-data-center-geant-d-amazon-en-ile-de-france-devoile/)
-Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-sont-cachees-installations-qui-font-tourner-france)
+1. Comment AWS peut-il etre 5 foix plus efficase d'un datacenter europeen puisque le cloud AWS est dans des datacenter mutualisé en france. Le JDD publie un initiative d'AWS de datacenter geant en [ZI de Vilemilan à WISSOUS (91320)](https://www.journaldunet.com/web-tech/cloud/1515711-exclu-jdn-le-projet-secret-du-data-center-geant-d-amazon-en-ile-de-france-devoile/)
+Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-sont-cachees-installations-qui-font-tourner-france) gérer par Cyrus One : 15 000 m2 / 83 mégawatts (MW) 
     - La région française d'AWS qui compte trois zones de disponibilité se répartit entre le datacenter d'Interxion à La Courneuve, le DC3 de Scaleway à Vitry-sur-Seine et les centres de données de Data4 à Paris-Saclay/Marcoussis. AWS prévoit d'occuper une quatrième infrastructure située à Wissous. Propriété de Cyrus One, elle est actuellement en cours de construction.
     - La région française de Google s’appuie sur trois datacenters dont ceux de Global Switch à Clichy-La-Garenne et de Digital Realty à Ferrières-en-Brie en Seine-et-Marne.
     - La région française d’IBM est installée chez Global Switch à Clichy.
@@ -118,4 +132,5 @@ Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-s
 
 Other link 
 - https://aws.amazon.com/fr/sustainability/
+- https://nauges.typepad.com/my_weblog/2020/01/frugalit%C3%A9-num%C3%A9rique-centres-de-calcul-deuxi%C3%A8me-partie.html
 - https://theshiftproject.org/category/thematiques/numerique/

@@ -121,6 +121,7 @@ Ce pilier Développement durable met l'accent sur la réduction des impacts sur 
 Question & reflexion
 
 1. Comment un utilisateur du cloud AWS peut-il choisir le service et la région a utiliser pour minimisé l'impacte carbone de son infrastructure. 
+1. Comment avoir le l'impact carbone d'un service utilisé !!! des choix technique pourrais decoulé de cette information. lors du choix d'un service on regarde ses fonctionnalité, ses couts, mais pas son impacte carbone. Sans information impossible de faire une choix eclairé. 
 1. Comment AWS peut-il etre 5 foix plus efficase d'un datacenter europeen puisque le cloud AWS est dans des datacenter mutualisé en france. Le JDD publie un initiative d'AWS de datacenter geant en [ZI de Vilemilan à WISSOUS (91320)](https://www.journaldunet.com/web-tech/cloud/1515711-exclu-jdn-le-projet-secret-du-data-center-geant-d-amazon-en-ile-de-france-devoile/)
 Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-sont-cachees-installations-qui-font-tourner-france) gérer par Cyrus One : 15 000 m2 / 83 mégawatts (MW) 
     - La région française d'AWS qui compte trois zones de disponibilité se répartit entre le datacenter d'Interxion à La Courneuve, le DC3 de Scaleway à Vitry-sur-Seine et les centres de données de Data4 à Paris-Saclay/Marcoussis. AWS prévoit d'occuper une quatrième infrastructure située à Wissous. Propriété de Cyrus One, elle est actuellement en cours de construction.
@@ -130,7 +131,10 @@ Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-s
     - Oracle a aussi opté pour deux régions cloud pour la France via Interxion : l'une à la Courneuve, l'autre à Marseille avec le datacenter MSR2.
 
 
-Other link 
+Other link
+
 - https://aws.amazon.com/fr/sustainability/
 - https://nauges.typepad.com/my_weblog/2020/01/frugalit%C3%A9-num%C3%A9rique-centres-de-calcul-deuxi%C3%A8me-partie.html
 - https://theshiftproject.org/category/thematiques/numerique/
+
+

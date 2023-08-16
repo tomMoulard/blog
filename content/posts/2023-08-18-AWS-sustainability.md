@@ -22,6 +22,29 @@ categories:
 
 # AWS and Sustainability
 
+Les objectifs affichés par AWS pour son [cloud AWS](https://sustainability.aboutamazon.com/products-services/the-cloud)
+
+- 5 fois plus efficase d'un datacenter europeen
+- 2,4 milliards. Des litres d'eau sont retournés aux communautés chaque année à partir de projets de réapprovisionnement achevés ou en cours
+- En 2022, 90% de l'électricité consommée par Amazon était attribuable à une source d'énergie renouvelable
+
+## customer carbon footprint tool 
+
+AWS fournis dans la console un outil dans le service de [billing]( https://console.aws.amazon.com/billing/) un Customer Carbon Footprint Tool 
+
+L'unité de mesure des émissions de carbone est la tonne métrique d'équivalent dioxyde de carbone (MTCO2e). Cette mesure tient compte de plusieurs gaz à effet de serre, notamment le dioxyde de carbone, le méthane et l'oxyde nitreux. Toutes les émissions de gaz à effet de serre sont converties en la quantité de dioxyde de carbone qui entraînerait un réchauffement équivalent.
+
+Les données sur les émissions de carbone sont disponibles à partir de janvier 2020. Toute les services d'AWS ne son pas comptés dans ce dashboard. Toutes les valeurs figurant dans l'outil d'empreinte carbone du client sont arrondies au dixième de tonne le plus proche. Si les émissions ne sont pas arrondies à une dixième tonne, le rapport affichera 0.
+
+La documentation du report: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/what-is-ccft.html
+
+### Services prisent en compte dans le dashboard:
+- EC2
+- S3
+
+### Région prisent en compte :
+- ? 
+
 ## well-architected
 Aws a ajouté un piliers de la [AWS Well-Architected](https://aws.amazon.com/fr/architecture/well-architected/) 
 
@@ -34,13 +57,6 @@ Aws a ajouté un piliers de la [AWS Well-Architected](https://aws.amazon.com/fr/
 
 
 Ce pilier Développement durable met l'accent sur la réduction des impacts sur l'environnement de l'exécution des charges de travail dans le cloud. Les points clés incluent un modèle de responsabilité partagée pour plus de durabilité, l'analyse des répercussions et l'optimisation de l'utilisation afin de limiter les ressources nécessaires et de réduire l'impact en aval.  
-
-Il soutant les données affiché par AWS pour son [cloud AWS](https://sustainability.aboutamazon.com/products-services/the-cloud)
-
-- 5 fois plus efficase d'un datacenter europeen
-- 2,4 milliards. Des litres d'eau sont retournés aux communautés chaque année à partir de projets de réapprovisionnement achevés ou en cours
-- En 2022, 90% de l'électricité consommée par Amazon était attribuable à une source d'énergie renouvelable
-
 
 ### Question du Well-Architected Tool
 - SUS 1. Comment choisissez-vous les régions pour votre charge de travail ?
@@ -86,22 +102,6 @@ Il soutant les données affiché par AWS pour son [cloud AWS](https://sustainabi
         - Augmenter l'utilisation de vos environnements de création
         - Utiliser des tests Device Farms gérés pour effectuer les tests
 
-### customer carbon footprint tool 
-
-AWS fournis dans la console un outil dans le service de [billing]( https://console.aws.amazon.com/billing/) un Customer Carbon Footprint Tool 
-
-L'unité de mesure des émissions de carbone est la tonne métrique d'équivalent dioxyde de carbone (MTCO2e). Cette mesure tient compte de plusieurs gaz à effet de serre, notamment le dioxyde de carbone, le méthane et l'oxyde nitreux. Toutes les émissions de gaz à effet de serre sont converties en la quantité de dioxyde de carbone qui entraînerait un réchauffement équivalent.
-
-Les données sur les émissions de carbone sont disponibles à partir de janvier 2020. Toute les services d'AWS ne son pas comptés dans ce dashboard. Toutes les valeurs figurant dans l'outil d'empreinte carbone du client sont arrondies au dixième de tonne le plus proche. Si les émissions ne sont pas arrondies à une dixième tonne, le rapport affichera 0.
-
-La documentation du report: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/what-is-ccft.html
-
-service prise en compte dans le dashboard:
-- EC2
-- S3
-
-Région prise en compte :
-- ? 
 
 
 Question & reflexion

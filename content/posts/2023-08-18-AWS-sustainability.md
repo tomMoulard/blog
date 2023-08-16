@@ -107,7 +107,13 @@ Ce pilier Développement durable met l'accent sur la réduction des impacts sur 
 Question & reflexion
 
 1. Comment un utilisateur du cloud AWS peut-il choisir le service et la région a utiliser pour minimisé l'impacte carbone de son infrastructure. 
-1. Comment AWS peut-il etre 5 foix plus efficase d'un datacenter europeen puisque le cloud AWS est dans des datacenter mutualisé en france. 
+1. Comment AWS peut-il etre 5 foix plus efficase d'un datacenter europeen puisque le cloud AWS est dans des datacenter mutualisé en france. Le JDD publie un initiative d'AWS de datacenter geant en [Essonne](https://www.journaldunet.com/web-tech/cloud/1515711-exclu-jdn-le-projet-secret-du-data-center-geant-d-amazon-en-ile-de-france-devoile/)
+Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-sont-cachees-installations-qui-font-tourner-france)
+    - La région française d'AWS qui compte trois zones de disponibilité se répartit entre le datacenter d'Interxion à La Courneuve, le DC3 de Scaleway à Vitry-sur-Seine et les centres de données de Data4 à Paris-Saclay/Marcoussis. AWS prévoit d'occuper une quatrième infrastructure située à Wissous. Propriété de Cyrus One, elle est actuellement en cours de construction.
+    - La région française de Google s’appuie sur trois datacenters dont ceux de Global Switch à Clichy-La-Garenne et de Digital Realty à Ferrières-en-Brie en Seine-et-Marne.
+    - La région française d’IBM est installée chez Global Switch à Clichy.
+    - La région française de Microsoft Azure s'appuie sur quatre datacenters dont celui d’Interxion à La Courneuve et de Colt aux Ulis. La région Azure France Sud, elle, déployée dans le datacenter MRS1 d'Interxion à Marseille.
+    - Oracle a aussi opté pour deux régions cloud pour la France via Interxion : l'une à la Courneuve, l'autre à Marseille avec le datacenter MSR2.
 
 
 Other link 

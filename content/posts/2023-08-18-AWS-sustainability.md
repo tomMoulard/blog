@@ -24,6 +24,7 @@ categories:
 
 ## well-architected
 Aws a ajouté un piliers de la [AWS Well-Architected](https://aws.amazon.com/fr/architecture/well-architected/) 
+
 1. Operational Excellence / Excellence opérationnelle
 1. Security / Sécurité
 1. Reliability / Fiabilité
@@ -31,9 +32,11 @@ Aws a ajouté un piliers de la [AWS Well-Architected](https://aws.amazon.com/fr/
 1. Cost Optimization / Optimisation des coûts
 1. Sustainability / Développement durable
 
+
 Ce pilier Développement durable met l'accent sur la réduction des impacts sur l'environnement de l'exécution des charges de travail dans le cloud. Les points clés incluent un modèle de responsabilité partagée pour plus de durabilité, l'analyse des répercussions et l'optimisation de l'utilisation afin de limiter les ressources nécessaires et de réduire l'impact en aval.  
 
 Il soutant les données affiché par AWS pour son [cloud AWS](https://sustainability.aboutamazon.com/products-services/the-cloud)
+
 - 5 fois plus efficase d'un datacenter europeen
 - 2,4 milliards. Des litres d'eau sont retournés aux communautés chaque année à partir de projets de réapprovisionnement achevés ou en cours
 - En 2022, 90% de l'électricité consommée par Amazon était attribuable à une source d'énergie renouvelable
@@ -100,6 +103,11 @@ service prise en compte dans le dashboard:
 Région prise en compte :
 - ? 
 
+
+Question & reflexion
+
+1. Comment un utilisateur du cloud AWS peut-il choisir le service et la région a utiliser pour minimisé l'impacte carbone de son infrastructure. 
+1. Comment AWS peut-il etre 5 foix plus efficase d'un datacenter europeen puisque le cloud AWS est dans des datacenter mutualisé en france. 
 
 
 Other link 

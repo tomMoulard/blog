@@ -135,6 +135,9 @@ Other link
 
 - https://aws.amazon.com/fr/sustainability/
 - https://nauges.typepad.com/my_weblog/2020/01/frugalit%C3%A9-num%C3%A9rique-centres-de-calcul-deuxi%C3%A8me-partie.html
+
 - https://theshiftproject.org/category/thematiques/numerique/
+- https://app.electricitymaps.com/
+
 
 

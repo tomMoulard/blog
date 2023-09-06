@@ -133,11 +133,20 @@ Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-s
 
 Other link
 
-- https://aws.amazon.com/fr/sustainability/
 - https://nauges.typepad.com/my_weblog/2020/01/frugalit%C3%A9-num%C3%A9rique-centres-de-calcul-deuxi%C3%A8me-partie.html
-
 - https://theshiftproject.org/category/thematiques/numerique/
 - https://app.electricitymaps.com/
 
 
+- AWS
+    - https://aws.amazon.com/sustainability/
+    - https://sustainability.aboutamazon.com/
+    - https://aws.amazon.com/aws-cost-management/aws-customer-carbon-footprint-tool/
+  
+
+
+- linkedin
+    - https://www.linkedin.com/posts/guillaumemoulard_je-recherche-toutes-les-informations-possibles-activity-7104767296656547841-7zux
+    - https://www.linkedin.com/posts/guillaumemoulard_parfois-il-ne-faut-pas-trop-dire-de-b%C3%AAtise-activity-7097703932839260160-myO0
+    - https://www.linkedin.com/posts/guillaumemoulard_aws-climat-giec-activity-6932612478140874754-9pd6
 

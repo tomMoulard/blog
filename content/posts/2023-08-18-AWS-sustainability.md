@@ -130,7 +130,6 @@ Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-s
     - La région française de Microsoft Azure s'appuie sur quatre datacenters dont celui d’Interxion à La Courneuve et de Colt aux Ulis. La région Azure France Sud, elle, déployée dans le datacenter MRS1 d'Interxion à Marseille.
     - Oracle a aussi opté pour deux régions cloud pour la France via Interxion : l'une à la Courneuve, l'autre à Marseille avec le datacenter MSR2.
 
-
 Other link
 
 - https://nauges.typepad.com/my_weblog/2020/01/frugalit%C3%A9-num%C3%A9rique-centres-de-calcul-deuxi%C3%A8me-partie.html

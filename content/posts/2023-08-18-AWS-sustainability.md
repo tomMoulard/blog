@@ -145,7 +145,6 @@ Other link
     - https://aws.amazon.com/aws-cost-management/aws-customer-carbon-footprint-tool/
   
 
-
 - linkedin
     - https://www.linkedin.com/posts/guillaumemoulard_je-recherche-toutes-les-informations-possibles-activity-7104767296656547841-7zux
     - https://www.linkedin.com/posts/guillaumemoulard_parfois-il-ne-faut-pas-trop-dire-de-b%C3%AAtise-activity-7097703932839260160-myO0

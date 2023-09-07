@@ -34,6 +34,8 @@ Sur les 56 TWh :
 ![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg)
 
 
+[Le monde sans fin - impacte du numérique](/img/2023/sus/Le-monde-sans-fin_impacte-digital.jpg)
+
 # AWS and Sustainability
 
 Les objectifs affichés par AWS pour son [cloud AWS](https://sustainability.aboutamazon.com/products-services/the-cloud)

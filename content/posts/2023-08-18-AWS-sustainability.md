@@ -134,9 +134,9 @@ Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-s
 
 Other link
 
-- https://nauges.typepad.com/my_weblog/2020/01/frugalit%C3%A9-num%C3%A9rique-centres-de-calcul-deuxi%C3%A8me-partie.html
-- https://theshiftproject.org/category/thematiques/numerique/
-- https://app.electricitymaps.com/
+- [frugalité-numérique-centres-de-calcul-deuxième-partie](https://nauges.typepad.com/my_weblog/2020/01/frugalit%C3%A9-num%C3%A9rique-centres-de-calcul-deuxi%C3%A8me-partie.html)
+- [theshiftproject.org thematique-numerique](https://theshiftproject.org/category/thematiques/numerique/)
+- [electricity maps](https://app.electricitymaps.com/)
 
 
 - AWS

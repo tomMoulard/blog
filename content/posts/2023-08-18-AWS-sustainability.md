@@ -170,8 +170,8 @@ Other link
 
 - Reference
     - [Green IT](https://www.greenit.fr/)
-    - [theshiftproject.org thematique-numerique](https://theshiftproject.org/category/thematiques/numerique/)
-    - [electricity maps](https://app.electricitymaps.com/)
+    - [Theshiftproject.org thematique-numerique](https://theshiftproject.org/category/thematiques/numerique/)
+    - [Electricity maps](https://app.electricitymaps.com/)
 
 
 - AWS

@@ -31,7 +31,9 @@ Sur les 56 TWh :
 3,5 TWh pour le cœur du réseau (composants techniques pour relier les datacenters aux usagers, 3G, 4G, etc.)
 10 TWh pour les « datacenters » => 2.1% de l'électricité total !
 
-![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg)
+|--|--|
+|![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg)|![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg)|
+
 
 
 [Le monde sans fin - impacte du numérique](/img/2023/sus/Le-monde-sans-fin_impacte-digital.pdf)

@@ -154,10 +154,14 @@ Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-s
 
 Other link
 
-- une vision critique de la communication 0 carbone des hypperscaler par [carbone 4](https://www.carbone4.com/analyse-empreinte-carbone-du-cloud)
-- [frugalité-numérique-centres-de-calcul-deuxième-partie](https://nauges.typepad.com/my_weblog/2020/01/frugalit%C3%A9-num%C3%A9rique-centres-de-calcul-deuxi%C3%A8me-partie.html)
-- [theshiftproject.org thematique-numerique](https://theshiftproject.org/category/thematiques/numerique/)
-- [electricity maps](https://app.electricitymaps.com/)
+- Blogs
+    - une vision critique de la communication 0 carbone des hypperscaler par [carbone 4](https://www.carbone4.com/analyse-empreinte-carbone-du-cloud)
+    - [frugalité-numérique-centres-de-calcul-deuxième-partie](https://nauges.typepad.com/my_weblog/2020/01/frugalit%C3%A9-num%C3%A9rique-centres-de-calcul-deuxi%C3%A8me-partie.html)
+
+- Reference
+    - [Green IT](https://www.greenit.fr/)
+    - [theshiftproject.org thematique-numerique](https://theshiftproject.org/category/thematiques/numerique/)
+    - [electricity maps](https://app.electricitymaps.com/)
 
 
 - AWS

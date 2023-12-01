@@ -62,7 +62,7 @@ La documentation du report: https://docs.aws.amazon.com/awsaccountbilling/latest
 - ? 
 
 ## well-architected
-Aws a ajouté un piliers de la [AWS Well-Architected](https://aws.amazon.com/fr/architecture/well-architected/) 
+Aws a ajouté un piliers a sa methodologie d'optimisation des architectures technique [AWS Well-Architected](https://aws.amazon.com/fr/architecture/well-architected/) 
 
 1. Operational Excellence / Excellence opérationnelle
 1. Security / Sécurité
@@ -118,11 +118,27 @@ Ce pilier Développement durable met l'accent sur la réduction des impacts sur 
         - Augmenter l'utilisation de vos environnements de création
         - Utiliser des tests Device Farms gérés pour effectuer les tests
 
+# Comment choisir le bon service, la bonne région
+
+## Les Régions AWS
+
+AWS ne communique pas sur les indicateurs détaillés de performance de ses régions, de ses datacenter. Ils ne communique que sur une valeur mondiale !!!
+
+Photo de decembre 2023
+
+![](/img/2023/sus/awsDCdec23.jpg)
+
+Source : https://www.climatiq.io/blog/measure-greenhouse-gas-emissions-carbon-data-centres-cloud-computing
+
+## Les services AWS
+
+# Outil de management 
+
+https://www.cloudcarbonfootprint.org/
 
 
 Question & reflexion
 
-1. Comment un utilisateur du cloud AWS peut-il choisir le service et la région a utiliser pour minimisé l'impacte carbone de son infrastructure. 
 1. Comment avoir le l'impact carbone d'un service utilisé !!! des choix technique pourrais decoulé de cette information. lors du choix d'un service on regarde ses fonctionnalité, ses couts, mais pas son impacte carbone. Sans information impossible de faire une choix eclairé. 
 1. Comment AWS peut-il etre 5 foix plus efficase d'un datacenter europeen puisque le cloud AWS est dans des datacenter mutualisé en france. Le JDD publie un initiative d'AWS de datacenter geant en [ZI de Vilemilan à WISSOUS (91320)](https://www.journaldunet.com/web-tech/cloud/1515711-exclu-jdn-le-projet-secret-du-data-center-geant-d-amazon-en-ile-de-france-devoile/)
 Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-sont-cachees-installations-qui-font-tourner-france) gérer par Cyrus One : 15 000 m2 / 83 mégawatts (MW) 

@@ -133,6 +133,17 @@ Source : https://www.climatiq.io/blog/measure-greenhouse-gas-emissions-carbon-da
 
 Quand l'impact carbone d'un produit n'est pas données par AWS. La proposition est de chercher l'économie financière. Les outils d’optimisation qui propose d’utiliser des instances plus petites sont dans bien des cas utiles pour identifier des gains en terme d’impacte carbone
 
+Quelles reglés simple : 
+- La taille : lorsque vous utilisez des VM (machines virtuelles), pensez toujours à adapter la taille de la VM à vos besoins d’application, puis surveillez et réduisez si nécessaire.
+ - Des ressources à jour : lorsque vous utilisez des VM, choisissez toujours les derniers types de famille de VM et le type de stockage par bloc pour répondre aux besoins de votre application et respecter la politique de votre organisation.
+- Les processeurs basés sur ARM : envisagez d’utiliser des processeurs ARM (comme le processeur AWS Graviton, les processeurs Azure Ampere Altra basés sur ARM, les processeurs GCP Ampere Altra également, etc.) chaque fois que votre application prend en charge la technologie ARM (pour de meilleures performances et des coûts plus bas).
+- Concernant les ressources inutilisées : surveillez et éteignez (voire supprimez) les ressources inutilisées ou inactives (VM, bases de données, etc.). 
+- Concernant les GPU : utilisez les GPU uniquement pour les tâches considérées comme plus efficaces que les CPU (telles que l’apprentissage automatique, le rendu graphique, le transcodage, etc.).
+- Les instances spot : utilisez-les lorsque votre application supporte les interruptions soudaines.
+- Le démarrage et l’arrêt automatique des VM : utilisez les capacités de planification (SSM Automation et [Instance scheduler](https://aws.amazon.com/solutions/implementations/instance-scheduler-on-aws/) pour AWS, le démarrage / arrêt des VM Azure, le démarrage et l’arrêt des instances de machines virtuelles GCP, etc.) pour contrôler le comportement de vos VM de charge de travail.
+- Mise à l’échelle automatique : utilisez les capacités intégrées au cloud pour mettre à l’échelle horizontalement en fonction de la charge de votre application.
+- Réseau de diffusion de contenu : utilisez un CDN (comme Amazon CloudFront, Azure Content Delivery Network, Google Cloud CDN, etc.) pour réduire la quantité de trafic client vers vos services exposés publiquement.
+
 # Outil de management 
 
 Il existe des outils externes a AWS qui peuvent avoir un pertinence en plus de ce que propose en natif AWS.

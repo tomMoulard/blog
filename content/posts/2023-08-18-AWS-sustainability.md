@@ -21,7 +21,6 @@ categories:
 
 # Le numérique représente 3 % de la consommation d’énergie finale
 
-Source: [ww.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement](https://www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement/themes-ree/pressions-exercees-par-les-modes-de-production-et-de-consommation/prelevements-de-ressources-naturelles/energie/article/numerique-et-consommation-energetique)
 
 En France, la consommation énergétique est de 476 TWh et l’électricité représente environ 25 % de l’énergie finale.
 GreenIT estimait qu’en 2015 le numérique consommait environ 56 TWh, ce qui représente environ 12 % de la consommation électrique du pays et 3 % de la consommation d’énergie finale.
@@ -31,7 +30,7 @@ Sur les 56 TWh :
 3,5 TWh pour le cœur du réseau (composants techniques pour relier les datacenters aux usagers, 3G, 4G, etc.)
 10 TWh pour les « datacenters » => 2.1% de l'électricité total !
 
-![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg)
+[![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg) source : www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement](https://www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement/themes-ree/pressions-exercees-par-les-modes-de-production-et-de-consommation/prelevements-de-ressources-naturelles/energie/article/numerique-et-consommation-energetique)
 
 
 [![](/img/2023/sus/LeMondeSansFinImpactDigital.jpg)Le monde sans fin - impacte du numérique](/img/2023/sus/Le-monde-sans-fin_impacte-digital.pdf)
@@ -125,7 +124,7 @@ AWS ne communique pas sur les indicateurs détaillés de performance de ses rég
 
 Photo de décembre 2023
 
-![](/img/2023/sus/awsDCdec23.jpg)
+[![](/img/2023/sus/awsDCdec23.jpg)](https://www.climatiq.io/blog/measure-greenhouse-gas-emissions-carbon-data-centres-cloud-computing)
 
 Source : https://www.climatiq.io/blog/measure-greenhouse-gas-emissions-carbon-data-centres-cloud-computing
 

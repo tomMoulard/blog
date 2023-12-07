@@ -19,8 +19,13 @@ categories:
   - state of the art
 ---
 
-# Le numérique représente 3 % de la consommation d’énergie finale
+# Sustainability
 
+Comment définir la sustainability 
+Pour les nation unis "sustainable development" c'est 17 objectifs a vers lesquelles nos sociétés doivent tendres [EN](https://www.un.org/sustainabledevelopment/) [FR](https://www.un.org/sustainabledevelopment/fr/)
+« Les objectifs de développement durable sont un appel à l’action de tous les pays – pauvres, riches et à revenu intermédiaire – afin de promouvoir la prospérité tout en protégeant la planète. Ils reconnaissent que mettre fin à la pauvreté doit aller de pair avec des stratégies qui développent la croissance économique et répondent à une série de besoins sociaux, notamment l’éducation, la santé, la protection sociale et les possibilités d’emploi, tout en luttant contre le changement climatique et la protection de l’environnement. »
+
+# Le numérique représente 3 % de la consommation d’énergie finale
 
 En France, la consommation énergétique est de 476 TWh et l’électricité représente environ 25 % de l’énergie finale.
 GreenIT estimait qu’en 2015 le numérique consommait environ 56 TWh, ce qui représente environ 12 % de la consommation électrique du pays et 3 % de la consommation d’énergie finale.
@@ -31,7 +36,6 @@ Sur les 56 TWh :
 10 TWh pour les « datacenters » => 2.1% de l'électricité total !
 
 [![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg) source : www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement](https://www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement/themes-ree/pressions-exercees-par-les-modes-de-production-et-de-consommation/prelevements-de-ressources-naturelles/energie/article/numerique-et-consommation-energetique)
-
 
 [![](/img/2023/sus/LeMondeSansFinImpactDigital.jpg)Le monde sans fin - impacte du numérique](/img/2023/sus/Le-monde-sans-fin_impacte-digital.pdf)
 
@@ -150,9 +154,9 @@ Il existe des outils externes a AWS qui peuvent avoir un pertinence en plus de c
 - https://www.cloudcarbonfootprint.org/
 
 
-Question & réflexion
+# Question & réflexion
 
-1. La vision pour le seul impacte carbone est-elle suffisante ? Les nations unies ont définie [17 objectifs de développement durable](https://www.un.org/sustainabledevelopment/fr/objectifs-de-developpement-durable/)la [France a suivie](https://www.agenda-2030.fr/17-objectifs-de-developpement-durable)
+1. La vision pour le seul impacte carbone est-elle suffisante ? Les nations unies ont définie [17 objectifs de développement durable](https://www.un.org/sustainabledevelopment/fr/objectifs-de-developpement-durable/) la [France a suivie](https://www.agenda-2030.fr/17-objectifs-de-developpement-durable)
 1. Comment avoir l'impact carbone d'un service utilisé ? L'impact carbone est fonction du service. De la localisation lors de l'utilisation ainsi que de l'instant où il est utilisé. 
 Des choix techniques pourraient découler de cette information. Lors du choix d'un service on regarde ses fonctionnalité, ses couts, mais pas son impacte carbone. Sans information impossible de faire un choix éclairé. 
 1. Comment AWS peut-il être 5 fois plus efficace d'un datacenter européen puisque le cloud AWS est dans des datacenter mutualisé en France. Le JDD publie un initiative d'AWS de datacenter géant en [ZI de Vilemilan à WISSOUS (91320)](https://www.journaldunet.com/web-tech/cloud/1515711-exclu-jdn-le-projet-secret-du-data-center-geant-d-amazon-en-ile-de-france-devoile/)

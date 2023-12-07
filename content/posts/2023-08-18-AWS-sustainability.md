@@ -152,6 +152,7 @@ Il existe des outils externes a AWS qui peuvent avoir un pertinence en plus de c
 
 Question & réflexion
 
+1. La vision pour le seul impacte carbone est-elle suffisante ? Les nations unies ont définie [17 objectifs de développement durable](https://www.un.org/sustainabledevelopment/fr/objectifs-de-developpement-durable/)la [France a suivie](https://www.agenda-2030.fr/17-objectifs-de-developpement-durable)
 1. Comment avoir l'impact carbone d'un service utilisé ? L'impact carbone est fonction du service. De la localisation lors de l'utilisation ainsi que de l'instant où il est utilisé. 
 Des choix techniques pourraient découler de cette information. Lors du choix d'un service on regarde ses fonctionnalité, ses couts, mais pas son impacte carbone. Sans information impossible de faire un choix éclairé. 
 1. Comment AWS peut-il être 5 fois plus efficace d'un datacenter européen puisque le cloud AWS est dans des datacenter mutualisé en France. Le JDD publie un initiative d'AWS de datacenter géant en [ZI de Vilemilan à WISSOUS (91320)](https://www.journaldunet.com/web-tech/cloud/1515711-exclu-jdn-le-projet-secret-du-data-center-geant-d-amazon-en-ile-de-france-devoile/)

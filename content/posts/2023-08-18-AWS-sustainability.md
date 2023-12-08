@@ -1,4 +1,4 @@
-﻿---
+---
 title: "AWS Sustainability"
 date: 2023-08-16T13:00:00+01:00
 author: Guillaume Moulard
@@ -47,9 +47,10 @@ Les objectifs affichés par AWS pour son [cloud AWS](https://sustainability.abou
 - 2,4 milliards. Des litres d'eau sont retournés aux communautés chaque année à partir de projets de réapprovisionnement achevés ou en cours
 - En 2022, 90% de l'électricité consommée par Amazon était attribuable à une source d'énergie renouvelable
 
+Les outils proposés par AWS pour que ses clients utilise au mieux les services d’AWS : 
 ## customer carbon footprint tool 
 
-AWS fournis dans la console un outil dans le service de [billing]( https://console.aws.amazon.com/billing/) un Customer Carbon Footprint Tool 
+AWS fournis dans la console un outil dans le service de [billing]( https://console.aws.amazon.com/billing/) un Customer Carbon Footprint Tool. Des outils similaires existe chez [Azure]( https://learn.microsoft.com/en-us/power-bi/connect-data/service-connect-to-emissions-impact-dashboard) et chez [GCP]( https://cloud.google.com/carbon-footprint/docs/methodology)
 
 L'unité de mesure des émissions de carbone est la tonne métrique d'équivalent dioxyde de carbone (MTCO2e). Cette mesure tient compte de plusieurs gaz à effet de serre, notamment le dioxyde de carbone, le méthane et l'oxyde nitreux. Toutes les émissions de gaz à effet de serre sont converties en la quantité de dioxyde de carbone qui entraînerait un réchauffement équivalent.
 
@@ -61,11 +62,8 @@ La documentation du report: https://docs.aws.amazon.com/awsaccountbilling/latest
 - EC2
 - S3
 
-### Région prisent en compte :
-- ? 
-
 ## well-architected
-Aws a ajouté un piliers a sa méthodologie d'optimisation des architectures technique [AWS Well-Architected](https://aws.amazon.com/fr/architecture/well-architected/) 
+AWS a ajouté un piliers a sa méthodologie d'optimisation des architectures technique [AWS Well-Architected](https://aws.amazon.com/fr/architecture/well-architected/) 
 
 1. Operational Excellence / Excellence opérationnelle
 1. Security / Sécurité
@@ -77,15 +75,14 @@ Aws a ajouté un piliers a sa méthodologie d'optimisation des architectures tec
 
 Ce pilier Développement durable met l'accent sur la réduction des impacts sur l'environnement de l'exécution des charges de travail dans le cloud. Les points clés incluent un modèle de responsabilité partagée pour plus de durabilité, l'analyse des répercussions et l'optimisation de l'utilisation afin de limiter les ressources nécessaires et de réduire l'impact en aval.  
 
-### Question du Well-Architected Tool
+### Les question du Well-Architected Tool
 - SUS 1. Comment choisissez-vous les régions pour votre charge de travail ?
     - Options possible
         -   Choisir une région en fonction des exigences et des objectifs de durabilité de l'entreprise
 - SUS 2. Comment aligner les ressources du cloud sur votre demande ?
     - Options possible
         - Mettre à l'échelle l'infrastructure de la charge de travail de façon dynamique
-        - Optimiser le placement géographique des charges de travail en fonction
-        de leurs exigences réseau
+        - Optimiser le placement géographique des charges de travail en fonction de leurs exigences réseau
         - Aligner les SLA sur vos objectifs de durabilité
         - Arrêter la création et la maintenance des ressources inutilisées
         - Optimiser les ressources des membres de l'équipe pour les activités réalisées
@@ -136,29 +133,29 @@ Source : https://www.climatiq.io/blog/measure-greenhouse-gas-emissions-carbon-da
 
 Quand l'impact carbone d'un produit n'est pas données par AWS. La proposition est de chercher l'économie financière. Les outils d’optimisation qui propose d’utiliser des instances plus petites sont dans bien des cas utiles pour identifier des gains en terme d’impacte carbone
 
-Quelles reglés simple : 
+Quelles réglés simple : 
 - La taille : lorsque vous utilisez des VM (machines virtuelles), pensez toujours à adapter la taille de la VM à vos besoins d’application, puis surveillez et réduisez si nécessaire.
  - Des ressources à jour : lorsque vous utilisez des VM, choisissez toujours les derniers types de famille de VM et le type de stockage par bloc pour répondre aux besoins de votre application et respecter la politique de votre organisation.
 - Les processeurs basés sur ARM : envisagez d’utiliser des processeurs ARM (comme le processeur AWS Graviton, les processeurs Azure Ampere Altra basés sur ARM, les processeurs GCP Ampere Altra également, etc.) chaque fois que votre application prend en charge la technologie ARM (pour de meilleures performances et des coûts plus bas).
 - Concernant les ressources inutilisées : surveillez et éteignez (voire supprimez) les ressources inutilisées ou inactives (VM, bases de données, etc.). 
 - Concernant les GPU : utilisez les GPU uniquement pour les tâches considérées comme plus efficaces que les CPU (telles que l’apprentissage automatique, le rendu graphique, le transcodage, etc.).
-- Les instances spot : utilisez-les lorsque votre application supporte les interruptions soudaines.
 - Le démarrage et l’arrêt automatique des VM : utilisez les capacités de planification (SSM Automation et [Instance scheduler](https://aws.amazon.com/solutions/implementations/instance-scheduler-on-aws/) pour AWS, le démarrage / arrêt des VM Azure, le démarrage et l’arrêt des instances de machines virtuelles GCP, etc.) pour contrôler le comportement de vos VM de charge de travail.
 - Mise à l’échelle automatique : utilisez les capacités intégrées au cloud pour mettre à l’échelle horizontalement en fonction de la charge de votre application.
 - Réseau de diffusion de contenu : utilisez un CDN (comme Amazon CloudFront, Azure Content Delivery Network, Google Cloud CDN, etc.) pour réduire la quantité de trafic client vers vos services exposés publiquement.
 
 # Outil de management 
 
-Il existe des outils externes a AWS qui peuvent avoir un pertinence en plus de ce que propose en natif AWS.
+Il existe des outils externes a AWS qui peuvent avoir une pertinence en plus de ce que propose en natif AWS.
 
 - https://www.cloudcarbonfootprint.org/
 
 
-# Question & réflexion
+# Question & Réflexion
 
-1. La vision pour le seul impacte carbone est-elle suffisante ? Les nations unies ont définie [17 objectifs de développement durable](https://www.un.org/sustainabledevelopment/fr/objectifs-de-developpement-durable/) la [France a suivie](https://www.agenda-2030.fr/17-objectifs-de-developpement-durable)
+1. La vision pour le seul impacte carbone est-elle suffisante ? Les nations unies ont définie [17 objectifs de développement durable](https://www.un.org/sustainabledevelopment/fr/objectifs-de-developpement-durable/) la [France a suivie](https://www.agenda-2030.fr/17-objectifs-de-developpement-durable). Les analyse cycle de vie (ACV/LCA) tel que définie par les normes ISO 14040 & 14044 serais plus adapté au contexte IT. 
+1. L’impacte sur le développement durable des services AWS ne sont pas disponible.   
 1. Comment avoir l'impact carbone d'un service utilisé ? L'impact carbone est fonction du service. De la localisation lors de l'utilisation ainsi que de l'instant où il est utilisé. 
-Des choix techniques pourraient découler de cette information. Lors du choix d'un service on regarde ses fonctionnalité, ses couts, mais pas son impacte carbone. Sans information impossible de faire un choix éclairé. 
+Des choix techniques pourraient découler de cette information. Lors du choix d'un service on regarde ses fonctionnalités, ses couts, mais pas son impacte carbone. Sans information impossible de faire un choix éclairé. 
 1. Comment AWS peut-il être 5 fois plus efficace d'un datacenter européen puisque le cloud AWS est dans des datacenter mutualisé en France. Le JDD publie un initiative d'AWS de datacenter géant en [ZI de Vilemilan à WISSOUS (91320)](https://www.journaldunet.com/web-tech/cloud/1515711-exclu-jdn-le-projet-secret-du-data-center-geant-d-amazon-en-ile-de-france-devoile/)
 Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-sont-cachees-installations-qui-font-tourner-france) gérer par Cyrus One : 15 000 m2 / 83 mégawatts (MW) 
     - La région française d'AWS qui compte trois zones de disponibilité se répartit entre le datacenter d'Interxion à La Courneuve, le DC3 de Scaleway à Vitry-sur-Seine et les centres de données de Data4 à Paris-Saclay/Marcoussis. AWS prévoit d'occuper une quatrième infrastructure située à Wissous. Propriété de Cyrus One, elle est actuellement en cours de construction.
@@ -169,15 +166,15 @@ Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-s
 
 Other link
 
-- Blogs
-    - Une vision critique de la communication 0 carbone des hypperscaler par [carbone 4](https://www.carbone4.com/analyse-empreinte-carbone-du-cloud)
-    - [frugalité-numérique-centres-de-calcul-deuxième-partie](https://nauges.typepad.com/my_weblog/2020/01/frugalit%C3%A9-num%C3%A9rique-centres-de-calcul-deuxi%C3%A8me-partie.html)
-
 - Reference
     - [Green IT](https://www.greenit.fr/)
     - [Theshiftproject.org thematique-numerique](https://theshiftproject.org/category/thematiques/numerique/)
     - [Electricity maps](https://app.electricitymaps.com/)
 
+- Blogs
+    - Une vision critique de la communication 0 carbone des hyperscalers par [carbone 4](https://www.carbone4.com/analyse-empreinte-carbone-du-cloud)
+    - [frugalité numérique centres de calcul](https://nauges.typepad.com/my_weblog/2020/01/frugalit%C3%A9-num%C3%A9rique-centres-de-calcul-deuxi%C3%A8me-partie.html)
+   - [calculettes carbone des clouds providers]( https://boavizta.org/blog/calculettes-carbone-clouds-providers)
 
 - AWS
     - https://aws.amazon.com/sustainability/

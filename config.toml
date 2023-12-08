@@ -97,3 +97,9 @@ linenos = true
 	threshold = 80
 	includeNewer = true
 	toLower = false
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 8
+    ordered = false
+    startLevel = 1

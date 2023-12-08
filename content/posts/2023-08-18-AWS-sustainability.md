@@ -1,6 +1,6 @@
 ---
 title: "AWS Sustainability"
-date: 2023-08-16T13:00:00+01:00
+date: 2023-12-08T13:13:10+01:00
 author: Guillaume Moulard
 url: /aws-sustainability
 draft: false
@@ -15,6 +15,7 @@ tags:
   - numerique
   - numérique 
   - Développement durable
+  - GreenIT
 categories:
   - state of the art
 ---

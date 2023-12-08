@@ -154,7 +154,18 @@ Il existe des outils externes a AWS qui peuvent avoir une pertinence en plus de 
 # Question & Réflexion
 
 1. La vision seul de l'impacte carbone est-elle suffisante ? Les nations unies ont définie [17 objectifs de développement durable](https://www.un.org/sustainabledevelopment/fr/objectifs-de-developpement-durable/) la [France a suivie](https://www.agenda-2030.fr/17-objectifs-de-developpement-durable). Les analyses du cycle de vie (ACV/LCA) tel que définie par les normes ISO 14040 & 14044 seraient plus adaptées au contexte IT. 
-1. Les datas et les indicateurs sur le développement durable des services AWS ne sont pas disponible. Quelques indicateurs environnementaux pertinent : GWP : Changement climatique (kg éq. CO₂), PM : Emissions de particules (incidence des maladies), AD : Acidification (mol éq. H+), IR : Radiations ionisantes, santé humaine (kBq éq. U235), ADPe : Utilisation des ressources, minéraux et métaux (kg Sb éq), ADPf : Utilisation des ressources, fossiles (MJ), WU : Utilisation des ressources en eau (m3 éq), CED : e flux Energie primaire, EoL : Fin de vie cf [Benchmark Green IT 2022 P7](https://club.greenit.fr/doc/2022-09-Benchmark_Green_IT-2022-rapport.0.5_FR.pdf)
+1. Les datas et les indicateurs sur le développement durable des services AWS ne sont pas disponible. Quelques indicateurs environnementaux pertinent : 
+   - GWP : Changement climatique (kg éq. CO₂), 
+   - PM : Emissions de particules (incidence des maladies), 
+   - AD : Acidification (mol éq. H+), 
+   - IR : Radiations ionisantes, santé humaine (kBq éq. U235), 
+   - ADPe : Utilisation des ressources, minéraux et métaux (kg Sb éq), 
+   - ADPf : Utilisation des ressources, fossiles (MJ), 
+   - WU : Utilisation des ressources en eau (m3 éq), 
+   - CED : flux Energie primaire, 
+   - EoL : Fin de vie 
+   
+cf [Benchmark Green IT 2022 P7](https://club.greenit.fr/doc/2022-09-Benchmark_Green_IT-2022-rapport.0.5_FR.pdf)
 1. Comment avoir l'impact carbone d'un service utilisé ? L'impact carbone est fonction du service. De la localisation lors de l'utilisation ainsi que de l'instant où il est utilisé. 
 Des choix techniques pourraient découler de cette information. Lors du choix d'un service ont regarde ses fonctionnalités, ses couts, mais pas son impacte carbone. Sans information impossible de faire un choix éclairé. 
 1. Comment AWS peut-il être 5 fois plus efficace d'un datacenter européen puisque le cloud AWS est dans des datacenter mutualisé en France. Le JDD publie un initiative d'AWS de datacenter géant en [ZI de Vilemilan à WISSOUS (91320)](https://www.journaldunet.com/web-tech/cloud/1515711-exclu-jdn-le-projet-secret-du-data-center-geant-d-amazon-en-ile-de-france-devoile/)

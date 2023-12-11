@@ -59,9 +59,9 @@ Les données sur les émissions de carbone sont disponibles à partir de janvier
 
 La documentation du report: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/what-is-ccft.html
 
-### Services prisent en compte dans le dashboard:
-- EC2
-- S3
+### Services prisent en compte dans le dashboard
+    - EC2
+    - S3
 
 ## well-architected
 AWS a ajouté un piliers a sa méthodologie d'optimisation des architectures technique [AWS Well-Architected](https://aws.amazon.com/fr/architecture/well-architected/) 

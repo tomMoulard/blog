@@ -48,7 +48,7 @@ Les objectifs affichés par AWS pour son [cloud AWS](https://sustainability.abou
 - 2,4 milliards. Des litres d'eau sont retournés aux communautés chaque année à partir de projets de réapprovisionnement achevés ou en cours
 - En 2022, 90% de l'électricité consommée par Amazon était attribuable à une source d'énergie renouvelable
 
-Les outils proposés par AWS pour que ses clients utilise au mieux les services d’AWS : 
+Les outils proposés par AWS pour que ses clients utilisent au mieux les services d’AWS : 
 ## customer carbon footprint tool 
 
 AWS fournis dans la console un outil dans le service de [billing]( https://console.aws.amazon.com/billing/) un Customer Carbon Footprint Tool. Des outils similaires existe chez [Azure]( https://learn.microsoft.com/en-us/power-bi/connect-data/service-connect-to-emissions-impact-dashboard) et chez [GCP]( https://cloud.google.com/carbon-footprint/docs/methodology)
@@ -72,7 +72,6 @@ AWS a ajouté un piliers a sa méthodologie d'optimisation des architectures tec
 1. Performance Efficiency / Efficacité des performances
 1. Cost Optimization / Optimisation des coûts
 1. Sustainability / Développement durable
-
 
 Ce pilier Développement durable met l'accent sur la réduction des impacts sur l'environnement de l'exécution des charges de travail dans le cloud. Les points clés incluent un modèle de responsabilité partagée pour plus de durabilité, l'analyse des répercussions et l'optimisation de l'utilisation afin de limiter les ressources nécessaires et de réduire l'impact en aval.  
 
@@ -132,25 +131,26 @@ Source : https://www.climatiq.io/blog/measure-greenhouse-gas-emissions-carbon-da
 
 ## Les services AWS
 
-Quand l'impact carbone d'un produit n'est pas données par AWS. La proposition est de chercher l'économie financière. Les outils d’optimisation qui propose d’utiliser des instances plus petites sont dans bien des cas utiles pour identifier des gains en terme d’impacte carbone
+Quand l'impact carbone d'un produit n'est pas donné par AWS. La proposition est de chercher l'économie financière. Les outils d’optimisation qui propose d’utiliser des instances plus petites sont dans bien des cas utiles pour identifier des gains en terme d’impact carbone
 
-Quelles réglés simple : 
+Quelles réglés d'utilisation de l'infrastructure :
+- Questionner les usages, les RPO et les RTO pour n'utiliser que des infrastructures nécessaires.  
+- Utiliser des services en mode serverless autant que possible. 
+- Utiliser quand cela est possible des instances SPOT pour n'utiliser que du matériel sous-utilisé.
 - La taille : lorsque vous utilisez des VM (machines virtuelles), pensez toujours à adapter la taille de la VM à vos besoins d’application, puis surveillez et réduisez si nécessaire.
- - Des ressources à jour : lorsque vous utilisez des VM, choisissez toujours les derniers types de famille de VM et le type de stockage par bloc pour répondre aux besoins de votre application et respecter la politique de votre organisation.
 - Les processeurs basés sur ARM : envisagez d’utiliser des processeurs ARM (comme le processeur AWS Graviton, les processeurs Azure Ampere Altra basés sur ARM, les processeurs GCP Ampere Altra également, etc.) chaque fois que votre application prend en charge la technologie ARM (pour de meilleures performances et des coûts plus bas).
 - Concernant les ressources inutilisées : surveillez et éteignez (voire supprimez) les ressources inutilisées ou inactives (VM, bases de données, etc.). 
 - Concernant les GPU : utilisez les GPU uniquement pour les tâches considérées comme plus efficaces que les CPU (telles que l’apprentissage automatique, le rendu graphique, le transcodage, etc.).
 - Le démarrage et l’arrêt automatique des VM : utilisez les capacités de planification (SSM Automation et [Instance scheduler](https://aws.amazon.com/solutions/implementations/instance-scheduler-on-aws/) pour AWS, le démarrage / arrêt des VM Azure, le démarrage et l’arrêt des instances de machines virtuelles GCP, etc.) pour contrôler le comportement de vos VM de charge de travail.
 - Mise à l’échelle automatique : utilisez les capacités intégrées au cloud pour mettre à l’échelle horizontalement en fonction de la charge de votre application.
 - Réseau de diffusion de contenu : utilisez un CDN (comme Amazon CloudFront, Azure Content Delivery Network, Google Cloud CDN, etc.) pour réduire la quantité de trafic client vers vos services exposés publiquement.
-- utiliser des services en mode serverless autant que possible. 
+- Des ressources à jour : lorsque vous utilisez des VM, choisissez toujours les derniers types de famille de VM et le type de stockage par bloc pour répondre aux besoins de votre application et respecter la politique de votre organisation.
 
 # Outil de management 
 
 Il existe des outils externes a AWS qui peuvent avoir une pertinence en plus de ce que propose en natif AWS.
 
 - https://www.cloudcarbonfootprint.org/
-
 
 # Question & Réflexion
 
@@ -168,8 +168,8 @@ Il existe des outils externes a AWS qui peuvent avoir une pertinence en plus de 
    
     cf [Benchmark Green IT 2022 P7](https://club.greenit.fr/doc/2022-09-Benchmark_Green_IT-2022-rapport.0.5_FR.pdf)
 1. Comment avoir l'impact carbone d'un service utilisé ? L'impact carbone est fonction de chaque service, de la localisation lors de l'utilisation ainsi que de l'instant où il est utilisé. 
-Des choix techniques pourraient découler de cette information. Lors du choix d'un service ont regarde ses fonctionnalités, ses couts, mais pas son impacte carbone. Avec ces informaiton il deviendrait possible de faire un choix éclairé. 
-1. Comment AWS peut-il être 5 fois plus efficace d'un datacenter européen ? Pour sa région Paris, le cloud AWS est dans des datacenter mutualisé en France. L’implantation ressente d’AWS dans des datacenter performants permet probablement de se distinguer de la moyenne européen. 
+Des choix techniques pourraient découler de cette information. Lors du choix d'un service on regarde ses fonctionnalités, ses couts, mais pas son impacte carbone. Avec ces informations il deviendrait possible de faire un choix éclairé. 
+1. Comment AWS peut-il être 5 fois plus efficace d'un datacenter européen ? Pour sa région Paris, le cloud AWS est dans des datacenter mutualisé en France. L’implantation ressente d’AWS dans des datacenters performants permet probablement de se distinguer de la moyenne européen. 
 Le JDD publie un initiative d'AWS de datacenter géant en [ZI de Vilemilan à WISSOUS (91320)](https://www.journaldunet.com/web-tech/cloud/1515711-exclu-jdn-le-projet-secret-du-data-center-geant-d-amazon-en-ile-de-france-devoile/)
 Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-sont-cachees-installations-qui-font-tourner-france) gérer par Cyrus One : 15 000 m2 / 83 mégawatts (MW) 
     - La région française d'AWS qui compte trois zones de disponibilité se répartit entre le datacenter d'Interxion à La Courneuve, le DC3 de Scaleway à Vitry-sur-Seine et les centres de données de Data4 à Paris-Saclay/Marcoussis. AWS prévoit d'occuper une quatrième infrastructure située à Wissous. Propriété de Cyrus One, elle est actuellement en cours de construction. Source [JDD](https://www.journaldunet.fr/web-tech/guide-de-l-entreprise-digitale/1514137-la-carte-secrete-des-data-centers-des-clouds-providers-americains-en-france/) et [Archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-sont-cachees-installations-qui-font-tourner-france)

@@ -1,6 +1,6 @@
 ---
 title: "Azure Sustainability"
-date: 2023-12-T13:00:00+01:00
+date: 2023-12-10T13:00:00+01:00
 author: Guillaume Moulard
 url: /azure-sustainability
 draft: false

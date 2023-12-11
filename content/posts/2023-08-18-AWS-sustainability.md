@@ -166,7 +166,7 @@ Il existe des outils externes a AWS qui peuvent avoir une pertinence en plus de 
    - CED : flux Energie primaire, 
    - EoL : Fin de vie 
    
-cf [Benchmark Green IT 2022 P7](https://club.greenit.fr/doc/2022-09-Benchmark_Green_IT-2022-rapport.0.5_FR.pdf)
+    cf [Benchmark Green IT 2022 P7](https://club.greenit.fr/doc/2022-09-Benchmark_Green_IT-2022-rapport.0.5_FR.pdf)
 1. Comment avoir l'impact carbone d'un service utilisé ? L'impact carbone est fonction de chaque service, de la localisation lors de l'utilisation ainsi que de l'instant où il est utilisé. 
 Des choix techniques pourraient découler de cette information. Lors du choix d'un service ont regarde ses fonctionnalités, ses couts, mais pas son impacte carbone. Avec ces informaiton il deviendrait possible de faire un choix éclairé. 
 1. Comment AWS peut-il être 5 fois plus efficace d'un datacenter européen ? Pour sa région Paris, le cloud AWS est dans des datacenter mutualisé en France. L’implantation ressente d’AWS dans des datacenter performants permet probablement de se distinguer de la moyenne européen. 

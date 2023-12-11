@@ -143,6 +143,7 @@ Quelles réglés simple :
 - Le démarrage et l’arrêt automatique des VM : utilisez les capacités de planification (SSM Automation et [Instance scheduler](https://aws.amazon.com/solutions/implementations/instance-scheduler-on-aws/) pour AWS, le démarrage / arrêt des VM Azure, le démarrage et l’arrêt des instances de machines virtuelles GCP, etc.) pour contrôler le comportement de vos VM de charge de travail.
 - Mise à l’échelle automatique : utilisez les capacités intégrées au cloud pour mettre à l’échelle horizontalement en fonction de la charge de votre application.
 - Réseau de diffusion de contenu : utilisez un CDN (comme Amazon CloudFront, Azure Content Delivery Network, Google Cloud CDN, etc.) pour réduire la quantité de trafic client vers vos services exposés publiquement.
+- utiliser des services en mode serverless autant que possible. 
 
 # Outil de management 
 
@@ -168,7 +169,7 @@ Il existe des outils externes a AWS qui peuvent avoir une pertinence en plus de 
 cf [Benchmark Green IT 2022 P7](https://club.greenit.fr/doc/2022-09-Benchmark_Green_IT-2022-rapport.0.5_FR.pdf)
 1. Comment avoir l'impact carbone d'un service utilisé ? L'impact carbone est fonction du service. De la localisation lors de l'utilisation ainsi que de l'instant où il est utilisé. 
 Des choix techniques pourraient découler de cette information. Lors du choix d'un service ont regarde ses fonctionnalités, ses couts, mais pas son impacte carbone. Sans information impossible de faire un choix éclairé. 
-1. Comment AWS peut-il être 5 fois plus efficace d'un datacenter européen puisque le cloud AWS est dans des datacenter mutualisé en France. Le JDD publie un initiative d'AWS de datacenter géant en [ZI de Vilemilan à WISSOUS (91320)](https://www.journaldunet.com/web-tech/cloud/1515711-exclu-jdn-le-projet-secret-du-data-center-geant-d-amazon-en-ile-de-france-devoile/)
+1. Comment AWS peut-il être 5 fois plus efficace d'un datacenter européen puisque le cloud AWS pour sa region france  est dans des datacenter mutualisé en France. Le JDD publie un initiative d'AWS de datacenter géant en [ZI de Vilemilan à WISSOUS (91320)](https://www.journaldunet.com/web-tech/cloud/1515711-exclu-jdn-le-projet-secret-du-data-center-geant-d-amazon-en-ile-de-france-devoile/)
 Pour [archimag](https://www.archimag.com/univers-data/2023/04/12/datacenter-ou-sont-cachees-installations-qui-font-tourner-france) gérer par Cyrus One : 15 000 m2 / 83 mégawatts (MW) 
     - La région française d'AWS qui compte trois zones de disponibilité se répartit entre le datacenter d'Interxion à La Courneuve, le DC3 de Scaleway à Vitry-sur-Seine et les centres de données de Data4 à Paris-Saclay/Marcoussis. AWS prévoit d'occuper une quatrième infrastructure située à Wissous. Propriété de Cyrus One, elle est actuellement en cours de construction.
     - La région française de Google s’appuie sur trois datacenters dont ceux de Global Switch à Clichy-La-Garenne et de Digital Realty à Ferrières-en-Brie en Seine-et-Marne.

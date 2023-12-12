@@ -37,9 +37,6 @@ Sur les 56 TWh :
 - 3,5 TWh pour le cœur du réseau (composants techniques pour relier les datacenters aux usagers, 3G, 4G, etc.)
 - 10 TWh pour les « datacenters » => 2.1% de l'électricité total !
 
-Source : « Empreinte environnementale du numérique mondial », GreenIT.fr, 2019 et étude « iNUM : impacts environnementaux du numérique en France », GreenIT.fr,
-2020, chiffres mis à jour. * Extrapolation depuis l’étude « Digital technologies in Europe : an environmental life cycle approach » , GreenIT.fr, décembre 2021.
-
 [![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg) 
 
 source : 

@@ -67,7 +67,7 @@ Les objectifs affichés par AWS pour son [cloud AWS](https://sustainability.abou
 - 2,4 milliards. Des litres d'eau sont retournés aux communautés chaque année à partir de projets de réapprovisionnement achevés ou en cours
 - En 2022, 90% de l'électricité consommée par Amazon était attribuable à une source d'énergie renouvelable
 
-Les outils proposés par AWS pour que ses clients utilisent au mieux les services d’AWS : 
+Les outils proposés par AWS pour que ses clients utilisent au mieux les services d’AWS  
 ## customer carbon footprint tool 
 
 AWS fournis dans la console un outil dans le service de [billing]( https://console.aws.amazon.com/billing/) un Customer Carbon Footprint Tool. Des outils similaires existe chez [Azure]( https://learn.microsoft.com/en-us/power-bi/connect-data/service-connect-to-emissions-impact-dashboard) et chez [GCP]( https://cloud.google.com/carbon-footprint/docs/methodology)
@@ -79,8 +79,9 @@ Les données sur les émissions de carbone sont disponibles à partir de janvier
 La documentation du report: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/what-is-ccft.html
 
 ### Services prisent en compte dans le dashboard
-    - EC2
-    - S3
+
+- EC2
+- S3
 
 ## well-architected
 AWS a ajouté un piliers a sa méthodologie d'optimisation des architectures technique [AWS Well-Architected](https://aws.amazon.com/fr/architecture/well-architected/) 
@@ -205,7 +206,7 @@ Other link
     - [Electricity maps](https://app.electricitymaps.com/)
 
 - Blogs
-    - Une vision critique de la communication 0 carbone des hyperscalers par [carbone 4](https://www.carbone4.com/analyse-empreinte-carbone-du-cloud)
+    - Une vision critique de la communication 0 carbone des hyperscalers par [carbone4](https://www.carbone4.com/analyse-empreinte-carbone-du-cloud)
     - [frugalité numérique centres de calcul](https://nauges.typepad.com/my_weblog/2020/01/frugalit%C3%A9-num%C3%A9rique-centres-de-calcul-deuxi%C3%A8me-partie.html)
    - [calculettes carbone des clouds providers]( https://boavizta.org/blog/calculettes-carbone-clouds-providers)
 

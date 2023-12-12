@@ -23,7 +23,7 @@ categories:
 # Sustainability
 
 Comment définir la sustainability 
-Pour les nation unis "sustainable development" c'est 17 objectifs a vers lesquelles nos sociétés doivent tendres [EN](https://www.un.org/sustainabledevelopment/) [FR](https://www.un.org/sustainabledevelopment/fr/)
+Pour les nation unis "sustainable development" c'est 17 objectifs a vers lesquelles nos sociétés doivent tendres [EN](https://www.un.org/sustainabledevelopment/) / [FR](https://www.un.org/sustainabledevelopment/fr/)
 « Les objectifs de développement durable sont un appel à l’action de tous les pays – pauvres, riches et à revenu intermédiaire – afin de promouvoir la prospérité tout en protégeant la planète. Ils reconnaissent que mettre fin à la pauvreté doit aller de pair avec des stratégies qui développent la croissance économique et répondent à une série de besoins sociaux, notamment l’éducation, la santé, la protection sociale et les possibilités d’emploi, tout en luttant contre le changement climatique et la protection de l’environnement. »
 
 ## Le numérique représente pour l'instant 3 % de la consommation d’énergie finale
@@ -43,6 +43,7 @@ Source : « Empreinte environnementale du numérique mondial », GreenIT.fr, 201
 [![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg) 
 
 source : 
+
     - [www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement](https://www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement/themes-ree/pressions-exercees-par-les-modes-de-production-et-de-consommation/prelevements-de-ressources-naturelles/energie/article/numerique-et-consommation-energetique)
     - [Empreinte environnementale du numérique mondial](https://www.greenit.fr/etude-empreinte-environnementale-du-numerique-mondial/) 
     - [iNUM : impacts environnementaux du numérique en France](https://www.greenit.fr/impacts-environnementaux-du-numerique-en-france/)

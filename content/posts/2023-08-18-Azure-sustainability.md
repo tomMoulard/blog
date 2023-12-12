@@ -20,6 +20,8 @@ categories:
   - state of the art
 ---
 
+# Cet article est embryonnaire. L'article sur AWS a beaucoup plus d'intérêt : https://blog.moulard.org/aws-sustainability/
+
 # Azure and Sustainability
 
 ## MICROSOFT ASSESSMENTS: Sustainability | Well-Architected Review

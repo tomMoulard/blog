@@ -20,7 +20,7 @@ categories:
   - state of the art
 ---
 
-# Sustainability
+# Sustainability / développement durable  
 
 Comment définir la sustainability 
 Pour les nation unis "sustainable development" c'est 17 objectifs a vers lesquelles nos sociétés doivent tendres [EN](https://www.un.org/sustainabledevelopment/) / [FR](https://www.un.org/sustainabledevelopment/fr/)

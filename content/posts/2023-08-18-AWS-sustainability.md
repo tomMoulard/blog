@@ -44,9 +44,9 @@ Source : « Empreinte environnementale du numérique mondial », GreenIT.fr, 201
 
 source : 
 
-    - [www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement](https://www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement/themes-ree/pressions-exercees-par-les-modes-de-production-et-de-consommation/prelevements-de-ressources-naturelles/energie/article/numerique-et-consommation-energetique)
-    - [Empreinte environnementale du numérique mondial](https://www.greenit.fr/etude-empreinte-environnementale-du-numerique-mondial/) 
-    - [iNUM : impacts environnementaux du numérique en France](https://www.greenit.fr/impacts-environnementaux-du-numerique-en-france/)
+- [www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement](https://www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement/themes-ree/pressions-exercees-par-les-modes-de-production-et-de-consommation/prelevements-de-ressources-naturelles/energie/article/numerique-et-consommation-energetique)
+- [Empreinte environnementale du numérique mondial](https://www.greenit.fr/etude-empreinte-environnementale-du-numerique-mondial/) 
+- [iNUM : impacts environnementaux du numérique en France](https://www.greenit.fr/impacts-environnementaux-du-numerique-en-france/)
     
 
 [![](/img/2023/sus/LeMondeSansFinImpactDigital.jpg)Le monde sans fin - impacte du numérique](/img/2023/sus/Le-monde-sans-fin_impacte-digital.pdf)

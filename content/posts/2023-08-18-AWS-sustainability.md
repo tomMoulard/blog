@@ -50,6 +50,9 @@ source :
 
 [![](/img/2023/sus/LeMondeSansFinImpactDigital.jpg)Le monde sans fin - impacte du numérique](/img/2023/sus/Le-monde-sans-fin_impacte-digital.pdf)
 
+# Eco-conception
+
+
 # AWS and Sustainability
 
 Les objectifs affichés par AWS pour son [cloud AWS](https://sustainability.aboutamazon.com/products-services/the-cloud)

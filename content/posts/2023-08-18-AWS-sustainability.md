@@ -26,7 +26,7 @@ Comment définir la sustainability
 Pour les nation unis "sustainable development" c'est 17 objectifs a vers lesquelles nos sociétés doivent tendres [EN](https://www.un.org/sustainabledevelopment/) [FR](https://www.un.org/sustainabledevelopment/fr/)
 « Les objectifs de développement durable sont un appel à l’action de tous les pays – pauvres, riches et à revenu intermédiaire – afin de promouvoir la prospérité tout en protégeant la planète. Ils reconnaissent que mettre fin à la pauvreté doit aller de pair avec des stratégies qui développent la croissance économique et répondent à une série de besoins sociaux, notamment l’éducation, la santé, la protection sociale et les possibilités d’emploi, tout en luttant contre le changement climatique et la protection de l’environnement. »
 
-# Le numérique représente pour l'instant 3 % de la consommation d’énergie finale
+## Le numérique représente pour l'instant 3 % de la consommation d’énergie finale
 
 En France, la consommation énergétique est de 476 TWh et l’électricité représente environ 25 % de l’énergie finale. Les prévisions de GreenIT d'augementations de 50% du besoin electrique sont forte de 3% en 2020 a entre 5% et 6% en 2025.
  
@@ -50,8 +50,13 @@ source :
 
 [![](/img/2023/sus/LeMondeSansFinImpactDigital.jpg)Le monde sans fin - impacte du numérique](/img/2023/sus/Le-monde-sans-fin_impacte-digital.pdf)
 
-# Eco-conception
+## Eco-conception
 
+Si une large part de l'impactes viens des terminaux, c'est ici qu'une grosse partie des gains doivent être fait. Diminuer la fabrication de téléphone portable, d'ordinateur physique d'IoT et d'écrans de toutes sorte est très impactant.  
+
+En tant qu'utilisateur : chercher a minimisé le nombre de matériel utilisé, a en augmenter la durée de vie, a chercher une seconde vie au matériel  
+
+En tant que professionnelle il faut chercher à ne générer ni obsolescence ni nouveau besoin. Avoir une démarche d'éco-conception de nos usages / solutions / services / logiciel c'est chercher à ne pas générer de renouvellement ou d'achat chez les utilisateurs.
 
 # AWS and Sustainability
 

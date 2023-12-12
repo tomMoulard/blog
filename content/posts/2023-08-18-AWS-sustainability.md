@@ -40,7 +40,13 @@ Sur les 56 TWh :
 Source : « Empreinte environnementale du numérique mondial », GreenIT.fr, 2019 et étude « iNUM : impacts environnementaux du numérique en France », GreenIT.fr,
 2020, chiffres mis à jour. * Extrapolation depuis l’étude « Digital technologies in Europe : an environmental life cycle approach » , GreenIT.fr, décembre 2021.
 
-[![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg) source : www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement](https://www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement/themes-ree/pressions-exercees-par-les-modes-de-production-et-de-consommation/prelevements-de-ressources-naturelles/energie/article/numerique-et-consommation-energetique)
+[![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg) 
+
+source : 
+    - [www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement](https://www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement/themes-ree/pressions-exercees-par-les-modes-de-production-et-de-consommation/prelevements-de-ressources-naturelles/energie/article/numerique-et-consommation-energetique)
+    - [Empreinte environnementale du numérique mondial](https://www.greenit.fr/etude-empreinte-environnementale-du-numerique-mondial/) 
+    - [iNUM : impacts environnementaux du numérique en France](https://www.greenit.fr/impacts-environnementaux-du-numerique-en-france/)
+    
 
 [![](/img/2023/sus/LeMondeSansFinImpactDigital.jpg)Le monde sans fin - impacte du numérique](/img/2023/sus/Le-monde-sans-fin_impacte-digital.pdf)
 

@@ -28,13 +28,17 @@ Pour les nation unis "sustainable development" c'est 17 objectifs a vers lesquel
 
 # Le numérique représente pour l'instant 3 % de la consommation d’énergie finale
 
-En France, la consommation énergétique est de 476 TWh et l’électricité représente environ 25 % de l’énergie finale. Les prévisions d'augementations d'augm
+En France, la consommation énergétique est de 476 TWh et l’électricité représente environ 25 % de l’énergie finale. Les prévisions de GreenIT d'augementations de 50% du besoin electrique sont forte de 3% en 2020 a entre 5% et 6% en 2025.
+ 
 GreenIT estimait qu’en 2015 le numérique consommait environ 56 TWh, ce qui représente environ 12 % de la consommation électrique du pays et 3 % de la consommation d’énergie finale.
 
 Sur les 56 TWh :
 - 43 TWh pour les équipements utilisateurs à usage personnel ou professionnel (ordinateurs, tablettes, smartphones, box d’accès à internet, etc.)
 - 3,5 TWh pour le cœur du réseau (composants techniques pour relier les datacenters aux usagers, 3G, 4G, etc.)
 - 10 TWh pour les « datacenters » => 2.1% de l'électricité total !
+
+Source : « Empreinte environnementale du numérique mondial », GreenIT.fr, 2019 et étude « iNUM : impacts environnementaux du numérique en France », GreenIT.fr,
+2020, chiffres mis à jour. * Extrapolation depuis l’étude « Digital technologies in Europe : an environmental life cycle approach » , GreenIT.fr, décembre 2021.
 
 [![](/img/2023/sus/r1-conso-energie-electronique-4b5ae.jpg) source : www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement](https://www.notre-environnement.gouv.fr/rapport-sur-l-etat-de-l-environnement/themes-ree/pressions-exercees-par-les-modes-de-production-et-de-consommation/prelevements-de-ressources-naturelles/energie/article/numerique-et-consommation-energetique)
 

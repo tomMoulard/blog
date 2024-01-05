@@ -167,7 +167,8 @@ Quelles réglés d'utilisation de l'infrastructure :
 
 Il existe des outils externes a AWS qui peuvent avoir une pertinence en plus de ce que propose en natif AWS.
 
-- https://www.cloudcarbonfootprint.org/
+- https://www.cloudcarbonfootprint.org
+- https://www.co2scope.com
 
 # Question & Réflexion
 

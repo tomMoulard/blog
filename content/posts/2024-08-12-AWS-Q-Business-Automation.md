@@ -87,7 +87,7 @@ aws qbusiness start-data-source-sync-job \
 
 
 
-## Fichier terrafrom  
+## Terrafrom file  
 
 ### main.tf
 

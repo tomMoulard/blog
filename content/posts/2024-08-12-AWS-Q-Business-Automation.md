@@ -18,21 +18,19 @@ categories:
 
 # Terraform for Amazon Q Business
 
+Amazon Q business and the SaaS offer of Generative AI allowing to implement algorithms of augmented generation of recovery (RAG)
+.
+The implementation is done through the creation of an application in which we create a use an index. We then have the possibility of creating data sources. It is then necessary to deploy what allows to use the agent. To date it is only possible to do it in the regions of Northern Virginia and Oregon.
 
-Amazon Q business et l'offre SaaS d’IA Générative permettant d'implémenter des algorithmes de génération augmentée de récupération (RAG)
-. 
-La mise en place ce fait au travers la création d'une application dans lequel on crée une utilise un index. On a alors la possibilité de créer des data source. Il faut ensuite ce qui permet d'utiliser l'agent déployer. À ce jour il n'est possible de le faire que dans les régions de Virginie du Nord et d'oregon.
+The code that you will find below allows to create all this automatically. Only documents that are indexed in bucket S3 can be integrated into the RAG.
 
-Le code que vous trouverez les ci-dessous permet de créer tout cela automatiquement. Seule des documents qui sont indexés dans bucket  S3 peuvent être intégrés au RAG.
+## Organization of the IaC code
 
+For the simplicity of reading all the code is integrated into a main.tf file. In the future practices it would be more interesting to cut it into a classic terraform architecture.
+All the configuration of the S3 data source is integrated into the datasourceS3.tf file. For simplicity only and one to connect the local IAM identity center to the account which is in the same region as Amazon Q Business. The other variable is just to use it S3 bucket name accessible to all regions
 
-## Organisation du code IaC
-
-Pour la simplicité de lecture tout le code est intégré dans un fichier main.tf. Au futur les pratiques il serait plus intéressant de le découper dans une architecture classique de terraform.
-Toute la configuration du data source S3 et intégré dans le fichier datasourceS3.tf. 
-Pour une simplicité seule et l'une pour connecter L’IAM identity center local au compte qui est dans la même région que Amazon Q Business. L'autre variable et juste pour l'utiliser nom de bucket S3 accessible à toutes les régions
-
-## appel de terrafrom
+ref : https://docs.aws.amazon.com/amazonq/
+## terrafrom call
 
 ```
 $ export AWS_REGION=us-east-1
@@ -49,6 +47,46 @@ $ terraform apply
 $ terraform destroy
 
 ```
+
+
+## some instruction is not available on terraform
+Unfortunately in the current version of awscc 1.9.0 all the necessary features seem not to be available. Changes in AWS CLI are necessary after the terraform.
+- added groups / user rights
+- Launch of data sync
+
+### add group souscription
+
+https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/adding-users-groups.html
+
+refere ou refere terraform output for parameter and IAM Identity Center from group ID / principal-id
+``` shell 
+
+aws sso-admin create-application-assignment \
+--application-arn "arn:aws:sso::XXXX97133776:application/ssoins-XXXXf6da3a3ebd60/apl-XXXX4f0f59689bea" \
+--principal-id XXXX1488-b0a1-70d5-86f8-d8dc02244955 \
+--principal-type GROUP
+
+
+``` 
+
+### start data source sync
+
+refere terraform output for parameter
+``` shell 
+
+
+aws qbusiness start-data-source-sync-job \
+          --application-id  XXXX167a-161d-40ba-971d-31ae61148d6c \
+          --index-id XXXXd232-8330-4300-9bd8-9e81f81e886f        \
+          --data-source-id XXXXc7b5-dfdf-41a8-9706-2583af439a4e               
+
+```
+
+
+
+
+
+
 ## Fichier terrafrom  
 
 ### main.tf
@@ -206,6 +244,13 @@ data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 data "aws_partition" "current" {}
 
+output "application-id"  { value = awscc_qbusiness_application.demo_app.application_id }
+output "index-id"        { value = awscc_qbusiness_index.demo_idx.index_id }
+
+output "application-arn" { value = awscc_qbusiness_application.demo_app.identity_center_application_arn }
+
+
+
 ```
 
 ### datasourceS3.tf
@@ -323,6 +368,8 @@ resource "awscc_iam_role_policy" "demoRoleS3_policy" {
 }
 
 
+output "data-source-id"  { value = awscc_qbusiness_data_source.Demo_dss3.data_source_id }
+
 
 ```
 
@@ -345,8 +392,4 @@ variable "bucket_name" {
 
 ```
 
-
-Cf : [vmware : deploy-and-configure-vmware-cloud-on-aws Part2](https://blogs.vmware.com/cloud/2022/07/06/vmware-cloud-on-aws-terraform-deployment-phase-2/)
-
-Cf : [vmware : deploy-and-configure-vmware-cloud-on-aws Part3](https://blogs.vmware.com/cloud/2022/07/15/vmware-cloud-on-aws-terraform-deployment-phase-3/)
 

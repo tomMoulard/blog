@@ -1,7 +1,10 @@
 ---
 title: "Agentic et N8N : Quand les IA prennent leur envol !"
-date: 2023-05-15T10:00:00+02:00
+date: 2024-08-12T13:00:00+01:00
+author: Guillaume Moulard
+url: /N8N-Agentic
 draft: false
+type: post
 tags: ["IA", "Agentic", "N8N", "Bedrock", "GPT", "Ollama"]
 ---
 

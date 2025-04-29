@@ -1,6 +1,6 @@
 ---
 title: "Agentic et N8N : Quand les IA prennent leur envol !"
-date: 2024-08-12T13:00:00+01:00
+date: 2025-04-12T13:00:00+01:00
 author: Guillaume Moulard
 url: /N8N-Agentic
 draft: false

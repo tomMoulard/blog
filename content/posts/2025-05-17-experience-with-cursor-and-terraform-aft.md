@@ -54,6 +54,32 @@ Il est important de noter que ce code n'a jamais été testé par un humain, et 
 
 5. **Potentiel d'apprentissage** : Cette expérience nous a montré que des outils comme Cursor peuvent potentiellement être utilisés comme aide à l'apprentissage, en générant des exemples de code dans des langages ou des domaines moins familiers.
 
+## Retours d'expérience de la communauté
+
+En explorant davantage le sujet, nous avons découvert [un post Reddit fascinant](https://www.reddit.com/r/cursor/comments/1kk1mrz/10_brutal_lessons_from_6_months_of_vibe_coding/) partageant 10 leçons brutales tirées de 6 mois d'utilisation intensive de Cursor. Voici les points essentiels qui résonnent particulièrement avec notre expérience :
+
+1. **Penser comme un chef de projet, pas comme un "Prompt Monkey"** : Commencer par rédiger un véritable document d'exigences produit, qui servira de boussole face à la perte de contexte rapide de l'IA.
+
+2. **Documenter le déploiement immédiatement** : Anticiper les étapes de mise en production, car on oublie facilement les détails techniques, et Cursor aussi.
+
+3. **Git est indispensable** : Utiliser rigoureusement le contrôle de version, car Cursor peut casser des éléments critiques.
+
+4. **Privilégier des conversations courtes et ciblées** : Éviter d'accumuler des centaines de messages dans une seule conversation. Toujours préciser : "Corrige X uniquement. Ne change rien d'autre."
+
+5. **Planifier avant de coder** : Élaborer le flux complet de la fonctionnalité d'abord, choisir une approche, puis passer à l'exécution dans Cursor.
+
+6. **Nettoyer régulièrement le code** : Effectuer un nettoyage hebdomadaire des fichiers temporaires et de la structure des dossiers.
+
+7. **Utiliser Cursor pour des tâches spécifiques** : Ne pas demander à Cursor de construire l'application entière, mais plutôt des éléments d'interface, des blocs logiques ou des refactoring contrôlés.
+
+8. **Diagnostiquer avant de corriger** : Faire d'abord enquêter le modèle, puis lui demander de suggérer plusieurs solutions avant d'en implémenter une.
+
+9. **La dette technique s'accumule à vitesse IA** : Bien que le développement soit rapide, prendre le temps de refactoriser régulièrement.
+
+10. **Rester le capitaine** : Cursor n'est pas là pour "coder à votre place" mais pour co-piloter. C'est à vous de diriger la machine.
+
+Ces retours d'expérience plus approfondis soulignent l'importance de garder un œil critique lors de l'utilisation de ces outils. Notre expérience d'une heure avec Cursor n'est qu'un aperçu des possibilités et des défis que ces technologies représentent pour les développeurs. La citation finale du post résume bien cette philosophie : "Restez caféiné. Dirigez les machines."
+
 ## Conclusion
 
 Notre expérience avec Cursor pour générer du code pour un cas d'utilisation Terraform AFT a été à la fois fascinante et instructive. Bien que l'outil ait démontré sa capacité à produire rapidement du code structuré, notre expérience souligne également l'importance cruciale de l'expertise humaine dans le processus de développement.

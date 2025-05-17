@@ -2,6 +2,20 @@
 title: "Notre expérience fascinante avec Cursor : Génération de code pour Terraform AFT"
 date: 2025-05-17T00:00:00+02:00
 draft: false
+author: Tom Moulard
+url: /experience-with-cursor-and-terraform-aft
+draft: false
+type: post
+tags:
+  - Cursor
+  - Terraform
+  - AFT
+  - IA
+  - Génération de code
+categories:
+  - Développement
+  - Intelligence Artificielle
+  - Outils
 ---
 
 Dans le monde en constante évolution du développement logiciel, les outils d'intelligence artificielle pour la génération de code gagnent rapidement en popularité. Aujourd'hui, nous allons partager notre expérience passionnante avec Cursor, un outil de génération de code IA, que nous avons utilisé pour créer un cas d'utilisation intéressant avec Terraform AFT (Account Factory for Terraform).
@@ -36,7 +50,9 @@ Il est important de noter que ce code n'a jamais été testé par un humain, et 
 
 3. **Limitations** : L'absence de tests humains et notre manque de familiarité avec le langage généré soulignent l'importance de l'expertise humaine dans la vérification et l'optimisation du code généré par l'IA.
 
-4. **Potentiel d'apprentissage** : Cette expérience nous a montré que des outils comme Cursor peuvent potentiellement être utilisés comme aide à l'apprentissage, en générant des exemples de code dans des langages ou des domaines moins familiers.
+4. **Temps de développement** : Malgré l'utilisation d'un outil d'IA, nous avons quand même mis environ une heure pour générer l'ensemble du code du projet. Cela montre que même avec des outils avancés comme Cursor, un certain temps d'interaction et de réflexion reste nécessaire.
+
+5. **Potentiel d'apprentissage** : Cette expérience nous a montré que des outils comme Cursor peuvent potentiellement être utilisés comme aide à l'apprentissage, en générant des exemples de code dans des langages ou des domaines moins familiers.
 
 ## Conclusion
 

@@ -97,7 +97,10 @@ linenos = true
 	threshold = 80
 	includeNewer = true
 	toLower = false
-
+[services]
+  [services.googleAnalytics]
+    id = 'GTM-TDCXW7V8'
+    
 [markup]
   [markup.tableOfContents]
     endLevel = 8

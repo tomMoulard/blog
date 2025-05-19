@@ -2,7 +2,7 @@
 title: "Notre expérience fascinante avec Cursor : Génération de code pour Terraform AFT"
 date: 2025-05-17T00:00:00+02:00
 draft: false
-author: Tom Moulard
+author: ["Tom Moulard" ,"Guillaume Moulard"]
 url: /experience-with-cursor-and-terraform-aft
 draft: false
 type: post
@@ -22,7 +22,9 @@ Dans le monde en constante évolution du développement logiciel, les outils d'i
 
 ## Qu'est-ce que Cursor ?
 
-Cursor est un outil innovant qui permet aux développeurs d'écrire du code en utilisant des instructions en langage naturel. Il offre la possibilité de mettre à jour des classes ou des fonctions entières avec un simple prompt, promettant d'accélérer considérablement le processus de développement logiciel.
+[Cursor](https://www.cursor.so) est un outil innovant qui permet aux développeurs d'écrire du code en utilisant des instructions en langage naturel. Il offre la possibilité de mettre à jour des classes ou des fonctions entières avec un simple prompt, promettant d'accélérer considérablement le processus de développement logiciel.
+
+
 
 ## Notre projet : Terraform AFT
 
@@ -56,7 +58,7 @@ Il est important de noter que ce code n'a jamais été testé par un humain, et 
 
 ## Retours d'expérience de la communauté
 
-En explorant davantage le sujet, nous avons découvert [un post Reddit fascinant](https://www.reddit.com/r/cursor/comments/1kk1mrz/10_brutal_lessons_from_6_months_of_vibe_coding/) partageant 10 leçons brutales tirées de 6 mois d'utilisation intensive de Cursor. Voici les points essentiels qui résonnent particulièrement avec notre expérience :
+En explorant davantage le sujet, nous avons découvert [un post Reddit fascinant](https://www.reddit.com/r/cursor/comments/1kk1mrz/10_brutal_lessons_from_6_months_of_vibe_coding/) partageant 10 leçons brutales tirées de 6 mois d'utilisation intensive de [Cursor](https://www.cursor.so). Voici les points essentiels qui résonnent particulièrement avec notre expérience :
 
 1. **Penser comme un chef de projet, pas comme un "Prompt Monkey"** : Commencer par rédiger un véritable document d'exigences produit, qui servira de boussole face à la perte de contexte rapide de l'IA.
 

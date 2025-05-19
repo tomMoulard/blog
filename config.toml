@@ -99,7 +99,7 @@ linenos = true
 	toLower = false
 [services]
   [services.googleAnalytics]
-    id = 'G-BZ7HVELQED'
+    id = 'G-W2371LM47S'
     
 [markup]
   [markup.tableOfContents]

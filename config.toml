@@ -100,7 +100,9 @@ linenos = true
 [services]
   [services.googleAnalytics]
     id = 'G-W2371LM47S'
-    
+
+googleAnalyticsAsync = false # use asynchronous tracking. Synchronous tracking by default
+
 [markup]
   [markup.tableOfContents]
     endLevel = 8

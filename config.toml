@@ -97,11 +97,6 @@ linenos = true
 	threshold = 80
 	includeNewer = true
 	toLower = false
-[services]
-  [services.googleAnalytics]
-    id = 'G-W2371LM47S'
-
-googleAnalyticsAsync = false # use asynchronous tracking. Synchronous tracking by default
 
 [markup]
   [markup.tableOfContents]

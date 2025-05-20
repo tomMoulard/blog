@@ -2,6 +2,27 @@
 <html {{ with .Site.LanguageCode }} lang="{{ . }}" {{ end }}>
 
 <head>
+
+    <script>
+  (function(n,i,v,r,s,c,x,z){x=window.AwsRumClient={q:[],n:n,i:i,v:v,r:r,c:c};window[n]=function(c,p){x.q.push({c:c,p:p});};z=document.createElement('script');z.async=true;z.src=s;document.head.insertBefore(z,document.head.getElementsByTagName('script')[0]);})(
+    'cwr',
+    '5972ae55-a56a-4b63-aabe-fd62d848fbec',
+    '1.0.0',
+    'eu-west-3',
+    'https://client.rum.us-east-1.amazonaws.com/1.19.0/cwr.js',
+    {
+      sessionSampleRate: 1 ,
+      identityPoolId: "eu-west-3:8c9377ea-26cc-46e3-8270-abb9492a1288" ,
+      endpoint: "https://dataplane.rum.eu-west-3.amazonaws.com" ,
+      telemetries: ["performance","errors","http"] ,
+      allowCookies: true ,
+      enableXRay: false ,
+      signing: true // If you have a public resource policy and wish to send unsigned requests please set this to false
+    }
+  );
+</script>
+
+    
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2371LM47S"></script>
 <script>

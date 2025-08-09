@@ -2,7 +2,7 @@
 title: "Notre expérience fascinante avec Cursor : Génération de code pour Terraform AFT"
 date: 2025-05-17T00:00:00+02:00
 draft: false
-author: Tom Moulard 
+author: Tom Moulard
 url: /experience-with-cursor-and-terraform-aft
 draft: false
 type: post
@@ -23,8 +23,6 @@ Dans le monde en constante évolution du développement logiciel, les outils d'i
 ## Qu'est-ce que Cursor ?
 
 [Cursor](https://www.cursor.so) est un outil innovant qui permet aux développeurs d'écrire du code en utilisant des instructions en langage naturel. Il offre la possibilité de mettre à jour des classes ou des fonctions entières avec un simple prompt, promettant d'accélérer considérablement le processus de développement logiciel.
-
-
 
 ## Notre projet : Terraform AFT
 

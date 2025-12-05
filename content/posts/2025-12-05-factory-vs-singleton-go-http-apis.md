@@ -13,26 +13,13 @@ categories: ["Go", "Architecture", "tutoriel"]
 
 Picture this: It's 3 AM. Production is on fire. You're desperately trying to debug why your HTTP API is returning cached data from *yesterday*. You trace the issue to your HTTP client... which is a singleton... that someone initialized with a 24-hour cache... and there's no way to reset it without restarting the entire service.
 
-Sound familiar? No? Well, stick around anyway. By the end of this post, you'll understand why the **Factory pattern** will save your future self from these sleepless nights, and why **Singleton** is often the villain in disguise when building Go HTTP APIs.
+I've been there. Twice, actually. The second time was worse because I *knew* better but had inherited the codebase.
 
-Let's dive in with the classic journalist's approach: **Who? What? When? Where? Why?**
-
----
-
-## Who Should Care?
-
-**You**, if you:
-- Build HTTP APIs in Go (or plan to)
-- Write code that needs to be tested (spoiler: all code does)
-- Have ever struggled to mock a dependency
-- Want your teammates to stop cursing your name in code reviews
-- Enjoy sleeping at night instead of debugging production issues
-
-If none of these apply to you, congratulations! You're either a perfect developer or you've achieved enlightenment. For the rest of us mortals, let's continue.
+This post is about why the **Factory pattern** beats **Singleton** for HTTP clients in Go. Not because some design pattern book says so, but because I've debugged enough production incidents to have opinions.
 
 ---
 
-## What Are We Talking About?
+## The Two Approaches
 
 ### The Singleton Pattern: The "One Ring to Rule Them All" Approach
 
@@ -228,13 +215,13 @@ type User struct {
 }
 ```
 
-"But Tom," I hear you say, "that's more code!" Yes. And your future self will thank you. Here's why...
+"But that's more code!" Yes. About 40 more lines. I'll take 40 lines over a 3 AM debugging session any day.
 
 ---
 
-## When Does This Matter? (The Testing Showdown)
+## Testing: Where Singleton Falls Apart
 
-Let's try to test both approaches. This is where things get *spicy*.
+Here's where it gets painful. Try writing tests for both approaches.
 
 ### Testing the Singleton Approach (The Hard Way)
 
@@ -407,7 +394,7 @@ func TestUserHandler_GetUser_InvalidJSON(t *testing.T) {
 }
 ```
 
-Look at that! Three different tests, all running in parallel, each with its own mock behavior. No shared state, no test pollution, no tears.
+Three tests, all parallel, each with isolated mock behavior. This is how testing should work.
 
 ### Table-Driven Tests: The Factory Pattern's Best Friend
 
@@ -488,9 +475,9 @@ func TestUserHandler_GetUser_TableDriven(t *testing.T) {
 
 ### Generating Mocks with Mocktail: Stop Writing Boilerplate!
 
-Writing mock implementations by hand works, but let's be honest, it's tedious. For every interface you want to mock, you need to create a struct, implement all methods, handle the function callbacks... it adds up fast.
+Writing mocks by hand gets old fast. I've wasted too many hours writing boilerplate `DoFunc` callbacks.
 
-Enter [**Mocktail**](https://github.com/paperballs/mocktail): a mock generator that creates **strongly-typed mocks** using `testify/mock`. Unlike other generators that use string-based method calls (hello, refactoring nightmares!), Mocktail generates typed methods that break at compile time when your interface changes.
+[**Mocktail**](https://github.com/paperballs/mocktail) generates strongly-typed mocks using `testify/mock`. The key difference from other generators: it uses typed methods instead of string-based calls. When your interface changes, compilation fails. No more "forgot to update the mock" bugs.
 
 #### Installing Mocktail
 
@@ -648,7 +635,7 @@ func (c *httpClientMockDo_Call) TypedReturns(resp *http.Response, err error) *ht
 }
 ```
 
-The key insight: **`TypedReturns` has the same signature as the real method**. If you change `Do`'s return type, Mocktail regenerates with the new signature, and your tests won't compile until you fix them. No more "oops, I forgot to update that mock" bugs in production!
+`TypedReturns` has the same signature as the real method. Change `Do`'s return type, regenerate, and the compiler tells you what broke. I've caught several bugs this way that would have shipped otherwise.
 
 #### When to Use What
 
@@ -657,13 +644,13 @@ The key insight: **`TypedReturns` has the same signature as the real method**. I
 - **Frequently changing interfaces**: Mocktail's type safety is invaluable
 - **Team projects**: Mocktail ensures consistency
 
-The Factory pattern makes mocking possible; Mocktail makes it painless.
+Factory makes mocking possible. Mocktail removes the boilerplate.
 
 ---
 
-## Where Does This Play Out? (Real-World Scenarios)
+## Real Scenarios Where This Matters
 
-Let's look at some scenarios where Factory shines and Singleton... doesn't.
+Some cases I've actually dealt with:
 
 ### Scenario 1: Multi-Tenant API
 
@@ -793,9 +780,9 @@ func setupClients(featureFlags FeatureFlags, userID string, config ClientConfig)
 
 ---
 
-## Why Factory Wins (The Verdict)
+## The Trade-offs
 
-Let's summarize the evidence:
+Here's how they compare:
 
 | Aspect | Singleton | Factory |
 |--------|-----------|---------|
@@ -807,22 +794,18 @@ Let's summarize the evidence:
 | **Feature flags** | All or nothing | Per-instance control |
 | **Debugging** | "Which code path set this?" | Clear dependency chain |
 
-### When Singleton IS Okay
+### When Singleton Actually Makes Sense
 
-I'm not saying Singleton is *always* wrong. Use it for:
+To be fair, Singleton isn't always wrong:
 
 - **True singletons**: There really can only be one (e.g., a process-wide metrics registry)
 - **Immutable configuration**: Loaded once at startup, never changed
 - **Resource pools**: Connection pools where you explicitly WANT sharing
 - **Logging**: Usually fine as a singleton (but consider structured logging with context)
 
-The key question: **"Will I ever need to vary this behavior per context?"**
+The question I ask myself: "Will I ever need different behavior in different contexts?" If there's any chance the answer is yes, Factory. If it's truly global and immutable, Singleton might be fine.
 
-If yes Factory. If truly no Singleton *might* be okay.
-
-### The Factory-by-Default Philosophy
-
-My recommendation: **Start with Factory, reach for Singleton only when you have a specific, justified reason.**
+In practice, I default to Factory and only reach for Singleton when I have a specific reason.
 
 ```go
 // Default approach: Factory + Dependency Injection
@@ -853,9 +836,9 @@ func main() {
 
 ---
 
-## Refactoring from Singleton to Factory
+## Migrating from Singleton to Factory
 
-Already have a codebase full of singletons? Here's a migration path:
+If you're stuck with a singleton-heavy codebase (I've been there), here's how to migrate incrementally:
 
 ### Step 1: Define an Interface
 
@@ -915,11 +898,9 @@ func main() {
 
 ---
 
-## Interactive Playground
+## Interactive Example
 
-Since Klipse is installed on this blog, you can experiment with some Go code right here!
-
-Try modifying this simple example to understand how interfaces enable mocking:
+If you want to play with the concepts, here's a simplified version:
 
 ```go
 import "fmt"
@@ -965,13 +946,13 @@ func main() {
 }
 ```
 
-See how the `UserService` doesn't care whether it gets a `RealClient` or `MockClient`? That's the power of interfaces and the Factory pattern!
+`UserService` doesn't care which client it gets. That's the point.
 
 ---
 
-## Production Tips: Making Your Factory-Based Code Bulletproof
+## Production Hardening
 
-Now that you're convinced Factory is the way to go, here are some production-hardening tips I've learned the hard way:
+Some things I've learned from production incidents:
 
 ### 1. Always Limit Response Body Size
 
@@ -1028,46 +1009,14 @@ json.NewEncoder(w).Encode(result)
 
 ---
 
-## Key Takeaways
+## Wrapping Up
 
-### Use Factory When:
+Factory adds some boilerplate. About 40-50 lines for a typical HTTP client setup. In exchange, you get testable code, flexible configuration, and fewer 3 AM incidents.
 
-- You need different configurations for different contexts
-- You want to test your code with mocks
-- You're building multi-tenant systems
-- You need to support feature flags
-- You want explicit, traceable dependencies
-- You value your sleep
+Singleton isn't evil. It's just overused. Most HTTP clients don't need to be singletons, and the ones that do are rarer than you'd think.
 
-### Singleton Might Be Okay When:
-
-- There truly can only be one (process metrics, runtime config)
-- The instance is immutable after initialization
-- You're explicitly building a shared resource pool
-- You've thought about it and can justify the trade-offs
-
-### The Golden Rule
-
-> **Make dependencies explicit. Your tests will thank you. Your teammates will thank you. Future you will thank you.**
+Next time you're about to write `var instance *http.Client` with `sync.Once`, ask yourself if you'll ever need to mock it, configure it differently, or debug it in production. If the answer to any of those is "maybe," use a factory.
 
 ---
 
-## Conclusion
-
-The Factory pattern isn't just about creating objects. It's about:
-- **Flexibility**: Different configurations for different needs
-- **Testability**: Easy mocking without black magic
-- **Clarity**: Explicit dependencies you can trace
-- **Maintainability**: Code that's easier to change
-
-Singleton has its place, but it's a smaller place than most codebases give it. When building HTTP APIs in Go, the Factory pattern combined with dependency injection is almost always the better choice.
-
-So the next time you reach for `sync.Once` and a package-level variable, ask yourself: "Will I regret this at 3 AM?"
-
-If the answer is "maybe," use a factory instead. Your future self will send you a thank-you note.
-
-Happy coding! And may your tests always be green and your production always be boring.
-
----
-
-*Got questions? Found a bug in my examples? Want to argue that Singleton is actually fine? Drop a comment below or find me on [GitHub](https://github.com/tommoulard)!*
+*If you spot a bug in the examples or want to argue that Singleton is fine, find me on [GitHub](https://github.com/tommoulard).*

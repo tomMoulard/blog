@@ -1,6 +1,6 @@
 ---
 title: "Comment Détecter un Article Généré par une IA : Guide Pratique"
-date: 2025-12-12T12:12:12+02:00
+date: 2025-12-12T00:00:00+02:00
 draft: false
 author: Tom Moulard
 url: /comment-detecter-contenu-genere-par-ia

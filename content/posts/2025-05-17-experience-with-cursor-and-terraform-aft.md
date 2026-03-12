@@ -4,7 +4,6 @@ date: 2025-05-17T00:00:00+02:00
 draft: false
 author: Tom Moulard
 url: /experience-with-cursor-and-terraform-aft
-draft: false
 type: post
 tags:
   - Cursor

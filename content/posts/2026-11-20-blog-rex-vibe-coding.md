@@ -72,6 +72,12 @@ Ce qui a changé par rapport à l'année d'avant, c'est le harnais : Claude Code
 
 Vitesse ne veut pas dire raccourcis : tout est dans un [dépôt public](https://github.com/gmoulard/wikipedia2book/), chaque modification est un commit lisible, une trentaine de fichiers de tests tournent avant chaque déploiement, et la spécification suit le code.
 
+## pi-appliance : deux jours
+
+Un retour d’expérience plus expéditif cette fois : 2 jours pour concrétiser une vieille idée que je n’avais pas réussi à réaliser en 4 ans !
+
+Le vibe coding est ici un véritable game changer !
+
 ## Deux projets pour mesurer le changement
 
 Pour mesurer concrètement ce que le *vibe coding* change dans ma façon de développer, je me suis appuyé sur deux projets personnels assez différents.

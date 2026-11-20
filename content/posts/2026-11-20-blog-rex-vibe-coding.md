@@ -67,6 +67,84 @@ Ce qui a changé par rapport à l'année d'avant, c'est le harnais : Claude Code
 
 Vitesse ne veut pas dire raccourcis : tout est dans un [dépôt public](https://github.com/gmoulard/wikipedia2book/), chaque modification est un commit lisible, une trentaine de fichiers de tests tournent avant chaque déploiement, et la spécification suit le code.
 
+## Deux projets pour mesurer le changement
+
+Pour mesurer concrètement ce que le *vibe coding* change dans ma façon de développer, je me suis appuyé sur deux projets personnels assez différents.
+
+Le premier, [**Wikipedia2Book**](https://github.com/gmoulard/wikipedia2book), est une application web qui permet de composer des livres au format PDF à partir d'articles Wikipédia : recherche, sélection et organisation des articles, structuration en chapitres et volumes, puis génération des livres.
+
+Le second, [**pi-appliance**](https://github.com/gmoulard/pi-appliance), est d'une autre nature. Il s'agit de transformer un Raspberry Pi en une véritable appliance personnelle, capable d'héberger et de rendre accessibles depuis Internet différents services. Un projet beaucoup plus transversal, qui touche au développement logiciel, au système Linux, au réseau, à la sécurité, à l'administration et même au matériel.
+
+Pour objectiver un peu ces réalisations, j'ai utilisé [OctoCounts](https://octocounts.com), qui analyse les dépôts GitHub et compte les lignes de code avec l'outil Tokei.
+
+Au 20 novembre 2026, Wikipedia2Book représente **12 048 lignes de code**, réparties dans 50 fichiers et 9 langages. pi-appliance atteint **27 343 lignes de code**, réparties dans 153 fichiers et 10 langages. Au total, cela représente près de **40 000 lignes de code**, dans 203 fichiers, sans compter les commentaires et les lignes blanches.
+
+Les rapports détaillés sont accessibles ici :
+
+- [OctoCounts – Wikipedia2Book](https://octocounts.com/github/gmoulard/wikipedia2book/tree/main)
+- [OctoCounts – pi-appliance](https://octocounts.com/github/gmoulard/pi-appliance/tree/master)
+
+Ces comptages donnent une photographie du code présent dans chaque dépôt à un instant donné. Les règles de mesure excluent notamment certains répertoires identifiés comme contenant des tests, de la documentation ou du code généré. Il ne s'agit donc pas d'une mesure directe de la productivité, mais d'un premier indicateur de la taille des réalisations.
+
+### Quelques chiffres
+
+| KPI au 20 novembre 2026 | Wikipedia2Book | pi-appliance | Ensemble |
+|---|---:|---:|---:|
+| Lignes de code (SLOC) | 12 048 | 27 343 | **39 391** |
+| Lignes de commentaires | 1 587 | 3 680 | 5 267 |
+| Lignes totales | 15 059 | 33 129 | **48 188** |
+| Fichiers analysés | 50 | 153 | **203** |
+| Langages | 9 | 10 | — |
+| Moyenne de lignes de code par fichier | 241 | 179 | 194 |
+
+### La vélocité : ce que raconte l'historique Git
+
+Pour aller au-delà du simple comptage des lignes, j'ai également analysé les historiques Git complets des deux projets. Cela permet de mesurer le rythme de développement, les périodes d'activité et la fréquence des modifications intégrées.
+
+Wikipedia2Book a été développé entre le 7 et le 20 novembre 2026. En quatorze jours calendaires, la branche principale `main` a enregistré **409 commits**.
+
+Le cas de pi-appliance est particulièrement intéressant. Le projet existait depuis 2018, mais je l'avais progressivement abandonné. Je l'ai véritablement repris le **19 novembre 2026 au matin**, à 7 h 49. En moins de deux jours calendaires, la branche principale `master` a enregistré **106 commits** : 56 le 19 novembre et 50 le 20 novembre.
+
+Il serait donc trompeur de calculer la vélocité de pi-appliance depuis 2018. Cette date correspond à la naissance du projet, pas à sa période de développement actuelle. Pour cette comparaison, je retiens uniquement la période de reprise.
+
+| KPI de développement | Wikipedia2Book | pi-appliance |
+|---|---:|---:|
+| Début de la période étudiée | 7 novembre 2026 | 19 novembre 2026 |
+| Dernière activité observée | 20 novembre 2026 | 20 novembre 2026 |
+| Durée calendaire | 14 jours | 2 jours |
+| Commits sur la branche principale | **409** | **106** |
+| Commits par jour calendaire | 29,2 | 53 |
+| Jours avec activité | 14 | 2 |
+| Lignes de code actuelles | 12 048 | 27 343 |
+
+Ces chiffres sont évidemment à interpréter avec prudence : un commit ne correspond pas nécessairement à une fonctionnalité, ni à une unité de travail comparable. Ils donnent néanmoins une indication intéressante du rythme auquel les deux projets ont évolué.
+
+### Ce que je veux vraiment mesurer
+
+Le nombre de lignes de code et le nombre de commits ne suffisent pas à évaluer la vélocité. Ce qui m'intéresse davantage, c'est la capacité à transformer une idée en fonctionnalité opérationnelle, puis à la consolider pour en faire un produit utilisable.
+
+Je retiens donc plusieurs indicateurs complémentaires pour aller plus loin :
+
+| KPI | Ce qu'il mesure | Pourquoi c'est intéressant |
+|---|---|---|
+| Commits par semaine et par mois | Fréquence des modifications intégrées | Mesure le rythme d'activité |
+| Fonctionnalités livrées par mois | Nombre de nouvelles fonctions identifiables | Mesure le débit fonctionnel |
+| Délai idée → fonctionnalité | Temps entre la première trace d'une idée et sa mise à disposition | Mesure la rapidité de réalisation |
+| Corrections / évolutions | Répartition entre nouvelles fonctions, corrections et refactoring | Mesure l'effort de consolidation |
+| Tests | Effort consacré à la validation | Évalue la qualité du résultat |
+| Documentation | Évolution de la documentation technique et utilisateur | Mesure le niveau de finition |
+| Versions publiées | Fréquence des livraisons identifiées | Mesure la capacité à livrer régulièrement |
+
+Il reste à analyser plus finement les messages de commits, les changements de fichiers et les changelogs pour établir ces indicateurs. Je préfère ne pas leur attribuer de chiffres tant que cette classification n'a pas été faite.
+
+### Ce que j'en retiens
+
+Ces deux projets sont complémentaires. Wikipedia2Book illustre la création rapide d'une application web complète. pi-appliance montre qu'il est également possible de reprendre un projet ancien, de revoir ses choix techniques et de lui donner une nouvelle dimension en un temps très court.
+
+Ce qui m'intéresse dans ce retour d'expérience, ce n'est finalement pas le nombre de lignes écrites. C'est le chemin parcouru entre une idée et un produit fonctionnel. Ces deux projets m'ont permis d'expérimenter le développement assisté par IA à une échelle suffisamment importante pour rencontrer les vrais sujets de l'ingénierie logicielle : architecture, cohérence, sécurité, tests, documentation, ergonomie et maintenance.
+
+Et surtout, de constater que je peux désormais mener à bien des projets que j'aurais probablement laissés de côté auparavant, faute de temps ou de disponibilité. Le changement ne se mesure pas seulement à la vitesse à laquelle on écrit du code, mais aussi à tout ce que l'on devient capable de réaliser.
+
 ## Ma méthode aujourd'hui, en cinq étapes
 
 Avec Wikipedia2Book, puis avec mon projet suivant, [pi-appliance](https://www.pi-appliance.com/) (transformer un Raspberry Pi en petit serveur personnel, pour le grand public), j'ai fini par stabiliser une manière de faire. Elle tient en cinq étapes.
@@ -120,9 +198,9 @@ Avec le vibe coding, je fais finalement plus d'ingénierie logicielle que de cod
 
 Pour un dyslexique comme moi, c'est aussi merveilleux de pouvoir simplement parler en français à son outil de développement. Pouvoir expliquer une idée avec ses propres mots, décrire un problème, formuler une intention sans se battre avec l'orthographe, la syntaxe d'un langage ou ses conventions, c'est une véritable libération. Je peux enfin me concentrer sur ce que je veux construire plutôt que sur la manière de l'écrire. Ce n'est pas un détail : c'est une nouvelle forme d'accessibilité à la création logicielle.
 
-L'autre changement considérable, c'est que je peux enfin réaliser des choses que je n'aurais probablement jamais pris le temps de développer auparavant. Des bancs de tests de performance, des audits et des validations de la couverture de sécurité, du SSO, des interfaces soignées, des outils d'administration, une documentation technique et utilisateur particulièrement complète… Autant d'éléments qui font la différence entre un prototype et un véritable produit abouti, mais que l'on repousse souvent faute de temps ou de moyens. Aujourd'hui, je peux les envisager et les mettre en œuvre. Je ne me contente plus de développer les fonctionnalités essentielles : je peux aussi soigner tout ce qui fait la qualité du produit.
+L'autre changement considérable, c'est que je peux enfin réaliser des choses que je ne pouvais plus faire et/ou que ne n'aurais probablement jamais pris le temps de développer auparavant. Des bancs de tests de performance, des audits et des validations de la couverture de sécurité, du SSO, des interfaces soignées, des outils d'administration, une documentation technique et utilisateur particulièrement complète… Autant d'éléments qui font la différence entre un prototype et un véritable produit abouti, mais que l'on repousse souvent faute de temps ou de moyens. Aujourd'hui, je peux les envisager et les mettre en œuvre. Je ne me contente plus de développer les fonctionnalités essentielles : je peux aussi soigner tout ce qui fait la qualité du produit.
 
-Évidemment, tout cela a un coût. Il y a celui des jetons consommés. j'ai encore a apprendre mais je commence a avoir quelques pistes : éviter de faire relire systématiquement l'intégralité du projet à l'IA, ne pas mettre de documentation dans le code !, lui fournir uniquement le contexte nécessaire à la tâche, découper les demandes complexes en étapes cohérentes et conserver une documentation claire des décisions prises. Enfin, mieux vaut prendre quelques minutes pour préparer une demande précise que multiplier les échanges pour corriger une réponse mal orientée. En somme, il faut apprendre à piloter sa consommation de tokens comme on apprend à optimiser l'utilisation de ses ressources informatiques. L'IA est capable de travailler vite, mais cela ne dispense pas de travailler intelligemment.
+Évidemment, tout cela a un coût. Il y a celui des jetons consommés. J'ai cramer tout les tokens du monde... Mon compte pro copilote et 2 compte pro de claude code. J'ai encore a apprendre !!! Je commence a avoir quelques pistes : éviter de faire relire systématiquement l'intégralité du projet à l'IA, ne pas mettre de documentation dans le code !, lui fournir uniquement le contexte nécessaire à la tâche, découper les demandes complexes en étapes cohérentes et conserver une documentation claire des décisions prises. Enfin, mieux vaut prendre quelques minutes pour préparer une demande précise que multiplier les échanges pour corriger une réponse mal orientée. En somme, il faut apprendre à piloter sa consommation de tokens comme on apprend à optimiser l'utilisation de ses ressources informatiques. L'IA est capable de travailler vite, mais cela ne dispense pas de travailler intelligemment.
 
 Enfin, il ne faut pas oublier que les tests sur le terrain restent humains. L'IA peut vérifier que le code fait ce qui est écrit, mais c'est à moi de vérifier que ce qui est écrit sert réellement à quelque chose. Elle peut produire, analyser, tester et documenter ; elle ne remplace pas le jugement de celui qui connaît le besoin et les utilisateurs.
 

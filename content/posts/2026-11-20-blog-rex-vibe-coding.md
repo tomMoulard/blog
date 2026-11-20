@@ -1,6 +1,6 @@
 ---
 title: "Vibe coding : le REX d'un vieux bonhomme"
-author: Tom Moulard
+author: Guillaume Moulard
 categories: ["AI", "Developer Tools", "Code Quality", "Automation"]
 date: 2026-11-20T00:00:00.000+02:00
 tags: [vibe coding, IA, Claude Code, wikipedia2book, pi-appliance, wikipedia, wikipedia2book, "code-review", "automation", "ai-agents", "developer-tools", "code-quality", "meta-programming", "claude", "copilote", "subagents"]

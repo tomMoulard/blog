@@ -11,6 +11,8 @@ url: "/posts/rex-vibe-coding-old-man"
 
 # Vibe coding : le REX d'un vieux bonhomme
 
+Teaser : votre vélocité lors du codage 1, 16 ou 40 ???
+
 J'ai commencé l'informatique à une époque où le HTML n'existait que dans le laboratoire de Tim Berners-Lee, au CERN de Genève. Depuis, j'ai traversé plusieurs décennies d'évolutions technologiques, chacune accompagnée de son lot de promesses, de ruptures et parfois de prédictions alarmistes sur la disparition prochaine du métier de développeur.
 
 J'ai connu l'arrivée des **langages de programmation de plus haut niveau**, qui ont progressivement éloigné les développeurs du matériel et des contraintes de bas niveau. Ce qui nécessitait autrefois une connaissance approfondie de la machine pouvait désormais être exprimé en quelques instructions. Certains y voyaient déjà une dévalorisation du métier ; c'était surtout une libération du temps consacré aux tâches les plus techniques.
@@ -204,6 +206,8 @@ Puis je reprends la main. Je teste, pour de vrai : sur de vrais livres pour Wiki
 C'est d'ailleurs là que j'en suis sur pi-appliance : près d'une centaine de tâches cochées, une quarantaine ouvertes, et j'ai décidé d'**arrêter d'ajouter des fonctionnalités** tant que tout n'a pas été éprouvé sur un vrai Pi. Le code écrit par l'IA passe les tests ; le matériel réel, lui, ne lit pas la spécification.
 
 ## Ce que j'en retiens
+
+Lors d’un échange pendant la [cérémonie Made In Dauphine](https://www.dauphine-alumni.org/fr/prix-made-in-dauphine) avec [Eric Voltzenlogel](https://www.linkedin.com/in/ericvoltzenlogel/), celui-ci me confiait que ses équipes de développement avaient mesuré des gains de vélocité supérieurs à un facteur 16. De mon côté, mon ressenti est encore plus spectaculaire : je situerais plutôt le gain autour d’un facteur 40 !
 
 Avec le vibe coding, je fais finalement plus d'ingénierie logicielle que de code. Je passe moins de temps à écrire des lignes de programmation et davantage à réfléchir, concevoir, décider, vérifier et maintenir la cohérence de l'ensemble. La spécification devient presque le véritable code source : si elle est floue, l'IA produit du flou, mais elle le fait très vite ! J'ai aussi découvert que l'une des astuces les plus efficaces consiste à demander à l'IA de me poser des questions avant de commencer. Elle m'aide ainsi à préciser mon besoin, à identifier les oublis et à explorer des pistes auxquelles je n'aurais pas nécessairement pensé.
 

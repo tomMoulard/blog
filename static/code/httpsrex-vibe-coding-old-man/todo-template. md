@@ -1,0 +1,114 @@
+
+# TODO — Gestion du projet
+
+## 1. Instructions pour Claude Code
+
+Tu es responsable de la réalisation et du suivi des tâches de ce projet.
+
+### Règles générales
+
+- Lire le backlog avant toute intervention.
+- Examiner le code existant avant de proposer une modification.
+- Ne pas réécrire une fonctionnalité déjà opérationnelle.
+- Respecter l'architecture et les conventions du projet.
+- Mettre à jour ce fichier après chaque intervention.
+- Ne jamais déclarer une tâche terminée sans validation.
+
+### Orchestration du travail
+
+1. Analyser les tâches disponibles.
+2. Identifier les dépendances entre tâches.
+3. Repérer les tâches indépendantes.
+4. Déléguer les tâches indépendantes à des sous-agents lorsque c'est pertinent.
+5. Éviter que plusieurs agents modifient simultanément les mêmes fichiers.
+6. Intégrer et vérifier les travaux réalisés.
+7. Lancer les tests de non-régression.
+
+### Gestion des statuts
+
+- [ ] À faire
+- [x] Réalisé et vérifié
+- [~] En cours
+- [!] Bloqué
+
+Une tâche ne peut être cochée que lorsque ses critères
+d'acceptation sont satisfaits.
+
+---
+
+## 2. Backlog
+
+### EPIC 1 — Configuration
+
+#### TODO-1.1 — Configuration générale
+
+- **Priorité :** Haute
+- **Statut :** [ ] À faire
+- **Dépendances :** Aucune
+
+**Objectif**
+
+Centraliser la configuration de l'application.
+
+**Travail à réaliser**
+
+- [ ] Identifier les paramètres existants.
+- [ ] Regrouper les paramètres dans une configuration cohérente.
+- [ ] Documenter les paramètres.
+
+**Critères d'acceptation**
+
+- [ ] L'application démarre avec la nouvelle configuration.
+- [ ] Les paramètres existants restent compatibles.
+- [ ] Les tests passent.
+
+---
+
+### EPIC 2 — Réseau
+
+#### TODO-2.1 — Configuration DHCP
+
+- **Priorité :** Haute
+- **Statut :** [ ] À faire
+- **Dépendances :** TODO-1.1
+
+**Objectif**
+
+Permettre à l'application de récupérer automatiquement
+une configuration réseau via DHCP.
+
+**Travail à réaliser**
+
+- [ ] Analyser la configuration réseau actuelle.
+- [ ] Implémenter le fonctionnement DHCP.
+- [ ] Gérer les erreurs de connexion.
+
+**Critères d'acceptation**
+
+- [ ] Une adresse IP est obtenue automatiquement.
+- [ ] Le fonctionnement est vérifié après redémarrage.
+
+**Validation**
+
+- Tests automatisés : à réaliser
+- Tests sur matériel réel : à réaliser
+
+---
+
+## 3. Journal des interventions
+
+### 2026-11-21
+
+- Création de la structure du backlog.
+- Aucune tâche métier réalisée.
+
+---
+
+## 4. Synthèse
+
+- Tâches terminées : 0
+- Tâches en cours : 0
+- Tâches à faire : 2
+- Tâches bloquées : 0
+
+Claude Code doit maintenir cette synthèse à jour.

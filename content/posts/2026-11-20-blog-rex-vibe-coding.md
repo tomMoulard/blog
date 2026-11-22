@@ -205,6 +205,21 @@ Puis je reprends la main. Je teste, pour de vrai : sur de vrais livres pour Wiki
 
 C'est d'ailleurs là que j'en suis sur pi-appliance : près d'une centaine de tâches cochées, une quarantaine ouvertes, et j'ai décidé d'**arrêter d'ajouter des fonctionnalités** tant que tout n'a pas été éprouvé sur un vrai Pi. Le code écrit par l'IA passe les tests ; le matériel réel, lui, ne lit pas la spécification.
 
+6. Et maintenant, construire l'infrastructure pour les agents
+
+Ma méthode commence à prendre forme, mais je suis loin d'avoir exploré toutes les possibilités. J'ai découvert quelques astuces intéressantes pour organiser le travail des LLM, leur donner du contexte et répartir les tâches entre plusieurs agents. Mais il reste énormément de choses à imaginer et à expérimenter dans l'infrastructure qui permet de les guider efficacement et de tirer pleinement parti de leurs capacités.
+
+D'autres, probablement bien plus expérimentés que moi dans ce domaine, travaillent déjà sur des environnements beaucoup plus structurés.
+
+J'ai notamment découvert le travail de "Lauren Tan (@poteto)" (https://x.com/poteto), avec son article "The Complete Guide to pstack, Pt. 1 – Verification is all you need" (https://x.com/poteto/article/2094457600259842065).
+
+Elle propose avec pstack une infrastructure pour rendre les agents plus autonomes et fiables. Elle s'appuie notamment sur une Verification Skill pour tester les fonctionnalités, une CLI pour piloter l'application et une Feature Map pour donner aux agents une connaissance structurée du produit. L'objectif : permettre aux agents de réaliser, tester et corriger leur travail en s'appuyant sur des outils et des scénarios de vérification plutôt que sur de simples instructions.
+
+Ce qui me frappe dans cette approche, c'est qu'elle considère les outils, les compétences et l'environnement de travail des agents comme une véritable infrastructure logicielle à part entière.
+
+C'est probablement l'une des prochaines étapes de ma propre expérimentation. Après avoir appris à mieux décrire, découper et déléguer le travail, il va falloir apprendre à construire l'environnement qui permettra aux agents de travailler de manière toujours plus autonome, fiable et efficace.
+
+
 ## Ce que j'en retiens
 
 Lors d’un échange pendant la [cérémonie Made In Dauphine](https://www.dauphine-alumni.org/fr/prix-made-in-dauphine) avec [Eric Voltzenlogel](https://www.linkedin.com/in/ericvoltzenlogel/), celui-ci me confiait que ses équipes de développement avaient mesuré des gains de vélocité supérieurs à un facteur 16. De mon côté, mon ressenti est encore plus spectaculaire : je situerais plutôt le gain autour d’un facteur 40 !
